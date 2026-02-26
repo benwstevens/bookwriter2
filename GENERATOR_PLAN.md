@@ -275,12 +275,12 @@ Distiller uses `client.messages.stream()` for the coherence pass. Generator shou
 
 - [x] Review GENERATOR_PLAN.md and bookprocessing codebase
 - [x] Copy shared.py and requirements.txt into repo
-- [ ] Create `generator_instructions.txt`
-- [ ] Create `generator_coherence_instructions.txt`
-- [ ] Implement `generator.py` Stage 1 (Parse & Validate)
-- [ ] Implement `generator.py` Stage 2 (Generate Chapters)
-- [ ] Implement `generator.py` Stage 3 (Save & Validate)
-- [ ] Implement `generator.py` Stage 4 (Coherence Pass)
-- [ ] Implement `generator.py` Stage 5 (EPUB + HTML Assembly)
-- [ ] Create sample `toc.yaml` for testing
-- [ ] End-to-end dry-run test
+- [x] Create `generator_instructions.txt`
+- [x] Create `generator_coherence_instructions.txt`
+- [x] Implement `generator.py` Stage 1 (Parse & Validate)
+- [x] Implement `generator.py` Stage 2 (Generate Chapters)
+- [x] Implement `generator.py` Stage 3 (Save & Validate)
+- [x] Implement `generator.py` Stage 4 (Coherence Pass)
+- [x] Implement `generator.py` Stage 5 (EPUB + HTML Assembly)
+- [x] Create sample `toc.yaml` and `sample_style_guide.txt` for testing
+- [x] End-to-end dry-run test — PASSED

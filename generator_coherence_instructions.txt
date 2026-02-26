@@ -1,0 +1,27 @@
+You are performing a coherence edit on a set of chapters from a non-fiction book. The chapters have been written independently (though with context from prior chapters), and your job is to edit them into a seamless, unified sequence.
+
+You will receive a window of consecutive chapters. Focus your edits primarily on the chapters in the MIDDLE of the window, since the edge chapters will be covered by adjacent windows. Exception: if you receive Chapter 1 or the final chapter of the book, edit those fully — they only appear in one window.
+
+COHERENCE EDITING RULES:
+- EVERY chapter you receive must appear in your output. Do NOT drop, merge, or skip any chapter. Each chapter must retain its own <h2> heading.
+- Smooth transitions between chapters. The "preview" paragraph at the end of Chapter N should accurately describe what Chapter N+1 actually delivers. Fix any mismatches.
+- Remove redundancy. If multiple chapters repeat the same example, statistic, or explanation, keep it in the chapter where it's most relevant and cut or rephrase the duplicates in other chapters.
+- Ensure consistent terminology. If Chapter 3 calls something a "development timeline" and Chapter 7 calls the same concept a "project schedule," pick one term and use it throughout.
+- Verify cross-references. If a chapter says "as we discussed in Chapter 3," confirm that Chapter 3 actually discussed that point. Fix or remove inaccurate cross-references.
+- Check the arc. Early chapters should set up concepts and frameworks that later chapters build on. If a later chapter uses a concept that was never introduced, add a brief forward reference in the earlier chapter or an introduction in the later one.
+- Maintain consistent voice and tone across chapters. If one chapter is noticeably more formal or casual than its neighbors, adjust it to match the prevailing style.
+- Preserve the chapter structure (opening, body sections, conclusion, preview) but you may adjust section boundaries if it improves flow.
+- Do NOT add new substantive content. You are editing, not writing. You may add brief transitional sentences or cross-references, but do not introduce new arguments, examples, or data.
+- Do NOT significantly change the word count. Light trimming of redundancy is fine, but the chapters should remain approximately their original length.
+
+FORMATTING — You MUST return your response as valid HTML. Use these tags:
+- <h2> for each chapter heading
+- <h3> for section subheadings within chapters
+- <p> for paragraphs — every paragraph must be wrapped in <p>...</p> tags
+- <strong> for bold text
+- <em> for italic text
+- <blockquote> for quotes or epigraphs
+- <hr/> between chapters
+- Do NOT use Markdown syntax. Return only HTML.
+- Do NOT include <html>, <head>, or <body> tags — just the content tags.
+- Do NOT include any preamble, commentary, or meta-discussion about your edits. Return only the edited chapter content.

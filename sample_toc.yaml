@@ -1,0 +1,26 @@
+title: "The Birth of a Building"
+author: "Ben Stevens"
+default_word_target: 3500
+chapters:
+  - title: "Why Buildings Take So Long"
+    description: >
+      Introduce the reader to the development timeline.
+      Cover the gap between public perception and reality.
+      Use the metaphor of pregnancy — a building gestates.
+      Explain the typical timeline from conception to completion
+      and why each phase exists.
+    word_target: 4000
+
+  - title: "Dirt, Dollars, and Due Diligence"
+    description: >
+      The land acquisition process. Due diligence, environmental
+      studies, zoning, entitlements. Why most deals die here.
+      Walk through a real-world example of a site evaluation
+      and the hidden costs that kill projects before they start.
+
+  - title: "The Money Stack"
+    description: >
+      How real estate development is financed. Equity, debt,
+      mezzanine financing, construction loans. The capital stack
+      explained for non-finance people. Why developers use
+      other people's money and what that means for risk.
