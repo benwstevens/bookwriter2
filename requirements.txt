@@ -1,0 +1,6 @@
+anthropic
+ebooklib
+beautifulsoup4
+lxml
+pymupdf
+pyyaml
