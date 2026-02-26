@@ -169,16 +169,24 @@ python3 generator.py toc.yaml style_guide.txt --regen 5
 
 ## Cost Estimate Logic
 
+**Opus pricing:** $15/M input tokens, $75/M output tokens. Extended thinking tokens billed as output.
+**Sonnet pricing:** $3/M input tokens, $15/M output tokens.
+
 Per chapter (Opus with extended thinking):
-- Input: ~2,000 tokens (system) + ~500 tokens (TOC) + ~4,000 tokens (prior chapter) + ~1,000 tokens (summaries) + ~10,000 tokens (thinking budget) ≈ ~17,500 input tokens
+- Input: ~2,000 tokens (system) + ~500 tokens (TOC) + ~4,000 tokens (prior chapter) + ~1,000 tokens (summaries) ≈ ~7,500 input tokens
+- Thinking: ~10,000 tokens (budget_tokens)
 - Output: ~5,000 tokens (~3,500 words)
-- Rough per-chapter cost: ~$0.50–1.50
+- Per-chapter cost: ~(7,500 * $15/M) + ~(15,000 * $75/M) ≈ ~$0.11 + ~$1.13 ≈ ~$1.24
+
+Per summary (Sonnet, no extended thinking):
+- Input: ~6,000 tokens, Output: ~150 tokens
+- Per-summary cost: ~$0.02 + ~$0.002 ≈ ~$0.02
 
 For a 15-chapter book:
-- Generation pass: ~$10–20
-- Summary generation (Sonnet): ~$0.50
-- Coherence pass (Opus, ~4 window calls): ~$5–10
-- **Total estimate: ~$15–30**
+- Generation pass (Opus): ~$18.60
+- Summary generation (Sonnet): ~$0.30
+- Coherence pass (Opus, ~4 window calls): ~$8–15
+- **Total estimate: ~$27–34**
 
 The script will compute and display this before prompting the user to proceed.
 
@@ -202,3 +210,77 @@ The script will compute and display this before prompting the user to proceed.
 - **YAML for TOC** because it's more readable than JSON for this use case and handles multi-line descriptions cleanly.
 - **Sequential generation** (not parallel) because each chapter needs context from prior ones. This is slower but produces much better continuity.
 - **Overlapping coherence windows** rather than one giant call, because a 70k-word book would blow the context window. The overlap ensures no chapter-to-chapter transition falls in a gap.
+
+---
+
+## Codebase Review Notes (from bookprocessing-main)
+
+After reviewing the existing bookprocessing codebase, here are the key findings that affect implementation:
+
+### Reusable from `shared.py` (copied into repo)
+- `get_api_key()` — reads from env var or .env file, works as-is
+- `markdown_to_html()` — converts Markdown to HTML if detected, useful as fallback
+- `wrap_response_html()` — wraps API response in full HTML doc, works as-is
+- `count_words()` — strips HTML tags, counts whitespace-split tokens
+- `estimate_tokens()` — `len(text) // 4` approximation
+- `sanitize_filename()` — cleans text for filenames (max 60 chars)
+
+### NOT reusable (generator needs its own)
+- `setup_book_dir()` — designed for EPUB-source pipelines; generator needs custom dir setup (no source_dir, no chapters_dir, different subdirectories)
+- `resolve_epub_path()` — not applicable (generator takes YAML + TXT, not EPUB)
+- `detect_chapter_tag()`, `split_chapters()`, `filter_chapters()` — only for existing books
+- `detect_book_metadata()` — reads from HTML; generator gets metadata from YAML
+
+### EPUB Assembly Pattern (from distiller stage 5)
+The distiller's EPUB assembly:
+1. Creates `EpubBook()` with metadata (title, author, language)
+2. Adds CSS stylesheet: serif fonts, 1.6 line-height, justified text
+3. Splits final HTML on `<h2>` tags to create chapters
+4. Each chapter gets `file_name=chapter_{i:02d}.xhtml` with CSS link
+5. Builds TOC with `epub.Link()` entries
+6. Adds NCX + Nav navigation
+7. Sets spine: `["nav"] + epub_chapters`
+8. Writes with `epub.write_epub()`
+
+This pattern adapts directly — the generator's coherence-edited chapters already have `<h2>` titles.
+
+### Retry Pattern (from distiller)
+```python
+max_retries = 5; backoff = 2
+for attempt in range(max_retries):
+    try:
+        message = client.messages.create(...)
+        break
+    except (anthropic.RateLimitError, anthropic.APIError):
+        wait = backoff * (2 ** attempt)  # 2, 4, 8, 16, 32
+        time.sleep(wait)
+```
+
+### Streaming Pattern (from distiller coherence pass)
+Distiller uses `client.messages.stream()` for the coherence pass. Generator should do the same for coherence windows.
+
+### Model IDs
+- Generation: `claude-opus-4-6` (extended thinking, budget_tokens: 10000)
+- Summaries: `claude-sonnet-4-5-20250514` (cheap, no extended thinking)
+- Coherence: `claude-opus-4-6` (extended thinking, streaming)
+
+### Cost Pricing (Opus)
+- Opus input: $15/M tokens, output: $75/M tokens
+- Sonnet input: $3/M tokens, output: $15/M tokens
+- Extended thinking tokens billed as output
+
+---
+
+## Implementation Progress
+
+- [x] Review GENERATOR_PLAN.md and bookprocessing codebase
+- [x] Copy shared.py and requirements.txt into repo
+- [ ] Create `generator_instructions.txt`
+- [ ] Create `generator_coherence_instructions.txt`
+- [ ] Implement `generator.py` Stage 1 (Parse & Validate)
+- [ ] Implement `generator.py` Stage 2 (Generate Chapters)
+- [ ] Implement `generator.py` Stage 3 (Save & Validate)
+- [ ] Implement `generator.py` Stage 4 (Coherence Pass)
+- [ ] Implement `generator.py` Stage 5 (EPUB + HTML Assembly)
+- [ ] Create sample `toc.yaml` for testing
+- [ ] End-to-end dry-run test
