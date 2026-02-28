@@ -260,12 +260,12 @@ for attempt in range(max_retries):
 Distiller uses `client.messages.stream()` for the coherence pass. Generator should do the same for coherence windows.
 
 ### Model IDs
-- Generation: `claude-opus-4-6` (extended thinking, budget_tokens: 10000)
-- Summaries: `claude-sonnet-4-5-20250514` (cheap, no extended thinking)
+- Generation: `claude-opus-4-6` (adaptive thinking)
+- Summaries: `claude-sonnet-4-6` (cheap, no extended thinking)
 - Coherence: `claude-opus-4-6` (extended thinking, streaming)
 
 ### Cost Pricing (Opus)
-- Opus input: $15/M tokens, output: $75/M tokens
+- Opus input: $5/M tokens, output: $25/M tokens
 - Sonnet input: $3/M tokens, output: $15/M tokens
 - Extended thinking tokens billed as output
 
