@@ -60,4 +60,34 @@ Each chapter must include these fields:
 9. Chapter titles should be vivid and specific — not generic ("Understanding X"). Think magazine-article headlines.
 
 === BOOK TOPIC ===
-[Describe your book here — subject, audience, angle, tone, what makes it different]
+Replace everything below this line with your book description. Be as specific
+as you want — the more you give, the better the TOC. At minimum, cover:
+
+SUBJECT & ANGLE:
+What is this book about? What's the perspective or thesis? Who is the narrator —
+an insider, an outsider, a veteran? Example: "A book about developing a
+wastewater treatment plant, told from the perspective of someone who's done 10
+of these and knows what really happens behind the scenes."
+
+PART-LEVEL STRUCTURE (optional but recommended):
+If you have opinions about the major movements of the book, state them. You can
+be loose — the AI will refine the breakdown. Example:
+- Part 1: history, politics, funding — why these projects happen
+- Part 2: the design process — all the consultants and how it works
+- Part 3: construction
+- Part 4: aftermath and lessons learned
+
+CHAPTER COUNT & LENGTH:
+How many chapters? What word count per chapter? Example: "13 chapters,
+1200-1400 words each." If unspecified, defaults to the default_word_target above.
+
+SPECIFIC TOPICS OR CHAPTERS (optional):
+If there are specific chapters or topics you definitely want included, list them.
+Example: "I want a chapter specifically about how funding works — the alphabet
+soup of SRF, USDA, WIFIA, and how communities that need the most help have the
+least capacity to navigate the process."
+
+ANYTHING ELSE:
+Any other constraints, preferences, or ideas. Examples: "Keep it to 4 parts,"
+"I want the last chapter to be reflective, not prescriptive," "Include appendices
+for glossary and further reading."
