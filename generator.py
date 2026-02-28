@@ -764,11 +764,17 @@ def stage4(toc_data, style_guide, paths, chapter_targets):
 
     print(f"  Windows: {[(w[0]+1, w[1]) for w in windows]}")
 
-    # Track which chapters have been coherence-edited and by which window
-    # For overlapping chapters, use the version from the window where they're in the middle
-    edited_chapters = {}  # index -> edited html
+    # Pre-compute shared context (same for all windows)
+    system_prompt = coherence_instructions + "\n\n--- STYLE GUIDE ---\n\n" + style_guide
+    has_hierarchy = any(ct.get("part_title") for ct in chapter_targets)
+    if has_hierarchy:
+        hierarchy_text = _build_hierarchy_summary(chapter_targets)
+        toc_context = f"BOOK STRUCTURE:\n{hierarchy_text}"
+    else:
+        toc_context = f"TABLE OF CONTENTS:\n{toc_yaml}"
 
-    for win_idx, (start, end) in enumerate(windows):
+    def _process_window(win_idx, start, end):
+        """Process a single coherence window. Returns (win_idx, start, end, result_html) or None on failure."""
         window_chapters = chapters[start:end]
         window_nums = [ch["index"] for ch in window_chapters]
 
@@ -776,9 +782,7 @@ def stage4(toc_data, style_guide, paths, chapter_targets):
         cache_file = edit_dir / f"window_{start+1}_{end}_cache.html"
         if cache_file.exists():
             print(f"\n  Window {win_idx+1} [{start+1}–{end}]: cached, loading…")
-            cached_html = cache_file.read_text(encoding="utf-8")
-            _parse_window_result(cached_html, window_chapters, edited_chapters, start, end, num_chapters)
-            continue
+            return (win_idx, start, end, cache_file.read_text(encoding="utf-8"))
 
         print(f"\n  Window {win_idx+1} [{start+1}–{end}]: generating…", flush=True)
 
@@ -807,16 +811,6 @@ def stage4(toc_data, style_guide, paths, chapter_targets):
                 f"(the middle of this window). Lighter touch on edge chapters "
                 f"as they'll be covered by adjacent windows.{edge_note}"
             )
-
-        system_prompt = coherence_instructions + "\n\n--- STYLE GUIDE ---\n\n" + style_guide
-
-        # Build hierarchy-aware context if available
-        has_hierarchy = any(ct.get("part_title") for ct in chapter_targets)
-        if has_hierarchy:
-            hierarchy_text = _build_hierarchy_summary(chapter_targets)
-            toc_context = f"BOOK STRUCTURE:\n{hierarchy_text}"
-        else:
-            toc_context = f"TABLE OF CONTENTS:\n{toc_yaml}"
 
         # Add part/section boundary notes for coherence
         boundary_notes = ""
@@ -854,15 +848,47 @@ def stage4(toc_data, style_guide, paths, chapter_targets):
         )
 
         if result_text is None:
-            print(f"  Window {win_idx+1} FAILED. Using original chapters.")
-            for ch in window_chapters:
-                if ch["index"] not in edited_chapters:
-                    edited_chapters[ch["index"]] = ch["html"]
-            continue
+            print(f"  Window {win_idx+1} [{start+1}–{end}] FAILED.")
+            return None
 
         result_text = markdown_to_html(result_text)
         cache_file.write_text(result_text, encoding="utf-8")
-        _parse_window_result(result_text, window_chapters, edited_chapters, start, end, num_chapters)
+        print(f"  Window {win_idx+1} [{start+1}–{end}] complete.")
+        return (win_idx, start, end, result_text)
+
+    # Run all windows concurrently — they don't depend on each other's output.
+    # Overlap resolution happens afterward in _parse_window_result.
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    print(f"\n  Running {len(windows)} windows concurrently…")
+    results = {}
+    with ThreadPoolExecutor(max_workers=len(windows)) as executor:
+        futures = {
+            executor.submit(_process_window, win_idx, start, end): (win_idx, start, end)
+            for win_idx, (start, end) in enumerate(windows)
+        }
+        for future in as_completed(futures):
+            win_idx, start, end = futures[future]
+            result = future.result()
+            if result is not None:
+                results[(start, end)] = result
+            else:
+                # Failed — mark originals as fallback
+                results[(start, end)] = None
+
+    # Now apply results in window order for deterministic overlap resolution
+    edited_chapters = {}  # index -> edited html
+    for win_idx, (start, end) in enumerate(windows):
+        window_chapters = chapters[start:end]
+        result = results.get((start, end))
+        if result is not None:
+            _, _, _, result_html = result
+            _parse_window_result(result_html, window_chapters, edited_chapters, start, end, num_chapters)
+        else:
+            print(f"  Window {win_idx+1} failed. Using original chapters for uncovered indices.")
+            for ch in window_chapters:
+                if ch["index"] not in edited_chapters:
+                    edited_chapters[ch["index"]] = ch["html"]
 
     # Save all coherence-edited chapters
     print("\n  Saving coherence-edited chapters…")
