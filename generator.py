@@ -618,7 +618,7 @@ def _api_call_with_retry(client, model, system, user_message, max_tokens=8192,
                     max_tokens=max_tokens,
                     temperature=1,  # required for extended thinking
                     thinking={
-                        "type": "enabled",
+                        "type": "adaptive",
                         "budget_tokens": thinking_budget,
                     },
                     system=system,
@@ -948,7 +948,7 @@ def _stream_api_call_with_retry(client, model, system, user_message,
                 max_tokens=max_tokens,
                 temperature=1,  # required for extended thinking
                 thinking={
-                    "type": "enabled",
+                    "type": "adaptive",
                     "budget_tokens": thinking_budget,
                 },
                 system=system,
