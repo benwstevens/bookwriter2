@@ -384,8 +384,8 @@ def _estimate_cost(chapter_targets, style_guide, toc_data):
         # Accumulate summary tokens for next iteration (~150 tokens per summary)
         summary_context_tokens += 150
 
-    # Extended thinking tokens (billed as output): 10000 per chapter
-    thinking_tokens = 10000 * len(chapter_targets)
+    # Adaptive thinking tokens (billed as output): estimate ~5000 per chapter on average
+    thinking_tokens = 5000 * len(chapter_targets)
 
     # Summary generation (Sonnet): ~6000 input + ~150 output per chapter
     summary_input_total = 6000 * len(chapter_targets)
@@ -396,13 +396,13 @@ def _estimate_cost(chapter_targets, style_guide, toc_data):
     coherence_input_per_window = 5 * int(sum(ct["word_target"] for ct in chapter_targets) / len(chapter_targets) * 1.3)
     coherence_input_total = coherence_input_per_window * num_windows + toc_tokens * num_windows + style_tokens * num_windows
     coherence_output_total = coherence_input_per_window * num_windows  # roughly same size
-    coherence_thinking = 10000 * num_windows
+    coherence_thinking = 5000 * num_windows
 
-    # Opus: $15/M input, $75/M output
-    opus_input_cost = (gen_input_total + coherence_input_total) / 1_000_000 * 15.0
-    opus_output_cost = (gen_output_total + thinking_tokens + coherence_output_total + coherence_thinking) / 1_000_000 * 75.0
+    # Opus 4.6: $5/M input, $25/M output
+    opus_input_cost = (gen_input_total + coherence_input_total) / 1_000_000 * 5.0
+    opus_output_cost = (gen_output_total + thinking_tokens + coherence_output_total + coherence_thinking) / 1_000_000 * 25.0
 
-    # Sonnet: $3/M input, $15/M output
+    # Sonnet 4.6: $3/M input, $15/M output
     sonnet_input_cost = summary_input_total / 1_000_000 * 3.0
     sonnet_output_cost = summary_output_total / 1_000_000 * 15.0
 
