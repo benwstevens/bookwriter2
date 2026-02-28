@@ -446,7 +446,7 @@ def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None):
     import anthropic
     client = anthropic.Anthropic(api_key=api_key)
     gen_model = "claude-opus-4-6"
-    summary_model = "claude-sonnet-4-5-20250514"
+    summary_model = "claude-sonnet-4-6"
 
     summaries = []  # list of summary strings for context
     failures = []
