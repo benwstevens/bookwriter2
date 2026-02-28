@@ -17,16 +17,13 @@ that runs past 5 sentences.
 
 ANECDOTES:
 Every chapter should include at least one real-world story or example.
-These can be composites (you don't need to name real people or projects),
-but they should feel specific and grounded — not hypothetical.
 
 METAPHORS:
 Use metaphors drawn from everyday life to explain industry concepts. Avoid
-clichés ("at the end of the day," "it's a marathon not a sprint"). The
-metaphor of building-as-pregnancy from Chapter 1 can be a recurring thread.
+clichés ("at the end of the day," "it's a marathon not a sprint").
 
 DEFAULT WORD COUNT:
-3,500 words per chapter unless otherwise specified.
+1,500 words per chapter unless otherwise specified.
 
 HUMOR:
 Light humor is encouraged — wry observations about the absurdity of the
