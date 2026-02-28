@@ -5,7 +5,7 @@ Here is the structure and rules:
 === TOP LEVEL ===
 title: "Book Title"
 author: "Author Name"
-default_word_target: 3500          # default words per chapter (can be overridden per chapter)
+default_word_target: 1500          # default words per chapter (can be overridden per chapter)
 
 === HIERARCHY ===
 The book is organized as: parts → sections → chapters
@@ -30,40 +30,34 @@ parts:                             # 2-5 parts that represent the book's major m
 Each chapter must include these fields:
 
             intro: >
-              Guidance for the opening 1-3 paragraphs. Suggest a specific
-              scene, anecdote, metaphor, or hook — not "introduce the topic."
-              Be concrete: who, what, where.
+              Guidance for the opening 1-3 paragraphs. Use a metaphor from a different field or walk of life and then explain how that it illustrates the central idea or epiphany this chapter will explain. This helps break the flow of a given discipline and brings it back to something anyone can understand.
 
             chapter_sections:        # 3-4 sections per chapter
               - heading: "Section Subheading"
                 description: >
-                  1-2 sentences on what this section covers and what it argues.
+                  A short catchy description of a few words for this section's focus.
                 bullet_points:       # 3-5 specific points the section must address
                   - "First point — be concrete, not abstract"
                   - "Second point"
                   - "Third point"
 
             conclusion: >
-              Guidance for the closing 1-2 paragraphs. What should the reader
-              understand now that they didn't before? How does this chapter's
-              argument land?
+              Guidance for the closing 1-2 paragraphs. Is there any big idea that's now clear that they can only understand now that they     know what this chapter covered? Is there any major caveat to all of this that everyone knows. Make those big picture points here. 
 
             transition: >
-              1-2 sentences bridging to the next chapter. Reference what's
-              coming next by theme, not just title. For the final chapter,
+              1-2 sentences bridging to the next chapter. The reader may have lost interest by this point. Create tension by explaining how the information from this chapter leads into, or is better understood, in the context of what comes next. For the final chapter,
               replace this with a note about closing the book's arc.
 
 === RULES ===
 1. Every chapter MUST have: title, description, intro, chapter_sections (3-4), conclusion, transition
-2. Every chapter_section MUST have: heading, description, bullet_points (3-5 bullets)
-3. Bullet points should be CONCRETE — specific examples, questions, frameworks, or arguments to make. Not vague topic labels.
+2. Every chapter_section MUST have: heading, bullet_points (3-5 bullets) to describe what content will go here
+3. Bullet points should be CONCRETE — ideas, questions, frameworks, or arguments to make.
 4. The intro field should suggest a specific opening device (a scene, a story, a striking fact) — not just "introduce X."
 5. Transitions should connect chapters by theme. The last chapter of each part should transition to the next part's themes.
 6. Parts should represent genuine shifts in the book's arc (e.g., "understanding the problem" → "building the solution" → "living with the result").
 7. Sections within a part should group chapters that share a sub-theme.
-8. Aim for 8-15 chapters total, distributed across 2-5 parts.
-9. Use YAML multi-line strings (>) for all description, intro, conclusion, and transition fields.
-10. Chapter titles should be vivid and specific — not generic ("Understanding X"). Think magazine-article headlines.
+8. Use YAML multi-line strings (>) for all description, intro, conclusion, and transition fields.
+9. Chapter titles should be vivid and specific — not generic ("Understanding X"). Think magazine-article headlines.
 
 === BOOK TOPIC ===
 [Describe your book here — subject, audience, angle, tone, what makes it different]
