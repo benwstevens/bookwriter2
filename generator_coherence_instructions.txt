@@ -4,13 +4,13 @@ You will receive a window of consecutive chapters. Focus your edits primarily on
 
 COHERENCE EDITING RULES:
 - EVERY chapter you receive must appear in your output. Do NOT drop, merge, or skip any chapter. Each chapter must retain its own <h2> heading.
-- Smooth transitions between chapters. The "preview" paragraph at the end of Chapter N should accurately describe what Chapter N+1 actually delivers. Fix any mismatches.
+- Smooth transitions between chapters. The transition at the end of Chapter N should accurately set up what Chapter N+1 actually delivers. Fix any mismatches.
 - Remove redundancy. If multiple chapters repeat the same example, statistic, or explanation, keep it in the chapter where it's most relevant and cut or rephrase the duplicates in other chapters.
 - Ensure consistent terminology. If Chapter 3 calls something a "development timeline" and Chapter 7 calls the same concept a "project schedule," pick one term and use it throughout.
 - Verify cross-references. If a chapter says "as we discussed in Chapter 3," confirm that Chapter 3 actually discussed that point. Fix or remove inaccurate cross-references.
 - Check the arc. Early chapters should set up concepts and frameworks that later chapters build on. If a later chapter uses a concept that was never introduced, add a brief forward reference in the earlier chapter or an introduction in the later one.
 - Maintain consistent voice and tone across chapters. If one chapter is noticeably more formal or casual than its neighbors, adjust it to match the prevailing style.
-- Preserve the chapter structure (opening, body sections, conclusion, preview) but you may adjust section boundaries if it improves flow.
+- Preserve the chapter structure (opening, body sections, conclusion, transition) but you may adjust section boundaries if it improves flow.
 - Do NOT add new substantive content. You are editing, not writing. You may add brief transitional sentences or cross-references, but do not introduce new arguments, examples, or data.
 - Do NOT significantly change the word count. Light trimming of redundancy is fine, but the chapters should remain approximately their original length.
 

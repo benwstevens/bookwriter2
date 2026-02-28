@@ -40,6 +40,126 @@ DEFAULT_WORD_TARGET = 3500
 
 
 # ===========================================================================
+# TOC flattening — convert hierarchical parts/sections/chapters to flat list
+# ===========================================================================
+def flatten_toc(toc_data: dict, target_override: int | None = None) -> list[dict]:
+    """Flatten a hierarchical TOC into a sequential chapter list.
+
+    Supports two formats:
+      - Legacy flat: toc_data["chapters"] = [{title, description, ...}, ...]
+      - Hierarchical: toc_data["parts"] = [{title, sections: [{title, chapters: [...]}]}]
+
+    Returns a list of chapter dicts, each enriched with:
+      - title, description, word_target (as before)
+      - part_title, part_index: which part this chapter belongs to
+      - section_title, section_index: which section within the part
+      - intro: intro guidance (if provided)
+      - chapter_sections: list of {heading, description, bullet_points} (if provided)
+      - conclusion: conclusion guidance (if provided)
+      - transition: transition guidance (if provided)
+    """
+    global_target = target_override or toc_data.get("default_word_target", DEFAULT_WORD_TARGET)
+
+    # Legacy flat format
+    if "chapters" in toc_data and "parts" not in toc_data:
+        chapter_targets = []
+        for ch in toc_data["chapters"]:
+            wt = ch.get("word_target", global_target)
+            chapter_targets.append({
+                "title": ch["title"],
+                "description": ch["description"].strip(),
+                "word_target": wt,
+                "part_title": None,
+                "part_index": None,
+                "section_title": None,
+                "section_index": None,
+                "intro": ch.get("intro", "").strip() if ch.get("intro") else None,
+                "chapter_sections": ch.get("chapter_sections"),
+                "conclusion": ch.get("conclusion", "").strip() if ch.get("conclusion") else None,
+                "transition": ch.get("transition", "").strip() if ch.get("transition") else None,
+            })
+        return chapter_targets
+
+    # Hierarchical format
+    chapter_targets = []
+    parts = toc_data.get("parts", [])
+
+    for part_idx, part in enumerate(parts, 1):
+        sections = part.get("sections", [])
+        for sec_idx, section in enumerate(sections, 1):
+            chapters = section.get("chapters", [])
+            for ch in chapters:
+                wt = ch.get("word_target", global_target)
+                chapter_targets.append({
+                    "title": ch["title"],
+                    "description": ch.get("description", "").strip(),
+                    "word_target": wt,
+                    "part_title": part.get("title", f"Part {part_idx}"),
+                    "part_index": part_idx,
+                    "section_title": section.get("title", f"Section {sec_idx}"),
+                    "section_index": sec_idx,
+                    "intro": ch.get("intro", "").strip() if ch.get("intro") else None,
+                    "chapter_sections": ch.get("chapter_sections"),
+                    "conclusion": ch.get("conclusion", "").strip() if ch.get("conclusion") else None,
+                    "transition": ch.get("transition", "").strip() if ch.get("transition") else None,
+                })
+
+    return chapter_targets
+
+
+def _format_chapter_structure(ct: dict) -> str:
+    """Format the rich chapter structure into a text block for the model prompt."""
+    parts = []
+
+    if ct.get("intro"):
+        parts.append(f"INTRO GUIDANCE (1-3 paragraphs):\n{ct['intro']}")
+
+    if ct.get("chapter_sections"):
+        parts.append("CHAPTER SECTIONS:")
+        for j, sec in enumerate(ct["chapter_sections"], 1):
+            heading = sec.get("heading", f"Section {j}")
+            desc = sec.get("description", "").strip()
+            parts.append(f"\n  Section {j}: \"{heading}\"")
+            if desc:
+                parts.append(f"    Description: {desc}")
+            bullets = sec.get("bullet_points", [])
+            if bullets:
+                parts.append("    Content to cover:")
+                for bullet in bullets:
+                    parts.append(f"      - {bullet}")
+
+    if ct.get("conclusion"):
+        parts.append(f"\nCONCLUSION GUIDANCE:\n{ct['conclusion']}")
+
+    if ct.get("transition"):
+        parts.append(f"\nTRANSITION TO NEXT CHAPTER:\n{ct['transition']}")
+
+    return "\n".join(parts)
+
+
+def _build_hierarchy_summary(chapter_targets: list[dict]) -> str:
+    """Build a text summary of the book's part/section/chapter hierarchy."""
+    lines = []
+    current_part = None
+    current_section = None
+
+    for i, ct in enumerate(chapter_targets, 1):
+        if ct.get("part_title") and ct["part_title"] != current_part:
+            current_part = ct["part_title"]
+            lines.append(f"\n{current_part}")
+            current_section = None
+
+        if ct.get("section_title") and ct["section_title"] != current_section:
+            current_section = ct["section_title"]
+            lines.append(f"  {current_section}")
+
+        indent = "    " if ct.get("part_title") else "  "
+        lines.append(f"{indent}Chapter {i}: {ct['title']}")
+
+    return "\n".join(lines)
+
+
+# ===========================================================================
 # Directory setup (generator-specific — different from distiller)
 # ===========================================================================
 def setup_generator_dirs(toc_data: dict) -> dict[str, Path]:
@@ -78,26 +198,26 @@ def stage1(toc_path: Path, style_path: Path, target_override: int | None = None)
     with open(toc_path, "r", encoding="utf-8") as f:
         toc_data = yaml.safe_load(f)
 
-    if not toc_data or "chapters" not in toc_data:
-        print("ERROR: TOC must have a 'chapters' list.")
+    if not toc_data:
+        print("ERROR: TOC file is empty or invalid YAML.")
         sys.exit(1)
 
     if not toc_data.get("title"):
         print("ERROR: TOC must have a 'title' field.")
         sys.exit(1)
 
-    chapters = toc_data["chapters"]
-    if not chapters or not isinstance(chapters, list):
-        print("ERROR: 'chapters' must be a non-empty list.")
+    has_parts = "parts" in toc_data
+    has_chapters = "chapters" in toc_data
+
+    if not has_parts and not has_chapters:
+        print("ERROR: TOC must have either a 'parts' list (hierarchical) or a 'chapters' list (flat).")
         sys.exit(1)
 
-    for i, ch in enumerate(chapters, 1):
-        if not ch.get("title"):
-            print(f"ERROR: Chapter {i} missing 'title'.")
-            sys.exit(1)
-        if not ch.get("description"):
-            print(f"ERROR: Chapter {i} ('{ch['title']}') missing 'description'.")
-            sys.exit(1)
+    # Validate based on format
+    if has_parts:
+        _validate_hierarchical_toc(toc_data)
+    else:
+        _validate_flat_toc(toc_data)
 
     # Load style guide
     if not style_path.exists():
@@ -120,34 +240,122 @@ def stage1(toc_path: Path, style_path: Path, target_override: int | None = None)
     if not dest_style.exists():
         shutil.copy2(style_path, dest_style)
 
-    # Compute per-chapter word targets
-    global_target = target_override or toc_data.get("default_word_target", DEFAULT_WORD_TARGET)
-    chapter_targets = []
-    for ch in chapters:
-        wt = ch.get("word_target", global_target)
-        chapter_targets.append({
-            "title": ch["title"],
-            "description": ch["description"].strip(),
-            "word_target": wt,
-        })
+    # Flatten TOC into chapter_targets
+    chapter_targets = flatten_toc(toc_data, target_override)
 
     # Print summary
+    global_target = target_override or toc_data.get("default_word_target", DEFAULT_WORD_TARGET)
     total_target = sum(ct["word_target"] for ct in chapter_targets)
     print(f"\n  Book: {toc_data['title']}")
     print(f"  Author: {toc_data.get('author', 'Unknown')}")
-    print(f"  Chapters: {len(chapter_targets)}")
+
+    if has_parts:
+        num_parts = len(toc_data["parts"])
+        num_sections = sum(len(p.get("sections", [])) for p in toc_data["parts"])
+        print(f"  Structure: {num_parts} part(s), {num_sections} section(s), {len(chapter_targets)} chapter(s)")
+    else:
+        print(f"  Chapters: {len(chapter_targets)}")
+
     print(f"  Default word target: {global_target:,} per chapter")
     print(f"  Total target: ~{total_target:,} words")
 
+    if has_parts:
+        print(f"\n  Book structure:")
+        print(_build_hierarchy_summary(chapter_targets))
+
     print(f"\n  Per-chapter breakdown:")
     for i, ct in enumerate(chapter_targets, 1):
-        print(f"    {i:2d}. {ct['title']} — {ct['word_target']:,} words")
+        prefix = ""
+        if ct.get("part_title"):
+            prefix = f"[{ct['part_title'][:20]}] "
+        extras = []
+        if ct.get("chapter_sections"):
+            extras.append(f"{len(ct['chapter_sections'])} sections")
+        if ct.get("intro"):
+            extras.append("intro")
+        if ct.get("conclusion"):
+            extras.append("conclusion")
+        if ct.get("transition"):
+            extras.append("transition")
+        extra_str = f"  ({', '.join(extras)})" if extras else ""
+        print(f"    {i:2d}. {prefix}{ct['title']} — {ct['word_target']:,} words{extra_str}")
 
     # Cost estimate
     cost_estimate = _estimate_cost(chapter_targets, style_guide, toc_data)
     print(f"\n  Estimated cost: ~${cost_estimate:.2f}")
 
     return toc_data, style_guide, paths, chapter_targets
+
+
+def _validate_flat_toc(toc_data: dict):
+    """Validate a flat (legacy) TOC structure."""
+    chapters = toc_data["chapters"]
+    if not chapters or not isinstance(chapters, list):
+        print("ERROR: 'chapters' must be a non-empty list.")
+        sys.exit(1)
+
+    for i, ch in enumerate(chapters, 1):
+        if not ch.get("title"):
+            print(f"ERROR: Chapter {i} missing 'title'.")
+            sys.exit(1)
+        if not ch.get("description"):
+            print(f"ERROR: Chapter {i} ('{ch['title']}') missing 'description'.")
+            sys.exit(1)
+
+
+def _validate_hierarchical_toc(toc_data: dict):
+    """Validate a hierarchical TOC with parts → sections → chapters."""
+    parts = toc_data["parts"]
+    if not parts or not isinstance(parts, list):
+        print("ERROR: 'parts' must be a non-empty list.")
+        sys.exit(1)
+
+    chapter_count = 0
+    for pi, part in enumerate(parts, 1):
+        if not part.get("title"):
+            print(f"ERROR: Part {pi} missing 'title'.")
+            sys.exit(1)
+
+        sections = part.get("sections")
+        if not sections or not isinstance(sections, list):
+            print(f"ERROR: Part {pi} ('{part['title']}') must have a 'sections' list.")
+            sys.exit(1)
+
+        for si, section in enumerate(sections, 1):
+            if not section.get("title"):
+                print(f"ERROR: Part {pi}, Section {si} missing 'title'.")
+                sys.exit(1)
+
+            chapters = section.get("chapters")
+            if not chapters or not isinstance(chapters, list):
+                print(f"ERROR: Part {pi}, Section {si} ('{section['title']}') must have a 'chapters' list.")
+                sys.exit(1)
+
+            for ci, ch in enumerate(chapters, 1):
+                chapter_count += 1
+                if not ch.get("title"):
+                    print(f"ERROR: Part {pi}, Section {si}, Chapter {ci} missing 'title'.")
+                    sys.exit(1)
+                # description is recommended but we allow chapter_sections as alternative
+                if not ch.get("description") and not ch.get("chapter_sections"):
+                    print(
+                        f"ERROR: Chapter '{ch.get('title', f'#{chapter_count}')}' needs either "
+                        f"'description' or 'chapter_sections'."
+                    )
+                    sys.exit(1)
+
+                # Validate chapter_sections if present
+                if ch.get("chapter_sections"):
+                    for csi, cs in enumerate(ch["chapter_sections"], 1):
+                        if not cs.get("heading"):
+                            print(
+                                f"ERROR: Chapter '{ch['title']}', section {csi} missing 'heading'."
+                            )
+                            sys.exit(1)
+
+    if chapter_count == 0:
+        print("ERROR: No chapters found in the TOC hierarchy.")
+        sys.exit(1)
 
 
 def _estimate_cost(chapter_targets, style_guide, toc_data):
@@ -262,7 +470,13 @@ def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None):
             continue
 
         # Build user message with context
-        context_parts = [f"BOOK TABLE OF CONTENTS:\n{toc_yaml}"]
+        # Use hierarchy summary if available, otherwise full TOC YAML
+        has_hierarchy = ct.get("part_title") is not None
+        if has_hierarchy:
+            hierarchy_text = _build_hierarchy_summary(chapter_targets)
+            context_parts = [f"BOOK STRUCTURE:\n{hierarchy_text}"]
+        else:
+            context_parts = [f"BOOK TABLE OF CONTENTS:\n{toc_yaml}"]
 
         # Add summaries of all earlier chapters
         if summaries:
@@ -290,22 +504,40 @@ def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None):
             next_ch = chapter_targets[i]
             next_chapter_note = (
                 f"\nNEXT CHAPTER: \"{next_ch['title']}\" — {next_ch['description']}\n"
-                f"(Use this information to write the preview paragraph at the end of your chapter.)"
+                f"(Use this information to write the transition at the end of your chapter.)"
             )
         else:
             next_chapter_note = (
-                "\nThis is the FINAL CHAPTER of the book. Instead of a preview paragraph, "
+                "\nThis is the FINAL CHAPTER of the book. Instead of a transition paragraph, "
                 "end with a closing reflection on the book's overall arc and themes."
             )
 
-        context_parts.append(
-            f"\n--- YOUR ASSIGNMENT ---\n"
-            f"CHAPTER NUMBER: {i} of {len(chapter_targets)}\n"
-            f"CHAPTER TITLE: {ct['title']}\n"
-            f"CHAPTER DESCRIPTION: {ct['description']}\n"
-            f"TARGET WORD COUNT: {ct['word_target']} words (stay within 10% of this)."
+        # Build the assignment block with rich structure if available
+        assignment_parts = [
+            f"\n--- YOUR ASSIGNMENT ---",
+            f"CHAPTER NUMBER: {i} of {len(chapter_targets)}",
+            f"CHAPTER TITLE: {ct['title']}",
+        ]
+
+        if ct.get("part_title"):
+            assignment_parts.append(f"PART: {ct['part_title']}")
+        if ct.get("section_title"):
+            assignment_parts.append(f"SECTION: {ct['section_title']}")
+
+        if ct.get("description"):
+            assignment_parts.append(f"CHAPTER DESCRIPTION: {ct['description']}")
+
+        # Add rich chapter structure if available
+        chapter_structure = _format_chapter_structure(ct)
+        if chapter_structure:
+            assignment_parts.append(f"\nDETAILED CHAPTER STRUCTURE:\n{chapter_structure}")
+
+        assignment_parts.append(
+            f"\nTARGET WORD COUNT: {ct['word_target']} words (stay within 10% of this)."
             f"{next_chapter_note}"
         )
+
+        context_parts.append("\n".join(assignment_parts))
 
         user_message = "\n".join(context_parts)
 
@@ -579,13 +811,40 @@ def stage4(toc_data, style_guide, paths, chapter_targets):
 
         system_prompt = coherence_instructions + "\n\n--- STYLE GUIDE ---\n\n" + style_guide
 
+        # Build hierarchy-aware context if available
+        has_hierarchy = any(ct.get("part_title") for ct in chapter_targets)
+        if has_hierarchy:
+            hierarchy_text = _build_hierarchy_summary(chapter_targets)
+            toc_context = f"BOOK STRUCTURE:\n{hierarchy_text}"
+        else:
+            toc_context = f"TABLE OF CONTENTS:\n{toc_yaml}"
+
+        # Add part/section boundary notes for coherence
+        boundary_notes = ""
+        if has_hierarchy:
+            boundary_items = []
+            for ch in window_chapters:
+                ct_match = chapter_targets[ch["index"] - 1]
+                if ct_match.get("part_title"):
+                    boundary_items.append(
+                        f"  Chapter {ch['index']} ({ch['title']}): "
+                        f"{ct_match['part_title']} → {ct_match.get('section_title', 'N/A')}"
+                    )
+            if boundary_items:
+                boundary_notes = (
+                    "\nPART/SECTION PLACEMENT:\n" + "\n".join(boundary_items) + "\n"
+                    "\nNote: Pay special attention to transitions between parts or sections. "
+                    "These transitions should feel like natural structural shifts in the book's arc.\n"
+                )
+
         user_message = (
             f"BOOK TITLE: {toc_data['title']}\n"
             f"AUTHOR: {toc_data.get('author', 'Unknown')}\n"
             f"TOTAL CHAPTERS IN BOOK: {num_chapters}\n"
             f"THIS WINDOW: Chapters {window_nums[0]}–{window_nums[-1]}\n\n"
             f"FOCUS: {focus_note}\n\n"
-            f"TABLE OF CONTENTS:\n{toc_yaml}\n\n"
+            f"{toc_context}\n\n"
+            f"{boundary_notes}"
             f"CHAPTERS TO EDIT:\n\n{chapters_combined}"
         )
 
@@ -794,8 +1053,9 @@ hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
     book.add_item(css)
 
     epub_chapters = []
-    toc = []
 
+    # Build chapter EPUB items
+    epub_chapter_map = {}  # index -> EpubHtml
     for ch in chapter_contents:
         chap = epub.EpubHtml(
             title=ch["title"],
@@ -809,11 +1069,21 @@ hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
         chap.add_item(css)
         book.add_item(chap)
         epub_chapters.append(chap)
-        toc.append(epub.Link(
-            f"chapter_{ch['index']:02d}.xhtml",
-            ch["title"],
-            f"ch{ch['index']}",
-        ))
+        epub_chapter_map[ch["index"]] = chap
+
+    # Build TOC — nested if hierarchical, flat otherwise
+    has_hierarchy = any(ct.get("part_title") for ct in chapter_targets)
+
+    if has_hierarchy:
+        toc = _build_nested_epub_toc(epub, chapter_targets, epub_chapter_map)
+    else:
+        toc = []
+        for ch in chapter_contents:
+            toc.append(epub.Link(
+                f"chapter_{ch['index']:02d}.xhtml",
+                ch["title"],
+                f"ch{ch['index']}",
+            ))
 
     book.toc = toc
     book.add_item(epub.EpubNcx())
@@ -824,11 +1094,26 @@ hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
     epub.write_epub(str(epub_path), book)
     print(f"\n  EPUB saved: {epub_path}")
 
-    # Build combined HTML
+    # Build combined HTML — with part/section headings if hierarchical
     combined_parts = [f"<h1>{book_title}</h1>"]
-    for ch in chapter_contents:
-        combined_parts.append(ch["html"])
-        combined_parts.append("<hr/>")
+    if has_hierarchy:
+        current_part = None
+        current_section = None
+        for i, ch in enumerate(chapter_contents):
+            ct = chapter_targets[i]
+            if ct.get("part_title") and ct["part_title"] != current_part:
+                current_part = ct["part_title"]
+                combined_parts.append(f'<h2 class="part-title">{current_part}</h2>')
+                current_section = None
+            if ct.get("section_title") and ct["section_title"] != current_section:
+                current_section = ct["section_title"]
+                combined_parts.append(f'<h3 class="section-title">{current_section}</h3>')
+            combined_parts.append(ch["html"])
+            combined_parts.append("<hr/>")
+    else:
+        for ch in chapter_contents:
+            combined_parts.append(ch["html"])
+            combined_parts.append("<hr/>")
     combined_html = "\n".join(combined_parts)
 
     html_doc = (
@@ -842,6 +1127,47 @@ hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
     print(f"\n  Final word count: {total_words:,}")
 
     return epub_path
+
+
+def _build_nested_epub_toc(epub_mod, chapter_targets, epub_chapter_map):
+    """Build a nested EPUB TOC structure from hierarchical chapter_targets.
+
+    Returns a list suitable for book.toc, with parts as sections containing
+    chapter links.
+    """
+    toc = []
+    current_part = None
+    current_part_chapters = []
+    current_part_title = None
+
+    def flush_part():
+        nonlocal current_part_chapters, current_part_title
+        if current_part_chapters and current_part_title:
+            section = (epub_mod.Section(current_part_title), current_part_chapters)
+            toc.append(section)
+        elif current_part_chapters:
+            toc.extend(current_part_chapters)
+        current_part_chapters = []
+        current_part_title = None
+
+    for i, ct in enumerate(chapter_targets, 1):
+        part_title = ct.get("part_title")
+
+        if part_title != current_part:
+            flush_part()
+            current_part = part_title
+            current_part_title = part_title
+
+        if i in epub_chapter_map:
+            link = epub_mod.Link(
+                f"chapter_{i:02d}.xhtml",
+                ct["title"],
+                f"ch{i}",
+            )
+            current_part_chapters.append(link)
+
+    flush_part()
+    return toc
 
 
 # ===========================================================================

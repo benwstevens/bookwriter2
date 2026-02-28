@@ -1,26 +1,169 @@
 title: "The Birth of a Building"
 author: "Ben Stevens"
 default_word_target: 3500
-chapters:
-  - title: "Why Buildings Take So Long"
-    description: >
-      Introduce the reader to the development timeline.
-      Cover the gap between public perception and reality.
-      Use the metaphor of pregnancy — a building gestates.
-      Explain the typical timeline from conception to completion
-      and why each phase exists.
-    word_target: 4000
 
-  - title: "Dirt, Dollars, and Due Diligence"
+parts:
+  - title: "Part I: Foundations"
     description: >
-      The land acquisition process. Due diligence, environmental
-      studies, zoning, entitlements. Why most deals die here.
-      Walk through a real-world example of a site evaluation
-      and the hidden costs that kill projects before they start.
+      The groundwork of real estate development — how projects begin,
+      what kills them before they start, and the financial scaffolding
+      that makes them possible.
 
-  - title: "The Money Stack"
-    description: >
-      How real estate development is financed. Equity, debt,
-      mezzanine financing, construction loans. The capital stack
-      explained for non-finance people. Why developers use
-      other people's money and what that means for risk.
+    sections:
+      - title: "The Development Lifecycle"
+        description: >
+          Understanding timelines, land acquisition, and the hidden
+          complexity behind every building that gets built.
+
+        chapters:
+          - title: "Why Buildings Take So Long"
+            word_target: 4000
+            description: >
+              Introduce the reader to the development timeline.
+              Cover the gap between public perception and reality.
+              Use the metaphor of pregnancy — a building gestates.
+              Explain the typical timeline from conception to completion
+              and why each phase exists.
+            intro: >
+              Open with a scene: a person driving past an empty lot,
+              then driving past the same lot two years later to find
+              a half-finished structure. Set up the core question —
+              why does this take so long?
+            chapter_sections:
+              - heading: "The Invisible Years"
+                description: >
+                  The 2-4 years of work that happen before a shovel
+                  hits the ground.
+                bullet_points:
+                  - "Entitlements and zoning approvals as gatekeeping"
+                  - "Environmental studies and community engagement"
+                  - "Why most of the timeline is invisible to the public"
+                  - "Comparison to other industries (film, pharma) with long lead times"
+              - heading: "From Blueprint to Foundation"
+                description: >
+                  The design and pre-construction phase — architects,
+                  engineers, and the coordination problem.
+                bullet_points:
+                  - "The design-bid-build vs design-build models"
+                  - "How drawings evolve from schematics to construction documents"
+                  - "The role of value engineering"
+                  - "Permitting as the final pre-construction hurdle"
+              - heading: "The Construction Marathon"
+                description: >
+                  What happens once construction starts and why it
+                  still takes longer than people expect.
+                bullet_points:
+                  - "Sequencing: why you can't do everything at once"
+                  - "Weather, supply chains, and labor availability"
+                  - "Inspections and the punchlist process"
+                  - "The myth of the on-time, on-budget project"
+            conclusion: >
+              Synthesize the timeline into a framework the reader
+              can carry forward. Buildings take long because every
+              phase depends on the last — it's a chain, not a checklist.
+            transition: >
+              Now that we understand the timeline, the next chapter
+              digs into where it all starts: finding and securing land.
+
+          - title: "Dirt, Dollars, and Due Diligence"
+            description: >
+              The land acquisition process. Due diligence, environmental
+              studies, zoning, entitlements. Why most deals die here.
+              Walk through a real-world example of a site evaluation
+              and the hidden costs that kill projects before they start.
+            intro: >
+              Open with a developer standing on an empty lot, imagining
+              a building — then discovering the lot sits on a former
+              gas station with contaminated soil.
+            chapter_sections:
+              - heading: "Finding the Right Dirt"
+                description: >
+                  How developers identify and evaluate potential sites.
+                bullet_points:
+                  - "Market analysis and demand signals"
+                  - "Site selection criteria: location, zoning, infrastructure"
+                  - "The role of brokers and off-market deals"
+                  - "Letters of intent and early negotiations"
+              - heading: "The Due Diligence Deep Dive"
+                description: >
+                  What happens between the LOI and closing — the deal-killer phase.
+                bullet_points:
+                  - "Environmental Phase I and Phase II assessments"
+                  - "Title searches and survey work"
+                  - "Geotechnical reports — what's under the surface"
+                  - "The feasibility study: can the numbers work?"
+                  - "Why most deals die during due diligence"
+              - heading: "Entitlements: The Permission Gauntlet"
+                description: >
+                  Navigating zoning, land use approvals, and community politics.
+                bullet_points:
+                  - "Zoning codes and what they allow"
+                  - "Variance requests and conditional use permits"
+                  - "Community meetings and political dynamics"
+                  - "The timeline cost of entitlement delays"
+            conclusion: >
+              Due diligence is where most projects die — and that's
+              a feature, not a bug. It protects developers from
+              expensive mistakes downstream.
+            transition: >
+              With land secured and entitlements in hand, the next
+              question is: who's paying for all this?
+
+      - title: "Financing the Vision"
+        description: >
+          How development projects are funded, from equity raises
+          to construction loans.
+
+        chapters:
+          - title: "The Money Stack"
+            description: >
+              How real estate development is financed. Equity, debt,
+              mezzanine financing, construction loans. The capital stack
+              explained for non-finance people. Why developers use
+              other people's money and what that means for risk.
+            intro: >
+              Open with the paradox: the developer's name is on the
+              building, but it's almost never the developer's money.
+              Introduce the capital stack as the financial architecture
+              behind every project.
+            chapter_sections:
+              - heading: "Equity: Skin in the Game"
+                description: >
+                  The ownership layer of the capital stack.
+                bullet_points:
+                  - "GP vs LP equity — who runs the deal, who funds it"
+                  - "Typical equity percentages and return expectations"
+                  - "The promote structure and waterfall distributions"
+                  - "Why developers put in as little of their own money as possible"
+              - heading: "Debt: Leverage and Its Price"
+                description: >
+                  The lending layer — construction loans, permanent financing.
+                bullet_points:
+                  - "Construction loans vs permanent loans"
+                  - "Loan-to-cost and loan-to-value ratios"
+                  - "Interest reserves and draw schedules"
+                  - "Personal guarantees and recourse vs non-recourse"
+              - heading: "Mezzanine and Preferred Equity"
+                description: >
+                  The middle layers that fill the gap.
+                bullet_points:
+                  - "When the capital stack has a hole"
+                  - "Mezzanine debt vs preferred equity — structure and risk"
+                  - "The cost of gap financing"
+                  - "How over-leveraging kills projects"
+              - heading: "Assembling the Stack"
+                description: >
+                  How developers put the whole financing package together.
+                bullet_points:
+                  - "The capital markets process"
+                  - "Term sheets and closing conditions"
+                  - "Timing coordination between equity and debt"
+                  - "What happens when the market shifts mid-raise"
+            conclusion: >
+              The capital stack is a balancing act — enough leverage
+              to amplify returns, not so much that a downturn wipes
+              out the project.
+            transition: >
+              With money in hand, it's time to design and build.
+              The next part of the book follows the project from
+              blueprints to ribbon-cutting.
