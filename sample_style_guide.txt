@@ -16,7 +16,7 @@ Longer sentences are fine for narrative passages, but break up any paragraph
 that runs past 5 sentences.
 
 ANECDOTES:
-Every chapter should include at least one real-world story or example.
+Every chapter should real-world stories or examples, always drawn from real situations. If a metaphor is ever a composite, identify it as such.
 
 METAPHORS:
 Use metaphors drawn from everyday life to explain industry concepts. Avoid
