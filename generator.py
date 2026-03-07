@@ -359,26 +359,40 @@ def _validate_hierarchical_toc(toc_data: dict):
 
 
 def _estimate_cost(chapter_targets, style_guide, toc_data):
-    """Estimate total API cost for the full pipeline."""
+    """Estimate total API cost for the full pipeline (with prompt caching)."""
+    # Anthropic prompt caching pricing:
+    #   - Cache write: 1.25x base input price (first use)
+    #   - Cache read:  0.1x base input price  (subsequent uses)
+    #   - Non-cached input: 1.0x base input price
     instructions_tokens = estimate_tokens(
         INSTRUCTIONS_FILE.read_text(encoding="utf-8") if INSTRUCTIONS_FILE.exists() else ""
     )
     style_tokens = estimate_tokens(style_guide)
     toc_tokens = estimate_tokens(yaml.dump(toc_data))
 
-    # Generation pass (Opus): per chapter
-    gen_input_total = 0
+    # The system prompt (instructions + style guide) is cached across chapters
+    sys_tokens = instructions_tokens + style_tokens
+
+    # Generation pass (Opus): per chapter — system prompt cached after ch1
+    gen_cached_write = 0  # tokens written to cache (first call)
+    gen_cached_read = 0   # tokens read from cache (subsequent calls)
+    gen_uncached_input = 0  # non-cacheable input tokens
     gen_output_total = 0
     summary_context_tokens = 0
 
     for i, ct in enumerate(chapter_targets):
-        # System: instructions + style guide
-        sys_tokens = instructions_tokens + style_tokens
-        # User: TOC + description + prior chapter (~word_target * 1.3 tokens) + summaries
+        # User message tokens (not cached — varies per chapter)
         prior_chapter_tokens = int(chapter_targets[i - 1]["word_target"] * 1.3) if i > 0 else 0
         user_tokens = toc_tokens + estimate_tokens(ct["description"]) + prior_chapter_tokens + summary_context_tokens
 
-        gen_input_total += sys_tokens + user_tokens
+        if i == 0:
+            # First chapter: system prompt written to cache
+            gen_cached_write += sys_tokens
+        else:
+            # Subsequent chapters: system prompt read from cache
+            gen_cached_read += sys_tokens
+
+        gen_uncached_input += user_tokens
         gen_output_total += int(ct["word_target"] * 1.3)  # tokens ≈ words * 1.3
 
         # Accumulate summary tokens for next iteration (~150 tokens per summary)
@@ -387,23 +401,38 @@ def _estimate_cost(chapter_targets, style_guide, toc_data):
     # Adaptive thinking tokens (billed as output): estimate ~5000 per chapter on average
     thinking_tokens = 5000 * len(chapter_targets)
 
-    # Summary generation (Sonnet): ~6000 input + ~150 output per chapter
-    summary_input_total = 6000 * len(chapter_targets)
+    # Summary generation (Sonnet): system prompt cached across summaries
+    # ~6000 uncached input + ~150 output per chapter, small system prompt (~50 tokens)
+    summary_sys_tokens = 50  # "You are a concise summarizer..."
+    summary_cached_write = summary_sys_tokens  # first summary writes cache
+    summary_cached_read = summary_sys_tokens * max(0, len(chapter_targets) - 1)
+    summary_uncached_input = 6000 * len(chapter_targets) - summary_sys_tokens * len(chapter_targets)
     summary_output_total = 150 * len(chapter_targets)
 
-    # Coherence pass (Opus): rough estimate
+    # Coherence pass (Opus): system prompt cached across windows
     num_windows = max(1, (len(chapter_targets) - 3) // 2 + 1) if len(chapter_targets) > 7 else 1
+    coherence_sys_tokens = style_tokens  # style guide is the cacheable system part
     coherence_input_per_window = 5 * int(sum(ct["word_target"] for ct in chapter_targets) / len(chapter_targets) * 1.3)
-    coherence_input_total = coherence_input_per_window * num_windows + toc_tokens * num_windows + style_tokens * num_windows
-    coherence_output_total = coherence_input_per_window * num_windows  # roughly same size
+    coherence_uncached_input = (coherence_input_per_window + toc_tokens) * num_windows
+    coherence_cached_write = coherence_sys_tokens  # first window writes cache
+    coherence_cached_read = coherence_sys_tokens * max(0, num_windows - 1)
+    coherence_output_total = coherence_input_per_window * num_windows
     coherence_thinking = 5000 * num_windows
 
     # Opus 4.6: $5/M input, $25/M output
-    opus_input_cost = (gen_input_total + coherence_input_total) / 1_000_000 * 5.0
+    opus_base_rate = 5.0
+    opus_cache_write_input = (gen_cached_write + coherence_cached_write) / 1_000_000 * (opus_base_rate * 1.25)
+    opus_cache_read_input = (gen_cached_read + coherence_cached_read) / 1_000_000 * (opus_base_rate * 0.1)
+    opus_uncached_input = (gen_uncached_input + coherence_uncached_input) / 1_000_000 * opus_base_rate
+    opus_input_cost = opus_cache_write_input + opus_cache_read_input + opus_uncached_input
     opus_output_cost = (gen_output_total + thinking_tokens + coherence_output_total + coherence_thinking) / 1_000_000 * 25.0
 
     # Sonnet 4.6: $3/M input, $15/M output
-    sonnet_input_cost = summary_input_total / 1_000_000 * 3.0
+    sonnet_base_rate = 3.0
+    sonnet_cache_write_input = summary_cached_write / 1_000_000 * (sonnet_base_rate * 1.25)
+    sonnet_cache_read_input = summary_cached_read / 1_000_000 * (sonnet_base_rate * 0.1)
+    sonnet_uncached_input = max(0, summary_uncached_input) / 1_000_000 * sonnet_base_rate
+    sonnet_input_cost = sonnet_cache_write_input + sonnet_cache_read_input + sonnet_uncached_input
     sonnet_output_cost = summary_output_total / 1_000_000 * 15.0
 
     return opus_input_cost + opus_output_cost + sonnet_input_cost + sonnet_output_cost
@@ -602,12 +631,32 @@ def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None):
         print("Re-run with --stage 2 to retry failed chapters.")
 
 
+def _make_cached_system(system):
+    """Convert a system prompt string into a structured block with cache_control."""
+    if isinstance(system, list):
+        # Already structured — ensure last block has cache_control
+        blocks = list(system)
+        if blocks:
+            last = dict(blocks[-1])
+            last["cache_control"] = {"type": "ephemeral"}
+            blocks[-1] = last
+        return blocks
+    return [
+        {
+            "type": "text",
+            "text": system,
+            "cache_control": {"type": "ephemeral"},
+        }
+    ]
+
+
 def _api_call_with_retry(client, model, system, user_message, max_tokens=8192,
                           use_extended_thinking=False, thinking_budget=10000,
                           max_retries=5, backoff=2):
-    """Make an API call with exponential backoff retry logic."""
+    """Make an API call with exponential backoff retry logic and prompt caching."""
     import anthropic
 
+    cached_system = _make_cached_system(system)
     response_text = None
 
     for attempt in range(max_retries):
@@ -620,16 +669,23 @@ def _api_call_with_retry(client, model, system, user_message, max_tokens=8192,
                     thinking={
                         "type": "adaptive",
                     },
-                    system=system,
+                    system=cached_system,
                     messages=[{"role": "user", "content": user_message}],
                 )
             else:
                 message = client.messages.create(
                     model=model,
                     max_tokens=max_tokens,
-                    system=system,
+                    system=cached_system,
                     messages=[{"role": "user", "content": user_message}],
                 )
+
+            # Log cache performance
+            usage = message.usage
+            cached = getattr(usage, "cache_read_input_tokens", 0) or 0
+            created = getattr(usage, "cache_creation_input_tokens", 0) or 0
+            if cached or created:
+                print(f"[cache: {cached} read, {created} written]", end=" ", flush=True)
 
             # Extract text from response (may have thinking blocks)
             for block in message.content:
@@ -962,8 +1018,10 @@ def _parse_window_result(html, window_chapters, edited_chapters, start, end, num
 def _stream_api_call_with_retry(client, model, system, user_message,
                                  max_tokens=32768, thinking_budget=10000,
                                  max_retries=5, backoff=2):
-    """Stream an API call with extended thinking and retry logic."""
+    """Stream an API call with extended thinking, prompt caching, and retry logic."""
     import anthropic
+
+    cached_system = _make_cached_system(system)
 
     for attempt in range(max_retries):
         try:
@@ -975,7 +1033,7 @@ def _stream_api_call_with_retry(client, model, system, user_message,
                 thinking={
                     "type": "adaptive",
                 },
-                system=system,
+                system=cached_system,
                 messages=[{"role": "user", "content": user_message}],
             ) as stream:
                 for event in stream:
@@ -985,6 +1043,14 @@ def _stream_api_call_with_retry(client, model, system, user_message,
                                 collected_text.append(event.delta.text)
                                 if sum(len(t) for t in collected_text) % 2000 < len(event.delta.text):
                                     print(".", end="", flush=True)
+            # Log cache performance from the final message
+            final_msg = stream.get_final_message()
+            if final_msg:
+                usage = final_msg.usage
+                cached = getattr(usage, "cache_read_input_tokens", 0) or 0
+                created = getattr(usage, "cache_creation_input_tokens", 0) or 0
+                if cached or created:
+                    print(f"[cache: {cached} read, {created} written]", end=" ", flush=True)
             print()
             return "".join(collected_text)
 
