@@ -1128,13 +1128,12 @@ def stage5(toc_data, paths, chapter_targets):
     book.add_author(book_author)
 
     css_content = """
-body { font-family: Georgia, "Times New Roman", serif; line-height: 1.6; margin: 1em; color: #222; }
+body { font-family: Georgia, "Times New Roman", serif; line-height: 1.6; margin: 1em; }
 h1, h2, h3, h4 { margin-top: 1.5em; margin-bottom: 0.5em; line-height: 1.2; }
-h2 { border-bottom: 1px solid #ccc; padding-bottom: 0.3em; }
-h3 { color: #444; }
+h2 { padding-bottom: 0.3em; }
 p { margin-bottom: 0.8em; text-align: justify; }
-blockquote { margin: 1em 2em; font-style: italic; color: #555; border-left: 3px solid #ccc; padding-left: 1em; }
-hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+blockquote { margin: 1em 2em; font-style: italic; padding-left: 1em; }
+hr { border: none; margin: 2em 0; }
 """
     css = epub.EpubItem(
         uid="style", file_name="style/default.css",
