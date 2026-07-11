@@ -1,0 +1,1247 @@
+title: "Don't Touch That Terminal: A Vibe Coder's Guide to the Technical Stuff You Actually Need"
+author: "Ben"
+default_word_target: 1500
+
+parts:
+  - title: "Part One: Your Machine and You"
+    description: >
+      Before you can build anything, you need to understand the machine you're building on. This part covers
+      the terminal, the file system, and the basic mental model of how your computer actually works under the
+      hood — all the stuff the GUI has been hiding from you your entire life.
+
+    sections:
+      - title: "Learning to Talk to Your Computer"
+        description: >
+          The terminal isn't a relic from the 1980s — it's the most powerful tool on your computer, and AI
+          coding tools like Claude Code live inside it. These chapters get you fluent enough to stop being
+          afraid of the blinking cursor.
+
+        chapters:
+          - title: "The Blinking Cursor Won't Bite You"
+            word_target: 1500
+            description: >
+              The terminal is the front door to everything you'll do with AI coding tools. This chapter
+              demystifies it — what it is, why it still exists, and how to open it on your machine without
+              feeling like you're defusing a bomb. By the end, you'll have typed your first commands and
+              realized the terminal is just a very literal conversation partner.
+
+            intro: >
+              Open with the analogy of driving a car with an automatic transmission vs. a manual. The GUI
+              is the automatic — smooth, forgiving, does a lot of thinking for you. The terminal is the
+              manual — more control, more direct, and once you learn it, you'll never want to go back for
+              certain tasks. Most vibe coders hit a wall the first time Claude Code says "run this in your
+              terminal" and they don't know where the terminal is. This chapter fixes that.
+
+            chapter_sections:
+              - heading: "What the Terminal Actually Is"
+                description: >
+                  Strip away the mystique — it's just a text-based way to tell your computer what to do.
+                bullet_points:
+                  - "The terminal is a text conversation with your operating system — you type a command, it responds"
+                  - "Why it still exists: GUIs are great for browsing, but terrible for automation, scripting, and the kind of repetitive tasks developers do hundreds of times a day"
+                  - "Terminal vs. shell vs. command line vs. console — these words get used interchangeably and here's why you shouldn't worry about the differences yet"
+                  - "How to open the terminal on Mac (Terminal or iTerm2), Windows (PowerShell, Command Prompt, or Windows Terminal), and Linux"
+
+              - heading: "Your First Ten Commands"
+                description: >
+                  The 80/20 of terminal usage — ten commands that cover 90% of what you'll actually type.
+                bullet_points:
+                  - "pwd (print working directory) — 'Where am I right now?'"
+                  - "ls (list) — 'What's in this folder?' and its useful flags: ls -la for the full picture"
+                  - "cd (change directory) — 'Take me somewhere else' and the special shortcuts: cd .., cd ~, cd -"
+                  - "mkdir and touch — creating folders and files from thin air"
+                  - "cp, mv, rm — copying, moving, and deleting (and why rm -rf is the command everyone warns you about)"
+                  - "cat, head, tail — peeking inside files without opening them"
+                  - "clear — when your screen gets cluttered and you need a fresh start"
+                  - "The up arrow key — your new best friend for repeating commands"
+
+              - heading: "Reading Error Messages Without Panicking"
+                description: >
+                  Error messages aren't insults — they're directions. Learning to read them is half the battle.
+                bullet_points:
+                  - "The anatomy of a terminal error: what each line is trying to tell you"
+                  - "'Command not found' — the most common error and what it actually means"
+                  - "'Permission denied' — your computer protecting you from yourself"
+                  - "'No such file or directory' — you're looking in the wrong place, not doing something wrong"
+                  - "The single most useful debugging technique: copy the error message and paste it into your AI tool"
+
+              - heading: "Mac vs. Windows vs. Linux — What Actually Matters"
+                description: >
+                  The differences that affect your daily life and the ones you can safely ignore.
+                bullet_points:
+                  - "Mac and Linux share a common ancestor (Unix) — most commands work identically on both"
+                  - "Windows is the outlier: PowerShell commands are different, but WSL (Windows Subsystem for Linux) gives you a Linux terminal inside Windows"
+                  - "Why most developer tutorials assume Mac or Linux, and how to translate if you're on Windows"
+                  - "The practical recommendation: if you're on Windows and serious about coding with AI, install WSL — it will save you hundreds of hours of translation headaches"
+
+            conclusion: >
+              The terminal is not a test of your intelligence. It's a tool — like a table saw or a stethoscope —
+              that feels intimidating until you've used it a dozen times. After that, it just feels like talking.
+
+            transition: >
+              Now that you can navigate the terminal, you need to understand what you're navigating through.
+              Your computer's file system has a logic to it — and understanding that logic is the difference
+              between knowing where your code lives and losing it in a maze of nested folders.
+
+          - title: "Where Things Live — The File System"
+            word_target: 1500
+            description: >
+              Every file on your computer has an address, and every coding project lives in a specific place.
+              This chapter maps the file system — home directories, project folders, hidden files, and the
+              concept of paths — so you always know where you are, where your code is, and where things go
+              when you install them.
+
+            intro: >
+              Open with the analogy of a city's street grid. You can navigate a city by landmarks ("turn left
+              at the Starbucks"), but that breaks down when there's no Starbucks. Professional navigators use
+              addresses — and so does your computer. Your file system is a street grid, and every file has an
+              address. Once you learn to read addresses, you'll never get lost.
+
+            chapter_sections:
+              - heading: "The Tree You Can't See"
+                description: >
+                  How files and folders are organized — the root, the branches, and where you fit in.
+                bullet_points:
+                  - "The file system as an upside-down tree: root (/) at the top, everything branches down from there"
+                  - "Key directories: /Users (or /home on Linux), /Applications, /usr, /tmp — what lives where and why"
+                  - "Your home directory (~) — the only part of the tree you need to care about for now"
+                  - "The difference between absolute paths (/Users/ben/projects/myapp) and relative paths (./myapp) — and when to use each"
+
+              - heading: "Hidden Files and the Dot Convention"
+                description: >
+                  The invisible layer of configuration files that control how everything works.
+                bullet_points:
+                  - "Files starting with a dot (.) are hidden by default — and there are a lot of them"
+                  - ".bashrc, .zshrc, .gitconfig, .env — the configuration files that control your development environment"
+                  - "How to see hidden files: ls -a in the terminal, or Cmd+Shift+. in Finder"
+                  - "Why this matters for vibe coders: AI tools often create or modify dotfiles, and you need to know they're there"
+
+              - heading: "Project Structure — Where Your Code Should Live"
+                description: >
+                  A sane default for organizing your projects so they don't end up scattered across your Desktop.
+                bullet_points:
+                  - "The ~/projects or ~/code convention — pick a home for all your work and stick with it"
+                  - "One folder per project, always — never put two projects in the same folder"
+                  - "Common files you'll see in every project: README.md, .gitignore, package.json or requirements.txt, and what each one does"
+                  - "The node_modules and __pycache__ folders — why they're huge, why they're generated, and why you never share them"
+
+              - heading: "File Permissions and Why 'Sudo' Exists"
+                description: >
+                  Your computer has a bouncer, and sometimes you need to show ID.
+                bullet_points:
+                  - "File permissions in plain English: read, write, execute — who can do what to which files"
+                  - "Why you sometimes need sudo (superuser do) — it's the 'I'm the owner of this computer' override"
+                  - "The golden rule: if a tutorial tells you to run sudo and you don't understand why, ask your AI tool to explain before you do it"
+                  - "chmod in one paragraph — you probably won't use it often, but you need to recognize it when you see it"
+
+            conclusion: >
+              Knowing your file system is like knowing the layout of your workshop. You don't need to
+              memorize every drawer, but you need to know where the important tools are and how to find
+              anything when you need it.
+
+            transition: >
+              You can talk to your terminal and navigate your file system. Now it's time to learn the tool
+              that makes your terminal dramatically more powerful — the text editor that lives inside it, and
+              the package managers that let you install anything with a single command.
+
+          - title: "Installing Things — Package Managers and Environment Setup"
+            word_target: 1500
+            description: >
+              Software is built on top of other software. Package managers are how you install the building
+              blocks. This chapter covers pip, npm, brew, and apt — the tools that let you add capabilities
+              to your machine with a single command — plus the environment setup that keeps everything from
+              colliding.
+
+            intro: >
+              Open with the analogy of a commercial kitchen's supply chain. A chef doesn't grow wheat to
+              make bread — they order flour from a supplier. Package managers are your suppliers. They
+              deliver pre-built ingredients (libraries, tools, frameworks) so you can focus on cooking
+              instead of farming. But if you order from five suppliers and they all deliver at once with
+              no system, your kitchen becomes chaos. That's what environment management prevents.
+
+            chapter_sections:
+              - heading: "What Packages Are and Why They Exist"
+                description: >
+                  Nobody writes everything from scratch — you stand on other people's work, and that's the point.
+                bullet_points:
+                  - "A package is someone else's code that you can use in your project — a solved problem you don't have to solve again"
+                  - "Why this matters: a simple web app might depend on hundreds of packages, each one handling something specific"
+                  - "The concept of dependencies: Package A needs Package B, which needs Package C — it's turtles all the way down"
+                  - "Open source in one paragraph: most packages are free, maintained by volunteers or companies, and you're allowed to use them"
+
+              - heading: "The Big Four Package Managers"
+                description: >
+                  pip, npm, brew, and apt — which one does what and when you'll use each.
+                bullet_points:
+                  - "pip — installs Python packages. If you're writing Python, this is your tool. Usage: pip install [package-name]"
+                  - "npm — installs JavaScript/Node.js packages. If you're building anything web-related, this is your tool. Usage: npm install [package-name]"
+                  - "Homebrew (brew) — installs system-level tools on Mac. It's how you install things like Git, Node.js, Python itself. Usage: brew install [tool-name]"
+                  - "apt — the equivalent of Homebrew for Linux/Ubuntu. Usage: sudo apt install [tool-name]"
+                  - "The cheat sheet: brew/apt installs tools on your computer; pip/npm installs libraries for your code"
+
+              - heading: "Virtual Environments — Keeping Projects From Fighting"
+                description: >
+                  Why Project A's dependencies can break Project B, and how to prevent it.
+                bullet_points:
+                  - "The collision problem: Project A needs version 2.0 of a library, Project B needs version 3.0 — they can't both win"
+                  - "Python virtual environments (venv): creating an isolated bubble for each project's dependencies"
+                  - "Node.js gets this for free: node_modules lives inside each project folder by default"
+                  - "The practical workflow: always create a virtual environment before you start a Python project — python -m venv .venv and source .venv/bin/activate"
+                  - "requirements.txt and package.json — the recipe cards that list exactly what ingredients each project needs"
+
+              - heading: "Setting Up Your Machine for the First Time"
+                description: >
+                  The one-time setup checklist that saves you from a thousand small headaches later.
+                bullet_points:
+                  - "The essential toolkit: Git, Python, Node.js, a code editor (VS Code is the default recommendation), and a terminal you like using"
+                  - "Installation order matters: Homebrew first (Mac), then use it to install everything else"
+                  - "Verifying installations: how to check that things actually installed correctly (python --version, git --version, node --version)"
+                  - "The PATH variable in one paragraph: it's the list of places your terminal looks when you type a command — if something's 'not found,' it's usually a PATH problem"
+                  - "The honest truth: environment setup is the least fun part of coding, it only happens once, and your AI tool is extremely good at troubleshooting it"
+
+            conclusion: >
+              Your development environment is your workshop. A well-organized workshop makes every project
+              easier. A messy one makes even simple projects frustrating. The twenty minutes you spend
+              setting things up properly will save you hours of debugging later.
+
+            transition: >
+              Your machine is set up, your terminal is open, and you can install things. Now it's time to
+              learn the tool that every developer — AI-assisted or not — uses every single day and that
+              you cannot skip: Git and GitHub.
+
+  - title: "Part Two: Version Control — The Skill You Can't Skip"
+    description: >
+      Git is the most important tool in software development, and also the most confusing for beginners.
+      This part breaks it down from first principles — what it does, why it exists, and the 20% of Git
+      commands that cover 80% of real-world usage — then walks you through GitHub, where your code lives
+      online and where collaboration happens.
+
+    sections:
+      - title: "Git and GitHub"
+        description: >
+          The version control system that tracks every change you make, lets you undo mistakes, and makes
+          collaboration possible. You will use Git every single day. These chapters make sure you understand
+          it, not just memorize commands.
+
+        chapters:
+          - title: "Git — The Time Machine for Your Code"
+            word_target: 1800
+            description: >
+              Git tracks every change you make to your code and lets you rewind to any previous version.
+              This chapter explains the mental model — snapshots, staging, commits — and walks through the
+              daily workflow that covers the vast majority of what you'll ever need to do with Git.
+
+            intro: >
+              Open with the analogy of a novelist's drafts. Imagine if every time you wrote a paragraph, you
+              could save a snapshot of the entire manuscript — and at any point, you could flip back to any
+              previous snapshot, compare versions side by side, or branch off into an alternate storyline
+              without losing the original. That's Git. It's not complicated. It's just unfamiliar.
+
+            chapter_sections:
+              - heading: "The Mental Model — Snapshots, Not File Saves"
+                description: >
+                  Git doesn't save files — it saves snapshots of your entire project at moments you choose.
+                bullet_points:
+                  - "Every time you 'commit' in Git, you're taking a photograph of every file in your project at that exact moment"
+                  - "These snapshots form a timeline — you can scroll back to any point in that timeline"
+                  - "The three stages: working directory (your files right now), staging area (what you're about to commit), and repository (the saved history)"
+                  - "This three-stage process seems annoying at first — but it gives you surgical control over what you save and when"
+
+              - heading: "The Daily Workflow — Six Commands That Cover 80% of Git"
+                description: >
+                  The commands you'll actually type every day, with plain-English explanations of each.
+                bullet_points:
+                  - "git init — start tracking a project (you do this once per project)"
+                  - "git status — 'What's changed since my last snapshot?' — you'll type this constantly"
+                  - "git add — move changes to the staging area ('I want to include these changes in my next snapshot')"
+                  - "git commit -m 'description' — take the snapshot and label it with a short message"
+                  - "git log — see the timeline of all your snapshots"
+                  - "git diff — see exactly what changed, line by line, since your last commit"
+                  - "The rhythm: make changes → git add → git commit → repeat. That's the entire daily workflow."
+
+              - heading: "Branches — Parallel Universes for Your Code"
+                description: >
+                  Branches let you experiment without risking your working code.
+                bullet_points:
+                  - "A branch is a parallel copy of your project where you can make changes without affecting the original"
+                  - "The main branch (called 'main' or sometimes 'master') is your stable, known-good version"
+                  - "Creating a branch: git checkout -b feature-name — you're now in a parallel universe"
+                  - "Merging: when your experiment works, you fold it back into main with git merge"
+                  - "Why this matters for vibe coders: when Claude Code suggests something risky, do it on a branch — if it breaks, you just delete the branch and you're back to safety"
+
+              - heading: "Undoing Mistakes — The Actual Reason Git Exists"
+                description: >
+                  The commands that save you when things go wrong.
+                bullet_points:
+                  - "git checkout -- filename — 'undo all changes to this file since my last commit' (the panic button)"
+                  - "git reset — unstage files you didn't mean to add"
+                  - "git revert — create a new commit that undoes a previous commit (safe for shared projects)"
+                  - "The .gitignore file — telling Git to pretend certain files don't exist (API keys, node_modules, .env files)"
+                  - "The honest truth about Git: even experienced developers Google Git commands regularly — you're not expected to memorize everything"
+
+            conclusion: >
+              Git is not optional. It's the safety net under every coding project, and AI tools assume you're
+              using it. The six-command daily workflow will carry you through 80% of situations. The other
+              20% is what search engines and AI assistants are for.
+
+            transition: >
+              Git lives on your computer. GitHub lives on the internet. Together, they're the system that lets
+              you back up your code, share it with others, and collaborate with AI tools that need access to
+              your repositories. Let's get your code online.
+
+          - title: "GitHub — Your Code's Home on the Internet"
+            word_target: 1500
+            description: >
+              GitHub is where your Git repositories live online — backed up, shareable, and connected to
+              the broader ecosystem of tools and collaborators. This chapter covers creating repos, pushing
+              and pulling code, pull requests, and the GitHub features that matter most for solo developers
+              using AI tools.
+
+            intro: >
+              Open with the analogy of Google Docs for writing. You could write your novel in a Word document
+              saved only on your hard drive — but you'd lose everything if your computer died. Google Docs
+              gives you cloud backup, sharing, and collaboration. GitHub does the same thing for code. It's
+              not a replacement for Git — it's where Git repositories live online.
+
+            chapter_sections:
+              - heading: "Creating a Repository and Connecting It"
+                description: >
+                  Getting your local project onto GitHub for the first time.
+                bullet_points:
+                  - "Creating an account and a new repository on github.com"
+                  - "The two workflows: creating a repo on GitHub first and cloning it down, or creating one locally and pushing it up"
+                  - "git remote add origin — connecting your local repo to its GitHub home"
+                  - "git push — sending your commits to GitHub"
+                  - "git clone — downloading someone else's repo (or your own) to a new machine"
+
+              - heading: "Push, Pull, and Staying in Sync"
+                description: >
+                  The daily rhythm of keeping your local code and GitHub in agreement.
+                bullet_points:
+                  - "git push — 'send my latest commits to GitHub'"
+                  - "git pull — 'download any changes from GitHub that I don't have locally'"
+                  - "The rule: always pull before you push if you're working from multiple machines"
+                  - "What happens when push fails: merge conflicts in plain English, and how to resolve them without crying"
+
+              - heading: "Pull Requests — The Gateway to Collaboration"
+                description: >
+                  Even for solo projects, pull requests are how you keep your main branch clean.
+                bullet_points:
+                  - "A pull request is a formal proposal: 'I made these changes on a branch — please review and merge them into main'"
+                  - "Why solo developers use PRs: it creates a paper trail and a natural review checkpoint"
+                  - "Creating a PR on GitHub: push your branch, click the green button, describe what you did"
+                  - "The PR workflow when using AI tools: Claude Code works on a branch, you review the PR, you merge when satisfied"
+
+              - heading: "GitHub Features That Matter for Vibe Coders"
+                description: >
+                  The 20% of GitHub you'll actually use.
+                bullet_points:
+                  - "Issues — a simple task tracker built into every repo"
+                  - "README.md — the front page of your project, written in Markdown"
+                  - "GitHub Actions — automated workflows (you won't build these yet, but you'll use repos that have them)"
+                  - "The .github folder and templates — scaffolding that more advanced projects use"
+                  - "Public vs. private repos — and why you should default to private until you have a reason not to"
+
+            conclusion: >
+              GitHub is your code's insurance policy and its public face. Push your code regularly, use
+              branches for experiments, and treat your commit history like a logbook. Future you — and any
+              AI tool you collaborate with — will thank present you.
+
+            transition: >
+              You can navigate your machine, manage files, and track your code with Git and GitHub. Now it's
+              time to learn enough of an actual programming language to understand what your AI tools are
+              writing for you — because blindly running code you don't understand is how things break badly.
+
+  - title: "Part Three: Just Enough Code to Be Dangerous"
+    description: >
+      You don't need to become a programmer to use AI coding tools effectively. But you need to read code
+      the way a general contractor reads blueprints — not drawing them yourself, but understanding what
+      you're looking at well enough to catch problems. This part gives you that literacy in Python and
+      the web stack.
+
+    sections:
+      - title: "Python for People Who Don't Want to Be Programmers"
+        description: >
+          Python is the most beginner-friendly language and the one most AI tools default to. These chapters
+          teach you to read Python, understand its structure, and recognize the patterns that show up in
+          every AI-generated script.
+
+        chapters:
+          - title: "Reading Python Like a General Contractor Reads Blueprints"
+            word_target: 1500
+            description: >
+              You don't need to write Python from scratch — you need to read it well enough to understand
+              what your AI is building. This chapter covers variables, data types, functions, conditionals,
+              and loops — the structural elements that appear in every Python script — with an emphasis on
+              reading comprehension over writing ability.
+
+            intro: >
+              Open with the general contractor analogy. A GC doesn't draw the structural engineering plans
+              or the electrical schematics. But they can read them — well enough to catch when the beam
+              is undersized or the circuit doesn't make sense. That's your job with code. You're the GC.
+              The AI is your subcontractor. You need to be able to read the plans it produces well enough
+              to know when something's off.
+
+            chapter_sections:
+              - heading: "Variables and Data Types — The Nouns"
+                description: >
+                  The building blocks of every program — things that hold information.
+                bullet_points:
+                  - "A variable is a label stuck on a piece of data: name = 'Ben' means 'remember that name refers to Ben'"
+                  - "The basic data types: strings (text), integers (whole numbers), floats (decimals), booleans (true/false), and None (nothing)"
+                  - "Lists: ordered collections of things — shopping_list = ['milk', 'eggs', 'bread']"
+                  - "Dictionaries: labeled collections — person = {'name': 'Ben', 'age': 40, 'city': 'Raleigh'}"
+                  - "Type errors in plain English: when your code tries to add a number to a word, Python gets confused — and so does your AI sometimes"
+
+              - heading: "Functions — The Verbs"
+                description: >
+                  Reusable blocks of code that do specific things — the workhorses of every program.
+                bullet_points:
+                  - "A function is a named recipe: 'whenever I say calculate_tax, do these steps'"
+                  - "Anatomy of a function: def function_name(inputs): followed by indented instructions, ending with return output"
+                  - "Parameters and arguments — the ingredients the function needs to do its job"
+                  - "Why functions matter for reading AI code: Claude will organize everything into functions, and understanding the structure helps you follow the logic"
+                  - "Built-in functions you'll see everywhere: print(), len(), range(), type(), input()"
+
+              - heading: "Control Flow — The Logic"
+                description: >
+                  How code makes decisions and repeats actions.
+                bullet_points:
+                  - "if/elif/else — 'if this is true, do this; otherwise, do that' — the decision-making structure"
+                  - "for loops — 'do this action for every item in this list' — the repetition structure"
+                  - "while loops — 'keep doing this until a condition changes' — used less often, but important to recognize"
+                  - "Indentation in Python is not cosmetic — it's structural. Wrong indentation breaks the code. This trips up every beginner exactly once."
+                  - "Reading nested logic: when an if statement is inside a for loop inside a function — how to trace through it without losing your mind"
+
+              - heading: "Imports, Libraries, and 'I Didn't Write This Part'"
+                description: >
+                  Most of the code in your project was written by someone else — and that's by design.
+                bullet_points:
+                  - "import statements: pulling in someone else's code to use in yours — import os, from datetime import datetime"
+                  - "The standard library: Python ships with a huge toolkit built in — file handling, dates, math, web requests"
+                  - "Third-party libraries: the packages you install with pip — requests, flask, pandas, and thousands of others"
+                  - "Reading import blocks: the first few lines of any AI-generated script tell you what tools it's using — learn to scan them like a table of contents"
+
+            conclusion: >
+              You don't need to write Python. You need to read it. When your AI tool generates a script, you
+              should be able to follow the logic, identify the key moving parts, and recognize when something
+              looks wrong — the same way a GC walks a job site and spots problems before they become expensive.
+
+            transition: >
+              Reading individual scripts is one thing. But real projects aren't single files — they're collections
+              of files that work together, handle errors, read and write data, and interact with the outside world.
+              The next chapter covers the patterns that turn a simple script into a functioning application.
+
+          - title: "Beyond Scripts — Files, Errors, and APIs"
+            word_target: 1500
+            description: >
+              Real programs read and write files, handle errors gracefully, talk to external services through
+              APIs, and manage sensitive information through environment variables. This chapter covers the
+              patterns that appear in every real-world project AI tools build for you.
+
+            intro: >
+              Open with the analogy of moving from cooking a single dish to running a kitchen. Cooking one
+              recipe is about following instructions. Running a kitchen is about managing inventory (files),
+              handling when things go wrong (errors), coordinating with suppliers (APIs), and keeping your
+              recipes secret (environment variables). The same leap happens in code.
+
+            chapter_sections:
+              - heading: "Reading and Writing Files"
+                description: >
+                  How code interacts with files on your computer — the most common real-world task.
+                bullet_points:
+                  - "The open() function and the with statement — Python's way of safely reading and writing files"
+                  - "Reading text files, CSV files, and JSON files — the three formats you'll encounter constantly"
+                  - "File paths in code: why your script can't find the file and what to do about it"
+                  - "The working directory problem: code runs from wherever the terminal is pointed, not from where the file lives"
+
+              - heading: "Error Handling — When Things Go Wrong on Purpose"
+                description: >
+                  Well-written code anticipates failure. Try/except blocks are how.
+                bullet_points:
+                  - "The try/except pattern: 'try this, and if it fails, do this instead' — the seatbelt of programming"
+                  - "Common exceptions you'll see: FileNotFoundError, KeyError, TypeError, ConnectionError"
+                  - "Why AI-generated code should include error handling — and a red flag when it doesn't"
+                  - "The print statement as a debugging tool: adding print('got here') to figure out where code is failing — crude but effective"
+
+              - heading: "APIs — How Programs Talk to Each Other"
+                description: >
+                  The concept that unlocks almost everything in modern software.
+                bullet_points:
+                  - "An API is a menu at a restaurant: you can order specific items, but you can't walk into the kitchen"
+                  - "HTTP in one paragraph: GET asks for data, POST sends data, and every API interaction uses one of these"
+                  - "API keys: the password that identifies you and controls your access"
+                  - "JSON: the universal language APIs use to send and receive data — it looks like a Python dictionary because it basically is"
+                  - "The requests library: how Python talks to APIs in three lines of code"
+
+              - heading: "HTTP Status Codes — The Language of Success and Failure"
+                description: >
+                  Every time your code talks to a server, the server sends back a number. That number tells you
+                  exactly what happened — and learning to read these numbers is one of the fastest debugging
+                  shortcuts you'll ever pick up.
+                bullet_points:
+                  - "The system in one sentence: 200s mean success, 300s mean 'go look somewhere else,' 400s mean 'you did something wrong,' 500s mean 'the server broke'"
+                  - "200 OK — everything worked. 201 Created — everything worked and something new was made (like a new user account). These are the ones you want to see"
+                  - "301/302 Redirects — 'that page moved, I'm sending you to the new address.' Usually invisible to you, but relevant when configuring domains"
+                  - "400 Bad Request — you sent data the server can't understand. 401 Unauthorized — you're not logged in. 403 Forbidden — you're logged in but don't have permission. 404 Not Found — that URL doesn't exist"
+                  - "500 Internal Server Error — the server crashed. 502 Bad Gateway — the server behind the server crashed. 503 Service Unavailable — the server is overloaded or down for maintenance"
+                  - "Why this matters practically: when your deployment isn't working or your API call fails, the status code is the first clue. A 401 means your API key is wrong. A 500 means your code is crashing on the server. A 404 means your URL is wrong. The number saves you from guessing"
+
+              - heading: "Environment Variables and Secrets"
+                description: >
+                  How to keep sensitive information out of your code — the mistake every beginner makes once.
+                bullet_points:
+                  - "The cardinal sin: putting your API key directly in your code and pushing it to GitHub — it will be found and exploited"
+                  - ".env files: a simple text file that holds secrets, read by your code but never committed to Git"
+                  - "The python-dotenv library: loading .env files into your Python script"
+                  - "The .gitignore connection: .env goes in .gitignore — always, no exceptions"
+                  - "Environment variables in plain English: 'settings that live outside your code so different machines can have different values'"
+
+            conclusion: >
+              These patterns — file I/O, error handling, APIs, and environment variables — appear in virtually
+              every real project. They're the difference between a script that works on your laptop and an
+              application that works in the real world. When you see them in AI-generated code, you'll now
+              know what they're doing and why they're there.
+
+            transition: >
+              You can now read Python — the variables, the functions, the control flow, the patterns. But when
+              your AI tool generates a script, the first few lines are almost always import statements pulling
+              in libraries you've never heard of. The next chapter is your field guide to the Python packages
+              that show up in virtually every AI-generated project — what they do, when they're used, and why
+              your AI keeps reaching for them.
+
+          - title: "The Python Toolbox — 20 Packages You'll See Everywhere"
+            word_target: 1500
+            description: >
+              AI tools don't write everything from scratch — they assemble solutions from a well-known set of
+              Python packages. This chapter is a guided tour of the ~20 libraries that appear in the vast
+              majority of AI-generated code, organized by what they do. It's not a tutorial for each one —
+              it's a recognition guide, so when you see 'import pandas' at the top of a script, you know
+              what world you're in.
+
+            intro: >
+              Open with the analogy of a carpenter's truck. A seasoned carpenter doesn't carry every tool
+              ever made — they carry the 20 or so tools that handle 95% of jobs. A circular saw, a drill,
+              a level, a speed square. They know what each one does, when to reach for it, and when a job
+              calls for something specialized they'll need to go rent. Python's package ecosystem has
+              thousands of libraries, but AI tools reach for the same 20 over and over. This chapter is
+              your inventory of what's on the truck.
+
+            chapter_sections:
+              - heading: "Data Wrangling — pandas, NumPy, and csv"
+                description: >
+                  The packages that handle spreadsheets, tables, numbers, and structured data.
+                bullet_points:
+                  - "pandas — the Swiss Army knife for tabular data. If your project touches spreadsheets, CSVs, or anything that looks like rows and columns, pandas is doing the work. DataFrames are its core concept — think of them as programmable spreadsheets"
+                  - "NumPy — the math engine under the hood. pandas is built on top of NumPy. You'll rarely use it directly, but you'll see it imported constantly because other packages depend on it"
+                  - "csv — Python's built-in module for reading and writing CSV files. Simpler than pandas but sometimes all you need. Your AI will use this for lightweight scripts and pandas for anything more complex"
+                  - "openpyxl — reads and writes Excel files (.xlsx). When your project needs to generate or parse actual Excel spreadsheets, not just CSVs, this is the tool"
+
+              - heading: "Web Requests and APIs — requests, httpx, and urllib"
+                description: >
+                  The packages that let your code talk to the internet.
+                bullet_points:
+                  - "requests — the most popular Python package, period. It makes HTTP calls (GET, POST, etc.) in clean, readable code. Every API integration your AI builds will probably use this"
+                  - "httpx — the modern alternative to requests, with async support. If your AI generates code with 'async' and 'await' keywords, it might reach for httpx instead"
+                  - "urllib — Python's built-in web request module. Clunkier than requests but doesn't need to be installed. You'll see it in scripts that avoid external dependencies"
+                  - "BeautifulSoup (bs4) — parses HTML. When your project needs to scrape data from websites, BeautifulSoup is how you pull specific elements out of a page's HTML"
+
+              - heading: "Web Frameworks — Flask, FastAPI, and Django"
+                description: >
+                  The packages that turn Python into a web application.
+                bullet_points:
+                  - "Flask — the 'microframework.' Lightweight, flexible, easy to understand. Your AI will default to Flask for simple web apps, APIs, and prototypes. A working Flask app can be five lines of code"
+                  - "FastAPI — Flask's faster, more modern cousin. Automatically generates API documentation, handles data validation, and supports async. AI tools increasingly prefer it for API-heavy projects"
+                  - "Django — the 'batteries included' framework. Comes with an admin panel, user authentication, database ORM, and everything else built in. Overkill for small projects, excellent for large ones"
+                  - "The quick decision tree: building a quick API or prototype → Flask or FastAPI. Building a full application with users and a database → Django. Your AI tool will usually make this choice for you."
+
+              - heading: "Databases — SQLAlchemy, sqlite3, and SQLModel"
+                description: >
+                  The packages that connect your Python code to databases.
+                bullet_points:
+                  - "sqlite3 — Python's built-in database module. No installation needed, stores everything in a single file. Perfect for prototypes and small projects"
+                  - "SQLAlchemy — the heavyweight ORM (Object-Relational Mapper). It lets you interact with databases using Python objects instead of writing raw SQL. Complex but powerful"
+                  - "SQLModel — built by the same person who created FastAPI. Combines SQLAlchemy with data validation. If your AI is using FastAPI, it'll probably pair it with SQLModel"
+                  - "psycopg2 — the connector for PostgreSQL databases. You'll see it when your project graduates from SQLite to a production database"
+
+              - heading: "AI and Machine Learning — openai, anthropic, langchain, and friends"
+                description: >
+                  The packages that connect your code to AI services — including the ones powering your workflow.
+                bullet_points:
+                  - "openai — the official Python client for OpenAI's API (GPT models, DALL-E, Whisper). If your project calls an AI model, this is often involved"
+                  - "anthropic — the official Python client for Anthropic's API (Claude). Same concept, different provider"
+                  - "langchain — a framework for building applications that chain multiple AI calls together. Powerful but complex — if your AI suggests it for a simple project, push back"
+                  - "transformers (Hugging Face) — access to thousands of open-source AI models. Used when you want AI capabilities without paying for an API"
+
+              - heading: "Utilities You'll See in Every Project"
+                description: >
+                  The supporting cast — small packages that solve specific, universal problems.
+                bullet_points:
+                  - "python-dotenv — loads your .env file into environment variables. Three lines of code, solves the secrets management problem for every project"
+                  - "Pillow (PIL) — image processing. Resizing, cropping, format conversion, watermarks. If your project touches images, Pillow is doing it"
+                  - "datetime and arrow — handling dates and times. datetime is built-in but awkward; arrow is the friendlier alternative"
+                  - "click and argparse — building command-line tools. click is the modern choice; argparse is built-in. Used when your AI builds a script that takes input from the terminal"
+                  - "pytest — the standard testing framework. When your AI writes tests (and you should ask it to), it'll use pytest"
+                  - "pydantic — data validation. Defines what shape your data should be and rejects anything that doesn't fit. FastAPI is built on it, and it shows up independently in many projects"
+
+            conclusion: >
+              You don't need to learn these packages. You need to recognize them. When you see 'import flask'
+              you should think "ah, this is a web application." When you see 'import pandas' you should think
+              "this is working with tabular data." That recognition — knowing what tool your AI reached for
+              and why — is what lets you review generated code with confidence instead of confusion.
+
+            transition: >
+              Python handles the logic, but the web is where most applications actually live. If you're building
+              anything with a user interface — a website, a dashboard, a tool — you'll need to understand the
+              web stack: HTML, CSS, JavaScript, and how they work together to create what people see in a browser.
+
+      - title: "The Web Stack in 30 Minutes"
+        description: >
+          Most vibe coder projects end up as web applications. This section gives you the minimum viable
+          understanding of how the web works — enough to read what your AI generates and have an opinion
+          about it.
+
+        chapters:
+          - title: "HTML, CSS, JavaScript — The Three Layers of Everything You See Online"
+            word_target: 1500
+            description: >
+              Every website is made of three things: HTML (the content), CSS (the styling), and JavaScript
+              (the behavior). This chapter explains what each one does, how they fit together, and how to
+              read the code your AI writes when it builds you a web interface.
+
+            intro: >
+              Open with the analogy of a house. HTML is the framing — the walls, floors, and roof that define
+              the structure. CSS is the interior design — paint colors, furniture, lighting. JavaScript is the
+              electrical and plumbing — the stuff that makes things actually work when you flip a switch or
+              turn a faucet. Every website, from a personal blog to Amazon, is just these three things in
+              various combinations.
+
+            chapter_sections:
+              - heading: "HTML — The Skeleton"
+                description: >
+                  The structure and content of every web page — tags, elements, and the document tree.
+                bullet_points:
+                  - "HTML is a set of labels (tags) wrapped around content: <h1>This is a heading</h1>, <p>This is a paragraph</p>"
+                  - "The essential tags you'll see everywhere: div, p, h1-h6, a (links), img, button, form, input, ul/li"
+                  - "Nesting: tags inside tags — a div containing a heading and two paragraphs is the basic building block of every page"
+                  - "The head vs. body distinction: head holds metadata (title, links to CSS), body holds everything the user sees"
+                  - "Why you don't need to memorize tags: AI tools write HTML fluently — you just need to read it well enough to say 'make that heading smaller' or 'move that button'"
+
+              - heading: "CSS — The Style Layer"
+                description: >
+                  How web pages go from ugly default styling to looking like something a human designed.
+                bullet_points:
+                  - "CSS is a set of rules: 'for every element that matches this pattern, apply these visual properties'"
+                  - "Selectors in one paragraph: target elements by tag name (p), by class (.highlight), or by ID (#main-header)"
+                  - "The box model: every element is a rectangular box with content, padding, border, and margin — understanding this solves 90% of layout confusion"
+                  - "Flexbox and Grid — the two modern layout systems that replaced years of hacky workarounds — your AI will use these constantly"
+                  - "Tailwind CSS: the utility-class framework that lets you style directly in HTML — AI tools love it because it keeps everything in one place"
+
+              - heading: "JavaScript — The Behavior Layer"
+                description: >
+                  The programming language that makes web pages interactive.
+                bullet_points:
+                  - "JavaScript runs in the browser — it's what makes buttons work, forms submit, and content update without reloading the page"
+                  - "If you know Python basics, JavaScript will look familiar: variables, functions, if/else, loops — same concepts, different syntax"
+                  - "The key difference: Python runs on your computer, JavaScript runs in the user's browser"
+                  - "DOM manipulation in one sentence: JavaScript can find any element on the page and change it — that's how interactive websites work"
+                  - "React, Vue, Next.js — the frameworks built on top of JavaScript that AI tools commonly use (you don't need to learn them yet, just recognize the names)"
+
+              - heading: "How They Work Together — And What Your AI Builds"
+                description: >
+                  The assembly of a simple web page and the patterns AI tools produce.
+                bullet_points:
+                  - "A typical AI-generated web page: an HTML file that links to a CSS file and a JavaScript file — or a single React component that combines all three"
+                  - "The development server: why you type npm run dev and open localhost:3000 instead of double-clicking an HTML file"
+                  - "The practical skill: when your AI builds you a web interface and something looks wrong, you can inspect it, identify the issue, and give the AI specific feedback instead of saying 'it looks weird'"
+
+              - heading: "Browser Developer Tools — Your X-Ray Goggles"
+                description: >
+                  The developer tools built into every browser are the single most useful debugging tool for
+                  anything that runs in a web page. You will use these constantly.
+                bullet_points:
+                  - "How to open them: F12, or right-click → Inspect, or Cmd+Option+I (Mac) / Ctrl+Shift+I (Windows) — works in Chrome, Firefox, Safari, and Edge"
+                  - "The Elements tab: see and edit the live HTML and CSS of any page. Click an element, change a color, resize a margin — changes happen instantly (they're temporary, but perfect for experimenting before telling your AI what to change)"
+                  - "The Console tab: where JavaScript errors appear. If your page loads but a button doesn't work, the Console will usually tell you why — and the error message is exactly what you paste into your AI tool"
+                  - "The Network tab: shows every request your page makes — API calls, image loads, file fetches. When your app shows a spinner forever, the Network tab reveals which request failed, what status code it returned (there's those HTTP numbers again), and what the server sent back"
+                  - "The workflow: something looks wrong → open dev tools → check Console for errors → check Network for failed requests → copy the relevant error → paste it into your AI tool with context. This loop solves the majority of frontend problems"
+
+            conclusion: >
+              You don't need to design web pages from scratch. You need to understand the three layers well enough
+              to communicate effectively with your AI tools — to say "the CSS spacing is off" instead of "it looks
+              wrong," or "that JavaScript function is running on page load but it should wait for a button click."
+
+            transition: >
+              You can now read code in the two languages that matter most — Python for logic and the web stack
+              for interfaces. But here's a question you'll hit almost immediately: you've built an HTML page
+              with a form, or a Python script with a web interface, and when you double-click the file... nothing
+              works right. The form doesn't submit. The API call fails. That's because you need a server — and
+              the good news is, your laptop can pretend to be one.
+
+  - title: "Part Four: Getting It Out There"
+    description: >
+      Code on your laptop is a hobby. Code running on a server is a product. But before you touch the cloud,
+      you need to learn the most useful trick in web development: turning your own laptop into a server. This
+      part starts there, then covers the infrastructure that turns a local project into something other people
+      can use — SSH, cloud servers, deployment platforms, domains, databases, and the concept of DevOps for
+      people who never wanted to be DevOps engineers.
+
+    sections:
+      - title: "Running It Locally"
+        description: >
+          Before you deploy anywhere, you need to run your project on your own machine. Local development
+          servers are how every developer tests their work, and understanding them demystifies what a
+          "server" actually does before you ever pay for one.
+
+        chapters:
+          - title: "Your Laptop Is a Server — You Just Don't Know It Yet"
+            word_target: 1500
+            description: >
+              Double-clicking an HTML file doesn't work the way you expect when your page has forms, API calls,
+              or dynamic behavior. This chapter explains why, introduces the concept of localhost, and walks
+              through the local development servers you'll use every day — from Python's one-liner to Flask
+              and Express dev servers. It's the bridge between "I wrote some code" and "I can actually use it."
+
+            intro: >
+              Open with the analogy of a model home. A builder doesn't wait until the entire subdivision is
+              finished to see if the floor plan works. They build a model — one house, on site, fully
+              functional — and walk clients through it. A local development server is your model home. It
+              lets you experience your application exactly as a user would, without renting space on the
+              internet. And setting one up takes about five seconds.
+
+            chapter_sections:
+              - heading: "Why Double-Clicking Doesn't Work"
+                description: >
+                  The gap between opening a file and running an application — and why it trips up every beginner.
+                bullet_points:
+                  - "When you double-click an HTML file, your browser opens it as a file (file:///path/to/index.html) — not as a website"
+                  - "The problem: forms can't submit, JavaScript fetch calls fail, and nothing that talks to a backend works — because there's no server listening"
+                  - "What a server actually does in this context: it listens for requests (like a form submission) and sends back responses (like the next page or a confirmation)"
+                  - "The localhost concept: 'localhost' is your computer's address for talking to itself — it's the internet, but the loop never leaves your machine"
+                  - "Port numbers in plain English: localhost:3000 means 'my computer, door number 3000' — different applications use different doors so they don't collide"
+
+              - heading: "The Five-Second Server — python -m http.server"
+                description: >
+                  The simplest possible local server, already installed on your machine.
+                bullet_points:
+                  - "If Python is installed, you already have a web server: navigate to your project folder and run python -m http.server"
+                  - "Open localhost:8000 in your browser and your HTML files are now being served like a real website"
+                  - "What this is good for: static sites, testing HTML/CSS/JS, serving files to other devices on your network"
+                  - "What this can't do: handle form submissions, run backend logic, or talk to a database — it just serves files"
+                  - "The npx alternative: npx live-server auto-refreshes the browser when you save changes — tiny quality-of-life upgrade that makes iteration much faster"
+
+              - heading: "Development Servers for Real Applications"
+                description: >
+                  When your project has a backend — Flask, Express, Next.js — the framework provides the server.
+                bullet_points:
+                  - "Flask (Python): flask run starts a development server that handles routes, form data, templates, and database connections — the go-to for Python web projects"
+                  - "Express (Node.js): node app.js or nodemon app.js for auto-reloading — the equivalent for JavaScript backends"
+                  - "Next.js / React: npm run dev starts a full development environment with hot reloading — changes appear in the browser instantly without refreshing"
+                  - "The pattern: every web framework includes a built-in dev server — you'll see the command in the project's README or package.json"
+                  - "The critical distinction: development servers are for testing on your machine — they are not secure or performant enough for real users. That's what deployment is for."
+
+              - heading: "Localhost as Your Testing Lab"
+                description: >
+                  The workflow habits that make local development actually useful.
+                bullet_points:
+                  - "The development loop: edit code → save → check the browser → repeat. The dev server makes this cycle instant."
+                  - "Testing forms and inputs: submit a form on localhost, see the data arrive in your terminal — the feedback loop that makes form development painless"
+                  - "Multiple servers at once: your frontend on localhost:3000, your backend API on localhost:5000 — each in its own terminal window, talking to each other"
+                  - "When localhost works but deployment doesn't: the three usual suspects are environment variables, file paths that assume your laptop's structure, and hardcoded localhost URLs that need to become real domain names"
+                  - "The mental model that unlocks everything: a server is a program that listens and responds. Your laptop can run that program. AWS can run that program. The program is the same — only the address changes."
+
+            conclusion: >
+              Local development servers are the most underrated tool in a vibe coder's kit. They let you
+              build, test, and iterate without touching the cloud, without paying for hosting, and without
+              any deployment complexity. Every professional developer uses them every day. Now you will too.
+
+            transition: >
+              Your app runs on your machine. Great. But here's the problem you'll hit next: you send your
+              project to someone else (or deploy it to a server), and it doesn't work. Different operating
+              system, different Python version, missing library. The phrase you'll hear over and over is
+              "it works on my machine." Docker exists to kill that phrase.
+
+          - title: "Docker — The Box That Makes 'It Works on My Machine' Irrelevant"
+            word_target: 1500
+            description: >
+              Docker packages your code, its dependencies, and its entire environment into a sealed container
+              that runs identically everywhere. AI tools generate Dockerfiles constantly, deployment platforms
+              use containers under the hood, and the first time your AI drops a Dockerfile into your project,
+              you need to know what it means. This chapter covers the mental model, the five commands, and
+              the one file you need to be able to read.
+
+            intro: >
+              Open with the analogy of shipping containers — the physical kind. Before containerized shipping,
+              moving goods internationally was chaos: different ports, different cranes, different truck sizes,
+              cargo repacked at every stop. Then someone standardized the box. One size. Fits on any ship, any
+              truck, any train. The cargo inside doesn't care what's carrying it. Docker did the same thing
+              for software. Your code goes in a container. The container runs the same everywhere. That's it.
+
+            chapter_sections:
+              - heading: "The Problem Docker Solves"
+                description: >
+                  Why 'it works on my machine' is the most common sentence in software — and why it stops
+                  being a problem with containers.
+                bullet_points:
+                  - "Your project needs Python 3.11, a specific version of pandas, and a PostgreSQL driver. Your server has Python 3.9 and none of the rest. Your project breaks."
+                  - "Docker's solution: package your code AND its entire environment — the right Python version, every library, every system tool — into a single sealed unit called a container"
+                  - "A container is not a virtual machine (it doesn't simulate an entire computer) — it's lighter and faster, more like a sealed room inside a building that has its own air supply"
+                  - "Why this matters for vibe coders: AI tools generate Dockerfiles regularly, and deployment platforms like Railway, Render, and DigitalOcean App Platform run containers under the hood — understanding Docker means understanding how your code actually gets deployed"
+
+              - heading: "The Dockerfile — Your Container's Recipe Card"
+                description: >
+                  The one file you need to be able to read.
+                bullet_points:
+                  - "A Dockerfile is a plain-text recipe: start with a base image (usually a Linux OS with Python or Node pre-installed), copy your code in, install dependencies, and specify the command to run"
+                  - "The key instructions: FROM (what base to start from), COPY (put your files in the container), RUN (execute a command like pip install), EXPOSE (what port to listen on), CMD (what to run when the container starts)"
+                  - "Reading a Dockerfile your AI generated: FROM python:3.11 means 'start with a Linux box that has Python 3.11.' COPY . /app means 'copy my project into the container.' RUN pip install -r requirements.txt means 'install my dependencies.' CMD ['python', 'app.py'] means 'start my application.'"
+                  - "docker-compose.yml — when your project needs multiple containers (like your app plus a database), this file defines how they work together. You'll see it in any project with a backend and a database."
+
+              - heading: "Five Docker Commands — The Whole Workflow"
+                description: >
+                  Everything you'll actually type, and what each command does.
+                bullet_points:
+                  - "docker build -t myapp . — 'build a container image from the Dockerfile in this folder and call it myapp'"
+                  - "docker run -p 3000:3000 myapp — 'start the container and connect port 3000 on my machine to port 3000 inside the container'"
+                  - "docker compose up — 'start all the containers defined in docker-compose.yml' — the one-command-to-run-everything experience"
+                  - "docker ps — 'show me what containers are currently running'"
+                  - "docker stop [container-id] — 'shut this container down'"
+                  - "The rhythm: build once, run anywhere. Your AI generates the Dockerfile, you build and run it, and if it works locally in Docker, it'll work on the server."
+
+              - heading: "When You Need Docker and When You Don't"
+                description: >
+                  Docker is powerful but not always necessary — knowing when to skip it saves complexity.
+                bullet_points:
+                  - "Skip Docker if: you're deploying a static site or simple frontend (Vercel/Netlify handle this without containers), or you're running a quick script that doesn't need deployment"
+                  - "Use Docker if: your deployment platform expects it, your project has complex dependencies, you need a database running alongside your app locally, or your AI tool generated a Dockerfile (which means the project is complex enough to warrant one)"
+                  - "Docker Desktop: the GUI application that makes Docker work on Mac and Windows — install it once and forget about it"
+                  - "The resource caveat: Docker containers use memory and CPU. On a laptop with 8GB of RAM, running multiple containers can slow things down. This is normal, not a sign that something is broken."
+
+            conclusion: >
+              Docker is the bridge between "it works on my machine" and "it works everywhere." You don't need
+              to master it — you need to recognize a Dockerfile when your AI generates one, understand what
+              it's doing, and know the five commands that build and run containers. That's enough to deploy
+              with confidence.
+
+            transition: >
+              You can run your application locally, and you can package it in a container that runs anywhere.
+              Now it's time to understand the "anywhere" — what servers actually are, how to connect to them,
+              and the platforms that let you put your containerized (or non-containerized) application in front
+              of real users.
+
+      - title: "Servers and the Cloud"
+        description: >
+          What a server actually is, how to connect to one, and the platforms that let you deploy without
+          getting a computer science degree first.
+
+        chapters:
+          - title: "What Is a Server, Actually?"
+            word_target: 1500
+            description: >
+              A server is just a computer that's always on, connected to the internet, and waiting for
+              requests. This chapter strips away the mystery — what servers do, where they live, and the
+              difference between the metal box and the concept. It introduces SSH as the way you talk to
+              remote machines, and covers the cloud platforms where most vibe coders will deploy.
+
+            intro: >
+              Open with the analogy of a restaurant kitchen. When you cook at home, you're the only customer.
+              A restaurant kitchen does the same thing as your home kitchen — cooks food — but it's designed
+              to serve many people simultaneously, it's always open during operating hours, and strangers can
+              send it orders from the dining room. A server is your code, running in a restaurant kitchen
+              instead of your home kitchen.
+
+            chapter_sections:
+              - heading: "Servers Demystified"
+                description: >
+                  It's just a computer. That's it. But where it lives and how it's configured changes everything.
+                bullet_points:
+                  - "A server is a computer — often a very boring one — that runs 24/7, connected to the internet, responding to requests"
+                  - "Physical servers vs. virtual servers vs. containers: the same concept at different scales"
+                  - "The cloud in plain English: instead of buying a server, you rent one from Amazon (AWS), Google (GCP), Microsoft (Azure), or smaller providers like DigitalOcean"
+                  - "Why the cloud won: you can create a server in 60 seconds, use it for an hour, and delete it — paying only for what you used"
+
+              - heading: "SSH — The Secure Tunnel to Somewhere Else"
+                description: >
+                  How you connect to a remote server and work on it as if it were sitting on your desk.
+                bullet_points:
+                  - "SSH (Secure Shell) opens a terminal session on a remote computer — you type commands, and they execute on the server, not your laptop"
+                  - "The basic command: ssh username@ip-address — and what each part means"
+                  - "SSH keys: the password replacement that's both more secure and more convenient — you generate a key pair, and the server recognizes you by your key"
+                  - "Generating SSH keys: ssh-keygen in your terminal, then adding the public key to your server or GitHub"
+                  - "The mental model: SSH is a phone call to your server. You dial in, have a conversation (type commands), and hang up when you're done"
+
+              - heading: "The Platform Spectrum — From 'Do Everything' to 'Do Nothing'"
+                description: >
+                  Choosing where to deploy, from raw virtual machines to fully managed platforms.
+                bullet_points:
+                  - "The spectrum: at one end, a raw Linux server where you configure everything yourself (DigitalOcean droplets, AWS EC2). At the other, a platform that handles everything but your code (Vercel, Netlify, Heroku)"
+                  - "DigitalOcean: the 'friendly landlord' — gives you a clean virtual machine at a predictable price, you install what you need"
+                  - "AWS: the 'everything store' — hundreds of services, enormous power, genuinely confusing for beginners. Use it when you need something specific"
+                  - "Vercel and Netlify: 'just give me a URL for my website' — push your code to GitHub, they handle the rest. Perfect for static sites and Next.js apps"
+                  - "Railway, Render, and Fly.io: the modern middle ground — more flexible than Vercel, less painful than raw AWS"
+                  - "The recommendation: start with the simplest platform that handles your use case, and move down the stack only when you need more control"
+
+              - heading: "Your First Deployment — The Mental Model"
+                description: >
+                  What actually happens when you 'deploy' — in plain English.
+                bullet_points:
+                  - "Deploying means: your code gets copied to a server, the server installs all the dependencies, and a process starts that listens for requests from the internet"
+                  - "The basic flow: code on your laptop → pushed to GitHub → the deployment platform detects the change → it builds and runs your code on its servers"
+                  - "Why deployment fails: missing dependencies, environment variables not set on the server, or code that assumes it's running on your machine"
+                  - "The log file: when deployment fails, the error message is in the logs — every platform has a way to view them, and this is always your first stop"
+
+            conclusion: >
+              Servers aren't magic and the cloud isn't mysterious. It's renting someone else's computer and
+              telling it to run your code. The platforms exist on a spectrum from full control to full
+              convenience, and for most vibe coder projects, you want as far toward convenience as possible.
+
+            transition: >
+              Your code is deployed and running on a server. But how do people find it? And if your application
+              needs to remember anything — user accounts, saved data, preferences — where does that information
+              live? The answer is domains and databases: the address and the filing cabinet.
+
+          - title: "Domains, DNS, and Databases — The Last Mile"
+            word_target: 1500
+            description: >
+              Your code is running on a server, but it's accessible only via an IP address that looks like
+              a phone number. This chapter covers how domains work, what DNS does, and the basics of databases
+              — the permanent memory that lets your application remember things between visits.
+
+            intro: >
+              Open with the analogy of phone numbers vs. contact names. Every phone has a number, but nobody
+              memorizes numbers anymore — you save a name, and your phone translates it. DNS does the same
+              thing for the internet: it translates "myapp.com" into the server's actual numeric address.
+              And once people arrive at your app, they expect it to remember them — which is where databases
+              come in.
+
+            chapter_sections:
+              - heading: "Domains and DNS — Giving Your Project an Address"
+                description: >
+                  How domain names work and how to point one at your server.
+                bullet_points:
+                  - "A domain name is a human-readable address that maps to a server's IP address"
+                  - "Registrars (Namecheap, Google Domains, Cloudflare) — where you buy domains, typically $10–15/year"
+                  - "DNS records in plain English: the A record points your domain to an IP address, the CNAME record points it to another domain name — those two cover 90% of what you'll configure"
+                  - "Propagation: when you change DNS settings, it takes minutes to hours for the internet to notice — this is normal, not broken"
+                  - "HTTPS and SSL certificates: the padlock icon in your browser — platforms like Vercel and Cloudflare handle this automatically, which is why you use them"
+
+              - heading: "Databases — Permanent Memory for Your App"
+                description: >
+                  Where data lives when your app needs to remember things.
+                bullet_points:
+                  - "A database is a structured filing cabinet — you put data in, organized by categories, and retrieve it later using queries"
+                  - "SQL databases (PostgreSQL, MySQL, SQLite): data stored in tables with rows and columns, like a very powerful spreadsheet"
+                  - "NoSQL databases (MongoDB, Firebase): data stored as flexible documents instead of rigid tables — easier to start with, harder to organize at scale"
+                  - "SQLite: the starter database that lives as a single file inside your project — perfect for prototyping, no setup required"
+                  - "The practical reality: most AI tools will set up a database for you — your job is to understand that it exists, where the data lives, and how to back it up"
+
+              - heading: "Connecting the Pieces — Environment-Specific Configuration"
+                description: >
+                  Why your app behaves differently in development vs. production, and how to manage that.
+                bullet_points:
+                  - "Development vs. production: the same code running on your laptop (development) vs. on a server (production)"
+                  - "Database URLs, API keys, and port numbers — the settings that change between environments"
+                  - "Environment variables revisited: the .env file on your laptop has different values than the environment variables on your server"
+                  - "The DATABASE_URL pattern: most applications connect to their database through a single URL stored as an environment variable"
+
+              - heading: "Backing Up and Not Losing Everything"
+                description: >
+                  The backup strategy that every solo developer needs and almost none implement until it's too late.
+                bullet_points:
+                  - "Code backups: if it's on GitHub, it's backed up — this is why you push regularly"
+                  - "Database backups: your code can be rebuilt, but your data cannot — automated daily backups are non-negotiable"
+                  - "Platform-managed backups: most cloud database services offer automated backups — make sure they're turned on"
+                  - "The story every developer tells once: the time they lost data they couldn't recover — learn from other people's stories, not your own"
+
+            conclusion: >
+              Domains, DNS, and databases are the unglamorous plumbing that makes web applications feel like
+              real products. None of it is complicated once you understand what each piece does. The complexity
+              is not in any single concept — it's in remembering that all these pieces need to connect.
+
+            transition: >
+              Your application is deployed, has a domain name, and can remember things. You've covered the full
+              stack from terminal to production. But there's a meta-skill that ties everything together — the
+              workflow of actually building with AI tools day to day, including the security practices that keep
+              you safe and the debugging skills that keep you sane.
+
+  - title: "Part Five: The Vibe Coder's Workflow"
+    description: >
+      The tools are learned. The concepts are understood. This final part covers the actual practice of building
+      with AI coding tools — the daily workflow, the security habits, the debugging process, and the mindset
+      that separates productive vibe coders from people who just paste code and pray.
+
+    sections:
+      - title: "Working With AI, Not Just Asking It Questions"
+        description: >
+          Using AI coding tools effectively is a skill in itself. These chapters cover the workflow, the
+          safety practices, and the troubleshooting process that turn AI-assisted coding from a party trick
+          into a real capability.
+
+        chapters:
+          - title: "The AI Coding Workflow — From Idea to Running Code"
+            word_target: 1500
+            description: >
+              This chapter lays out the actual workflow of building something with AI coding tools — how to
+              structure prompts, how to review generated code, when to accept suggestions vs. push back,
+              and the iterative cycle that produces good results. It's the chapter that turns tool knowledge
+              into a working process.
+
+            intro: >
+              Open with the analogy of working with a brilliant but literal-minded contractor. If you say
+              "build me a deck," you might get a deck — but not the one you wanted. If you say "build me a
+              12x16 pressure-treated deck with composite decking, two steps down to the yard, and a railing
+              that meets code," you'll get exactly what you need. Working with AI coding tools is the same:
+              specificity and iteration produce dramatically better results than vague requests and blind acceptance.
+
+            chapter_sections:
+              - heading: "Writing Prompts That Produce Good Code"
+                description: >
+                  The art of telling your AI what you want — specifically enough to get it right, loosely enough
+                  to benefit from its knowledge.
+                bullet_points:
+                  - "Start with the what, then the how: 'Build a Flask API that takes a CSV upload, processes it, and returns a summary as JSON' is better than 'make me a web thing for CSV files'"
+                  - "Specify constraints: 'use Python 3.11, store data in SQLite, handle files up to 10MB, and return errors as JSON with status codes'"
+                  - "Include context: 'this will run on a DigitalOcean droplet with 1GB RAM' changes the AI's approach entirely"
+                  - "The iteration cycle: first prompt gets you 70% there, refinement prompts close the gap — 'now add input validation' → 'add error logging' → 'write tests for the upload endpoint'"
+                  - "The single most important habit: read the code before you run it. Every time."
+
+              - heading: "Reviewing AI-Generated Code"
+                description: >
+                  The checklist that separates responsible vibe coders from liability magnets.
+                bullet_points:
+                  - "First pass: does the structure make sense? Can you follow the logic from input to output?"
+                  - "Security check: are there hardcoded passwords, API keys, or SQL injection vulnerabilities?"
+                  - "Dependency check: what libraries did it install? Are they reputable and maintained?"
+                  - "Error handling check: does the code handle failure, or does it assume everything works perfectly?"
+                  - "The sniff test: if something looks too simple for a complex problem, it probably is — ask the AI to explain its approach"
+
+              - heading: "The Branch-and-Test Workflow"
+                description: >
+                  The practical daily process that keeps your project stable while experimenting.
+                bullet_points:
+                  - "Always work on a branch: git checkout -b feature-name before letting the AI make changes"
+                  - "Test before merging: run the code, check the output, verify it does what you asked"
+                  - "Commit often with clear messages: 'add CSV upload endpoint' not 'stuff'"
+                  - "When things break: git stash or git checkout main — you can always get back to a working state"
+                  - "The PR review as a forcing function: even solo, creating a pull request makes you look at the diff — and the diff is where you catch mistakes"
+
+              - heading: "When to Build vs. When to Use Something That Exists"
+                description: >
+                  The judgment call that saves beginners from reinventing the wheel.
+                bullet_points:
+                  - "Authentication: don't build it — use Clerk, Auth0, Supabase Auth, or Firebase Auth"
+                  - "Payment processing: don't build it — use Stripe"
+                  - "Hosting and deployment: don't manage your own server until you have a reason — use Vercel, Railway, or Render"
+                  - "The general rule: if it involves security, money, or user data, use a proven service instead of building your own"
+                  - "Where AI-built custom code shines: data processing, internal tools, automation scripts, prototypes, and anything unique to your specific problem"
+
+            conclusion: >
+              The workflow is simple but disciplined: plan what you want, prompt specifically, review what you get,
+              test before you trust, and commit your work. Every step has a safety net. The vibe coders who build
+              real things aren't the ones with the most talent — they're the ones with the most discipline.
+
+            transition: >
+              A disciplined workflow protects you from bugs. But there's a category of mistakes that discipline
+              alone doesn't prevent — security mistakes. And in a world where AI tools can set up servers, configure
+              databases, and deploy code in minutes, the security fundamentals matter more, not less.
+
+          - title: "Security for People Who Aren't Security People"
+            word_target: 1500
+            description: >
+              Security isn't a feature you add later — it's a set of habits you build from the start. This
+              chapter covers the minimum viable security practices every vibe coder needs: secrets management,
+              HTTPS, authentication, input validation, and the common mistakes that AI tools sometimes
+              introduce if you're not watching.
+
+            intro: >
+              Open with the analogy of locking your car. You don't need to be a locksmith to lock your car.
+              You don't need to understand the tumbler mechanism inside the lock. You just need the habit
+              of pressing the button every time you walk away. Security in coding works the same way — most
+              of it is habits, not expertise.
+
+            chapter_sections:
+              - heading: "The Non-Negotiable Habits"
+                description: >
+                  Five security practices that are never optional, no matter how small the project.
+                bullet_points:
+                  - "Never commit secrets to Git — API keys, passwords, database URLs go in .env files and nowhere else"
+                  - "Always use HTTPS — every deployment platform provides free SSL certificates, there's no excuse"
+                  - "Keep dependencies updated — outdated packages are the #1 attack vector for small applications"
+                  - "Use parameterized queries for databases — never build SQL strings by concatenating user input (your AI should know this, but check)"
+                  - "Validate all user input — never trust data from the outside world, always check that it's what you expect"
+
+              - heading: "Authentication and Authorization — Who Are You and What Can You Do?"
+                description: >
+                  The difference between identifying someone and controlling their access.
+                bullet_points:
+                  - "Authentication: 'prove who you are' — login systems, tokens, sessions"
+                  - "Authorization: 'what are you allowed to do?' — the rules that control access after login"
+                  - "Why you should never build your own auth system: use Clerk, Auth0, Supabase Auth, or similar"
+                  - "Tokens and sessions in one paragraph: after login, the server gives you a temporary pass (token) that you show with every request"
+                  - "The minimum viable auth for a side project: a single admin password stored as an environment variable — not elegant, but better than nothing"
+
+              - heading: "Common Mistakes AI Tools Can Introduce"
+                description: >
+                  The security errors that AI-generated code sometimes contains — and how to spot them.
+                bullet_points:
+                  - "Hardcoded credentials: AI sometimes puts API keys directly in code as placeholders and you forget to move them"
+                  - "Overly permissive CORS settings: allowing any website to talk to your API when it should only be your own frontend"
+                  - "Missing rate limiting: an endpoint that anyone can hit a million times per second"
+                  - "Debug mode in production: Flask's debug=True or similar settings that expose your internals to the world"
+                  - "The meta-lesson: AI tools are excellent coders but mediocre security auditors — you need to be the one who checks"
+
+              - heading: "What to Do When Something Goes Wrong"
+                description: >
+                  The incident response plan for when you realize you've made a security mistake.
+                bullet_points:
+                  - "If you committed a secret to GitHub: rotate the key immediately — deleting the commit isn't enough, it's already in the history"
+                  - "GitHub's secret scanning: GitHub will sometimes email you if it detects exposed API keys — take these emails seriously"
+                  - "If your database is exposed: change the credentials, check the access logs, and assess what was accessed"
+                  - "The general principle: assume the worst, rotate credentials first, investigate second"
+
+            conclusion: >
+              Security is not a feature. It's a set of habits. The five non-negotiable practices in this chapter
+              will protect you from the most common and most damaging mistakes. You don't need to be a security
+              expert. You just need to lock the car every time you walk away.
+
+            transition: >
+              Security keeps the bad things out. Debugging handles the bad things that are already inside — the
+              errors, the unexpected behavior, the features that work on your laptop but break in production.
+              The next chapter teaches you to troubleshoot like a professional, even when you didn't write the
+              code yourself.
+
+          - title: "Debugging — Following the Trail of Crumbs"
+            word_target: 1500
+            description: >
+              Something is broken. You didn't write the code. You don't fully understand it. Now what? This
+              chapter teaches the debugging process as a systematic investigation — reading error messages,
+              isolating problems, using logs, and leveraging your AI tools to diagnose issues instead of just
+              throwing more code at the wall.
+
+            intro: >
+              Open with the analogy of a plumber diagnosing a leak. A good plumber doesn't tear open every
+              wall in the house. They follow the water. They check the most likely sources first, narrow
+              the search area, and only cut into the wall when they know where the problem is. Debugging
+              is plumbing — and the error message is the water stain telling you where to look.
+
+            chapter_sections:
+              - heading: "Reading Error Messages — Actually Reading Them"
+                description: >
+                  Error messages are not random gibberish — they're directions. Here's how to read them.
+                bullet_points:
+                  - "The stack trace: a breadcrumb trail showing exactly which functions ran in which order before the crash"
+                  - "Read from the bottom up: the last line usually tells you what went wrong, the lines above tell you where"
+                  - "The file name and line number: the exact coordinates of the problem"
+                  - "Common error types and what they mean in plain English: NameError (typo or missing import), TypeError (wrong kind of data), IndexError (asking for item #10 in a list of 5)"
+                  - "The copy-paste technique: highlight the last 3 lines of the error, paste them into your AI tool, and ask 'what does this mean and how do I fix it?'"
+
+              - heading: "The Systematic Debugging Process"
+                description: >
+                  A step-by-step method that works whether you wrote the code or your AI did.
+                bullet_points:
+                  - "Step 1: Reproduce the bug — can you make it happen again reliably?"
+                  - "Step 2: Read the error message — what is the computer actually telling you?"
+                  - "Step 3: Isolate the problem — comment out code, add print statements, narrow down where the failure occurs"
+                  - "Step 4: Form a hypothesis — 'I think it's failing because the database URL isn't set in production'"
+                  - "Step 5: Test your hypothesis — change one thing, see if the behavior changes"
+                  - "The golden rule: change one thing at a time. If you change three things and the bug goes away, you don't know which fix worked."
+
+              - heading: "Logs — Your Application's Black Box"
+                description: >
+                  How to use logging to understand what your application is doing when you're not watching.
+                bullet_points:
+                  - "Print statements are debugging. Logging is surveillance. Both are useful at different scales."
+                  - "Python's logging module in five lines: import, configure, and log messages at different severity levels"
+                  - "Where to find logs: your terminal during development, your platform's log viewer in production"
+                  - "What to log: incoming requests, database operations, errors, and anything that helps you reconstruct what happened"
+                  - "The deployment debugging pattern: check the logs first, always — the answer is almost always in the logs"
+
+              - heading: "Using AI to Debug AI-Generated Code"
+                description: >
+                  The recursive beauty of asking your AI tool to fix its own work — and how to do it effectively.
+                bullet_points:
+                  - "Paste the error message and the relevant code — not just 'it doesn't work'"
+                  - "Include context: 'this worked in development but fails in production' is critical information"
+                  - "Ask for explanations, not just fixes: 'why did this break?' teaches you something, 'just fix it' doesn't"
+                  - "When the AI goes in circles: if the same fix fails twice, the problem is likely not where the AI thinks it is — step back and describe the broader situation"
+                  - "The nuclear option: 'explain what this entire file does, step by step' — sometimes starting over with understanding is faster than patching in the dark"
+
+            conclusion: >
+              Debugging is not a talent. It's a process. Read the error, isolate the problem, form a hypothesis,
+              test it, repeat. The same process works whether the bug is in code you wrote, code your AI wrote,
+              or code a stranger wrote ten years ago. When you get stuck, your AI tools are excellent debugging
+              partners — as long as you give them the right information.
+
+            transition: >
+              You've now covered everything from the terminal to deployment, from Python to security, from Git
+              to debugging. The final chapter steps back and looks at the big picture — the mindset that makes
+              vibe coding a sustainable practice instead of a fragile party trick, and the learning path that
+              takes you from here to wherever you want to go.
+
+          - title: "The Vibe Coder's Manifesto — What to Learn Next and How to Think About All of This"
+            word_target: 1500
+            description: >
+              The closing chapter that puts everything in perspective. It addresses the elephant in the room —
+              is AI-assisted coding "real" coding? — and then moves past it to the more interesting questions:
+              what separates productive vibe coders from frustrated ones, what to learn next based on what
+              you're building, and how to think about the rapidly evolving relationship between human intent
+              and AI execution.
+
+            intro: >
+              Open with a reflection on the trades. A century ago, knowing how to build a house meant
+              knowing how to fell a tree, mill lumber, and forge nails. Today, builders buy lumber from a
+              supplier and nails from a hardware store — and nobody questions whether they're "real" builders.
+              Tools change. The skill shifts from raw execution to judgment, coordination, and quality control.
+              That's exactly what's happening with coding.
+
+            chapter_sections:
+              - heading: "The Legitimacy Question — And Why It's the Wrong Question"
+                description: >
+                  Addressing the gatekeeping head-on and reframing the conversation.
+                bullet_points:
+                  - "Yes, people will tell you that using AI isn't 'real' coding — the same way people said using calculators wasn't 'real' math"
+                  - "The better question: can you build things that work, that you understand, and that you can maintain?"
+                  - "What vibe coders bring that traditional coders sometimes lack: domain expertise, user empathy, and the ability to identify what should be built in the first place"
+                  - "The honest limitation: there are things AI tools can't do well yet — complex systems architecture, performance optimization at scale, novel algorithmic work — know your boundaries"
+
+              - heading: "The Learning Roadmap — Where to Go From Here"
+                description: >
+                  Practical guidance on what to learn next based on what you're actually building.
+                bullet_points:
+                  - "Building web apps → learn React fundamentals and database design"
+                  - "Building data tools → learn pandas, SQL, and data visualization"
+                  - "Building automation → learn cron jobs, task queues, and webhook patterns"
+                  - "Building AI-powered products → learn prompt engineering, embeddings, and vector databases"
+                  - "For everyone → get deeper with Git, learn basic SQL, and read other people's code on GitHub"
+                  - "The meta-skill: learn to learn in public — build things, share them, get feedback, iterate"
+
+              - heading: "The Compound Effect of Understanding"
+                description: >
+                  Why every concept you learn makes the next one easier.
+                bullet_points:
+                  - "Technical knowledge compounds: understanding HTTP makes APIs make sense, which makes deployment make sense, which makes debugging make sense"
+                  - "The vocabulary effect: half of the battle is knowing the right words to search for — and now you have them"
+                  - "Reading beats writing: the ability to read and understand code is more valuable than the ability to write it from scratch, especially when AI tools keep improving"
+                  - "The tipping point: there's a moment — usually about 50 hours in — where everything suddenly connects and you stop feeling lost. That moment is coming."
+
+              - heading: "Building With Confidence"
+                description: >
+                  The closing argument for why this skillset matters and what it makes possible.
+                bullet_points:
+                  - "You now have the vocabulary to communicate with developers, AI tools, and technical documentation"
+                  - "You understand the full lifecycle: write code, track it with Git, test it, deploy it, secure it, debug it"
+                  - "You know what you don't know — and more importantly, you know how to find out"
+                  - "The real power of vibe coding isn't writing code faster — it's giving people with ideas the ability to build the first version themselves"
+                  - "The closing thought: every building starts with someone who saw an empty lot and imagined something standing on it. The code is just the construction."
+
+            conclusion: >
+              You're not pretending to be a software engineer. You're a builder who uses AI as a power tool —
+              the way a general contractor uses a nail gun instead of a hammer. The nail gun doesn't make the
+              contractor less skilled. It makes them faster, and it lets them focus on the decisions that
+              actually matter: what to build, where to build it, and whether it serves the people who'll use it.
+
+            transition: >
+              The reader now has the technical foundation to use AI coding tools with confidence — not the
+              confidence of someone who knows everything, but the confidence of someone who knows enough to
+              start, enough to ask good questions, and enough to keep learning. The blinking cursor isn't
+              scary anymore. It's an invitation.

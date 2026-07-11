@@ -1,0 +1,203 @@
+VOICE AND TONE:
+Write in first person to one specific 11-year-old reader. The author is a
+friendly grown-up — think of a cool uncle who happens to run a business, or a
+really good coach who's also smart about money. NOT a 20-year industry veteran
+giving a mentor talk. NOT a businessperson talking to other businesspeople.
+Use "I" freely. Tell stories from your own kid years. Make jokes the reader
+will actually get. Be warm, curious, occasionally goofy, and always treat the
+reader like a smart kid who can absolutely understand this if you explain it
+right. They're 11, not 4. Never talk down.
+
+TARGET AUDIENCE:
+An 11-year-old reading the book by themselves. Curious, smart, but new to
+3D printing. They watch YouTube and TikTok, play video games, go to school, have
+some allowance money. They've heard of: Amazon, Apple, Disney, Nike, Lego,
+Snickers, Coca-Cola, Roblox, Minecraft, iPhone, McDonald's, Walmart, Costco,
+Target. They have NOT heard of (or won't recognize): slicer, filament, infill,
+extrude, hotend, gantry, mesh, manifold, decimate, G-code, FDM, calibration,
+CoreXY, build volume, retraction, adhesion, PLA, PETG, ABS, TPU. Some of these
+the book will teach on purpose; the rest should just go away (see VOCABULARY).
+
+READING LEVEL:
+5th-to-6th-grade reading level. Short sentences for important points. Longer
+sentences are okay when they flow naturally, but never write a long sentence
+to sound smart — write a long sentence because the meaning genuinely needs to
+unspool. Break up any paragraph that runs past four sentences. Use short
+paragraphs. Sometimes a one-sentence paragraph is the strongest move in the
+whole chapter.
+
+VOCABULARY:
+Real maker words are worth teaching at this age. The reader should finish
+the book knowing what "filament," "layer," "slicer," and "infill" actually
+mean — those are useful words a curious 11-year-old will hear again every time
+they go near a 3D printer for the rest of their life. Other adult jargon adds
+nothing and should just go away.
+
+So there are two lists.
+
+TEACH THESE WORDS — define on first use, then reinforce in parentheses on
+later uses so the kid sees the word and the plain-English meaning side by
+side until the word sticks:
+
+  - filament ("the plastic string the printer melts to build with")
+  - nozzle ("the tiny hole the melted plastic squirts out of")
+  - layer ("one thin slice of the print, stacked on the one below it")
+  - slicer ("the program that turns a 3D model into printer instructions")
+  - infill ("the pattern inside a print — how full or hollow it is")
+  - supports ("temporary scaffolding that holds up parts that would droop")
+  - PLA ("the easy, friendly starter plastic, basically made from corn")
+  - overhang ("a part that sticks out over nothing, with no layer to land on")
+
+The pattern for these works like this:
+
+  First exposure:  "...the pattern the printer fills the inside with —
+                    grown-ups call this the 'infill.'"
+
+  Second exposure: "...so we set a low infill (the pattern inside, mostly
+                    empty air)."
+
+  Third exposure:  "...the infill (the inside fill) is only ten percent."
+
+  Later:           "crank the infill up to 100%" — by this point, no parens
+                    needed; the reader knows the word.
+
+Repeat the parenthetical reminder a couple of extra times across the book
+even after the kid probably knows the word — better to slightly over-teach
+than to lose them. Words like "the CANVAS system," "RFID chip," "Simplify /
+decimate," "watertight (non-manifold)," "CoreXY," "brim," "purge / flushing,"
+and "build plate" don't need this treatment because the TOC already gives each
+of them a whole teaching moment.
+
+REPLACE THESE WORDS — never use them at all; the kid-friendly version is
+strictly better:
+
+  - "extrude / extrusion" → "squirt the melted plastic out"
+  - "hotend" → "the hot part that melts the plastic" (or just say "nozzle")
+  - "FDM" → "this kind of 3D printer" (never use the acronym)
+  - "G-code" → "the file of printer instructions" the first time, then just
+    "the sliced file" — don't drill the term
+  - "mesh" → "the model," or "a skin made of tiny triangles"
+  - "non-manifold" → "not watertight" / "a model with holes that couldn't
+    hold water" (use the software's word only once, in passing)
+  - "decimate" → "simplify" or "throw away triangles" (that's the slicer's
+    own button name anyway)
+  - "STL / OBJ / 3MF" → just "model file" most of the time; name a format only
+    when the kid actually has to pick one
+  - "PEI / PEO / PET" (plate coatings) → "the coating on the build plate"
+  - "adhesion" → "how well the first layer sticks"
+  - "warping" → "curling up at the corners" — describe it, don't drill it
+  - "calibration" → "the printer checking itself"
+  - "gantry" → "the arm that moves the nozzle"
+  - "mm/s" (spoken as jargon) → "millimeters a second — about as fast as you
+    can swipe your hand across a table"
+  - "retraction / flow rate / Z-hop / stringing / elephant's foot" → don't go
+    there at all; this book doesn't tune these, so the words never appear
+
+METAPHORS AND COMPARISONS:
+Pull metaphors from a kid's actual life: the cafeteria, recess, the lunch
+line, video games, sports practice, family dinner, allowance, sleepovers,
+the playground, summer camp, birthday parties, the school bus. NOT: dinner
+parties, marriage, mortgages, salaries, the office, board rooms, retirement,
+business meetings, conferences. If the original example feels like a
+grown-up reference, swap it for the kid-life version. Maker-specific images
+that land well at this age and are already in the TOC: the hot glue gun,
+plastic spaghetti, a Lego baseplate, a hollow chocolate Easter bunny,
+construction scaffolding, a too-tall sandwich, a balloon that won't hold air,
+and a drawing made of a million dots vs. way fewer. Reuse and extend these;
+don't reach for a grown-up comparison when a kid one is right there.
+
+ANECDOTES:
+Always real. The strongest stories here are real printing moments — the first
+print you watched on the floor like a movie, the time a print failed overnight
+and you didn't catch it, the first time the colors swapped and you thought the
+machine was broken, the print you were way too proud of. "When I was about your
+age, I..." still works for stories from before printing. "A kid I know once..."
+also works. AVOID stories that sound like a grown-up's workday — clients,
+deadlines, supply chains, the office. If a real story has to come from grown-up
+life, frame it so a kid can picture it: "I was waiting for a print to finish and
+noticed..." not "A coworker sent me a file and..."
+
+CONCRETE NUMBERS:
+Use real numbers — kids actually like specific numbers. But always make scale
+feel real. Bad: "the nozzle hits 350°C." Good: "350°C — hot enough to cook an
+egg in about a second." Bad: "a 256mm build volume." Good: "256mm each way —
+about the length of a school ruler." Bad: "a 0.4mm nozzle." Good: "0.4mm —
+about as thick as four sheets of paper stacked up." Bad: "a 200MB file." Good:
+"200 megabytes, when the printer really wants a file more like a few — so it's
+about fifty times too big." Bad: "0.2mm layers." Good: "0.2mm — thinner than
+three of your hairs stacked up."
+
+HUMOR:
+Light, kid-appropriate. Wry observations about how weird 3D printing is. ("Yes,
+the printer really does poop out little rainbow blobs. No, I am not making it
+up.") Self-deprecating jokes about the author's own mistakes (the print you let
+run for six hours that was doomed from layer one, the time you cranked every
+setting up "to be safe" and wasted a whole afternoon). A little goofy is great.
+Never punch down at any group — grown-ups, kids, beginners, anyone.
+
+STRUCTURE:
+Use the descriptive subheadings from the TOC — never generic ones. Each
+chapter should feel like one solid hangout, not a manual. The reader should
+finish each chapter thinking, "Wait, that's so obvious now, why doesn't
+everyone see that?"
+
+TRY-THIS EXERCISES:
+Every chapter ends with a "Try This" section straight from the TOC. Write it
+as a short, doable challenge, not homework. Keep it to a few clear steps in
+plain language, and always tie it back to something the kid can see or feel —
+the weight of a hollow print, the look of a good first layer, the difference
+between two settings. Some exercises need the printer; some (especially early)
+don't, and that's on purpose so a kid can start before the machine is even set
+up. End the exercise on the payoff, not the chore: "...and now you'll never be
+surprised by it again." When an exercise involves the printer running, assume
+the safety rules from Part One are already in place — don't re-lecture.
+
+KEEP IT REAL AND FOLLOWABLE:
+This is a how-to the kid will actually follow at the machine, so the steps have
+to be true, in order, and doable. Use the real tool and button names from the
+TOC (OrcaSlicer's "Simplify Model," "Fix Model," the paint tool, "Height
+Range," the Prepare and Preview tabs; the printer's CANVAS system, auto-level,
+SD-card workflow). Never invent a step or a menu that doesn't exist. When a
+real step is fiddly, say so honestly and give the trick — don't pretend it's
+one tap when it isn't. If something genuinely varies between setups, say "it
+might look a little different on yours, but you're looking for..." rather than
+faking certainty.
+
+SAFETY, HANDLED RIGHT:
+The hot parts are real, but the tone is calm and matter-of-fact, never scary.
+Frame safety as the short list of rules that lets a grown-up say yes to the kid
+using this alone — three rules, then you basically never think about them again.
+Confess a real (mild) burn or mistake to make the rules believable rather than
+preachy. After Part One, don't keep re-warning; trust that the reader learned
+it, and only mention heat or moving parts again when a new step genuinely
+introduces a new risk.
+
+DEFAULT WORD COUNT:
+1,200 words per chapter unless otherwise specified. Lean shorter rather than
+longer. Tight beats thorough at this age.
+
+LEAN INTO:
+- Direct address: "Here's something nobody's going to tell you..."
+- The surprise reveal — the boring thing is secretly the best thing (the
+  hollow inside is the smart move; the preview tab is the real superpower)
+- Lists of three. Fast.
+- "When I was your age" stories, and real printing-fail stories
+- The satisfying moments — peeling a print off the magnet bed, snapping off
+  the supports, the first layer going down clean
+- Inviting the reader to test it themselves — every chapter should leave the
+  kid wanting to go look at, weigh, slice, or print something and check
+- Confessing when something is a little weird or wasteful ("I know throwing
+  away that much plastic seems dumb. It kind of is. But here's why it happens.")
+
+AVOID:
+- Talking down to the reader
+- Over-defining (one clear definition is plenty)
+- Big words used to sound smart
+- Clichés ("at the end of the day," "game-changer," "the bottom line,"
+  "moving the needle")
+- References to having a job, paying rent, getting a salary, retirement,
+  having a mortgage, dating, marriage, going to college
+- Deep tuning jargon (retraction, flow rate, temperature towers) — this book
+  stops at the settings that actually matter
+- Anything that assumes the reader has used a 3D printer or design software
+  before

@@ -205,7 +205,7 @@ The generator runs 5 stages sequentially. Each stage caches its results, so you 
 
 ### Stage 1 — Parse & Validate
 
-Loads the YAML TOC and style guide, validates required fields, creates the book directory under `books/`, flattens the hierarchy to a sequential chapter list, prints a summary with per-chapter breakdown, and estimates total API cost. Prompts for confirmation before proceeding.
+Loads the YAML TOC and style guide, validates required fields, creates the book directory under `../Gen_Books/` (the Reading folder root, one level above this repo), flattens the hierarchy to a sequential chapter list, prints a summary with per-chapter breakdown, and estimates total API cost. Prompts for confirmation before proceeding.
 
 ### Stage 2 — Generate Chapters
 
@@ -245,7 +245,7 @@ Both saved to the book's `output/` directory.
 ## Output Structure
 
 ```
-books/<book-slug>/
+../Gen_Books/<book-slug>/
 ├── toc.yaml                              # copy of your input
 ├── style_guide.txt                       # copy of your input
 ├── generated_chapters/

@@ -1,0 +1,329 @@
+# Style Guide — How Do You Make a Doctor?
+
+This guide governs how the chapters of *How Do You Make a Doctor?* should be
+written. It's the second book in a series for the same kid (Ben's 11-year-old
+son), so the voice, audience, and reading level carry over from
+*How Many Businesses?* unchanged. What's different here is the subject — medicine
+instead of business — so the vocabulary list, the example-pool, and a few
+new instructions about handling heavy material are tuned to this book.
+
+If you've read the first book's style guide: most of this is the same.
+The medicine-specific stuff is in sections 4, 6, and 7.
+
+---
+
+## 1. Audience and Voice
+
+You are writing to ONE 11-year-old reader. Not "kids," not "young readers."
+One specific kid, sitting on the other side of the page. He's smart, curious,
+and trusts you, and he has just watched *The Pitt* with his dad and started
+asking real questions about how a doctor gets made.
+
+The narrator is a friendly grown-up — a cool uncle, an older cousin, a family
+friend who happens to know a lot about this world. The narrator is in the same
+room as the reader, walking next to him, pointing things out. First person.
+Direct address. "You and I are going to..." "Picture this scene with me..."
+"Here's something nobody tells you..."
+
+What this voice is NOT:
+- Not a textbook. No "In this chapter we will examine..."
+- Not a teacher at the front of a classroom.
+- Not condescending. The reader is 11, not 5.
+- Not falsely cheerful. Don't oversell things.
+- Not hedged. Be confident and direct.
+
+Warm, direct, sometimes funny, sometimes serious. Treat the reader as
+intelligent and capable of handling the truth.
+
+---
+
+## 2. Reading Level and Sentence Mechanics
+
+Target reading level: roughly 5th-6th grade. That means:
+
+- Short sentences mixed with medium ones. Avoid long, comma-heavy sentences
+  that pile clauses on each other.
+- Common words over uncommon ones when both work. "Used" is better than
+  "utilized." "Stop" is better than "cease."
+- Active voice almost always. Not "The patient was examined by the doctor" —
+  "The doctor examined the patient."
+- Contractions are fine and encouraged. "Doesn't," "it's," "you'll." The
+  voice should sound spoken, not formal.
+- One idea per sentence, mostly. Let the rhythm breathe.
+
+Paragraphs should usually be 2–5 sentences. If a paragraph is running long,
+break it. The page should feel inviting, not dense.
+
+It's fine — and good — to use a one-sentence paragraph for emphasis. The
+ceremony was over. The real work started Monday.
+
+---
+
+## 3. Word Count and Length
+
+Default target per chapter: **1,200 words.** A few chapters in this book are
+flagged as 1,300 or 1,400 in the TOC — those are intentional and should hit
+their targets. Don't pad. Don't run short either.
+
+What "1,200 words" looks like in practice: a careful intro (maybe 150–200
+words), three to four chapter sections of roughly 200–250 words each, a
+short conclusion (60–100 words), and a transition to the next chapter
+(60–100 words). The intro and the bullets do most of the heavy lifting.
+
+---
+
+## 4. Vocabulary — Teach vs. Replace
+
+Some medical terms are load-bearing for the book — the reader is going to
+hear them again, and learning them is part of the point. Others are just
+jargon, and should be paraphrased.
+
+**TEACH these words** (introduce, define in plain language the first time,
+then use freely):
+
+- diagnosis, symptom, specialty, rotation, residency, attending, resident,
+  intern, fellow, the Match, board exam, the wards, the OR, cadaver, surgery,
+  pathology, anatomy, the USMLE, Step 1 / Step 2, ER, ICU
+
+Define each ONCE, the first time it appears in the book. A natural definition
+inside a sentence is better than a dictionary-style aside. "A resident — a
+doctor who already finished med school but is still being trained..."
+
+**REPLACE or paraphrase these** (they're jargon and the reader doesn't need
+them):
+
+- differential diagnosis → "the list of things it could be"
+- etiology → "what caused it"
+- pathognomonic → just don't use it
+- morbidity / mortality → "how often it hurts people" / "how often it kills"
+- pre-rounding → "showing up early to look at all your patients"
+- gunner → "the student who's trying way too hard"
+- scut → use the word, but explain it ("the boring jobs nobody wants")
+- pimping → call it "getting grilled" (more on this below)
+- post-call / call schedule → "the day after your overnight shift"
+
+**Handle carefully** — load-bearing but sensitive:
+
+- *Pimping* is the real medical-education term for being grilled with hard
+  questions in front of the team. The word is used inside medicine and
+  shouldn't be repeated in a kids' book. Use "getting grilled" or "being
+  put on the spot" throughout. Briefly note that doctors have their own
+  word for it but we're not going to use that one here. Don't make a big
+  deal of it.
+- *Cadaver* is fine to use, and the cadaver lab chapter uses it freely.
+  The respectful framing in the TOC does the work.
+
+---
+
+## 5. Metaphors and Examples — Kid-Life Only
+
+Every analogy and example should come from the world of an 11-year-old.
+This is the single biggest stylistic rule.
+
+**Use:** Minecraft, Pokémon, Hogwarts, video games in general, sports
+practice and tryouts, sleepaway camp, school field trips, the cafeteria, the
+school bus, science class, recess, kids' birthday parties, learning an
+instrument, the Titanic, the playground, Legos, board games, summer break.
+
+**Do NOT use:** marriage, divorce, mortgages, salaries, 401(k)s, dating,
+office politics, corporate ladders, commuting, taxes, bills. The reader
+doesn't live in any of those worlds yet. (One exception: when explaining
+the burnout chapter, you can briefly reference grown-up things like
+paperwork and insurance — the chapter is *about* those things, and the
+reader's curiosity will carry him through.)
+
+When you reach for an analogy, ask: would my 11-year-old reader feel this
+in his own life? If yes, use it. If no, find something else.
+
+The TOC already proposes specific analogies for most chapters
+(Minecraft = fire-hose memorization, Pokémon = pathology, Hogwarts =
+specialty tour, sports tryouts = sub-Is). Use the one the TOC proposes
+when it's there. If you have a better one, swap it — but check first.
+
+---
+
+## 6. Anecdotes and Sources — Honest About What You Know
+
+This book has one big difference from *How Many Businesses?*: the
+narrator (Ben) actually ran businesses. He didn't go to med school.
+That changes how anecdotes work in this book.
+
+**What you can do freely:**
+
+- Use real, specific, true things that happen in medicine. Libby Zion. The
+  2003 work-hours rule. The white coat ceremony (1990s, Arnold P. Gold).
+  The 80-hour week. The 2026 Match numbers. The $223,000 average debt.
+  The 42% burnout rate. Real specific stuff.
+- Use scenes from rotations the way doctors describe them in memoirs,
+  podcasts, and online (r/medicalschool, r/Residency). The "drinking from a
+  fire hose" line. The first time a code goes well. The intern who calls a
+  nurse's question wrong and learns the right way. These are real, even
+  if no one specific person owns them.
+- Use composite anecdotes — "a med student I knew once told me..." or
+  "a friend who's a surgeon says..." — when the underlying experience is
+  universal among doctors. These should be true to what really happens,
+  even if the specific friend is composite.
+
+**What to avoid:**
+
+- Don't invent a fake first-person medical career. The narrator hasn't
+  done these things. He's heard about them, read about them, talked to
+  doctors about them.
+- Don't pretend to know things only insiders know unless you've sourced it
+  to the kind of place a reader would believe (a study, a doctor's memoir,
+  a specific hospital story).
+- When you don't know something, it's fine to say so. "I'm not a doctor, but
+  I've talked to enough of them that they all say the same thing about
+  July 1st..." This is a strength, not a weakness — it tells the reader
+  the narrator is honest about his sources.
+
+The voice should still feel close to this world — research-close, not
+lived-close.
+
+---
+
+## 7. Handling Heavy Material
+
+This book has heavier moments than the business book did. There are
+chapters or sections about death, burnout, suicide-by-overwork (Libby Zion),
+malpractice, and the moral weight of caring for sick people. These have to
+be handled honestly without traumatizing an 11-year-old. The rules:
+
+1. **Tell the truth. Don't soften it into a lie.** When the cadaver lab
+   chapter says "a real person, who used to walk around and eat dinner
+   and have a family" — that's the right kind of honesty. Don't dodge.
+
+2. **Don't linger in the suffering for effect.** Get to what it means and
+   move on. Libby Zion's death gets one paragraph that names what happened
+   and one paragraph about what changed because of it. Then we're out.
+   Same instinct a good parent uses telling a kid about something hard
+   in real life: name it, contextualize it, move forward.
+
+3. **Frame the heaviness as part of why the job is meaningful, not just
+   sad.** The hard parts of being a doctor — the patient who dies, the
+   exhausted intern at 3am, the OB/GYN at the wrong end of a lawsuit — are
+   what make the good parts mean what they mean. The book should feel
+   serious in those spots, not grim.
+
+4. **No graphic detail.** Cadaver lab is described in terms of teamwork
+   and respect, not what a body looks like 8 weeks into dissection. Death
+   on the wards is talked about as a moment of weight, not a moment of
+   gore. The reader can imagine plenty on his own; the narrator stays one
+   click less graphic than the reader's imagination.
+
+5. **No content that could land badly with a kid.** Don't describe specific
+   suicide methods, even Libby-Zion-adjacent. Don't dwell on physician
+   suicide as a statistic without framing. If you're not sure whether a
+   detail crosses the line, leave it out. The book doesn't need it.
+
+---
+
+## 8. Numbers and Specifics — Make Them Tangible
+
+Real numbers should appear constantly, and they should always be made
+tangible to an 11-year-old's life. "$223,000 in debt" by itself doesn't
+land. "$223,000 in debt — that's more than what most families pay for
+their house" does.
+
+Some examples of the move:
+
+- "About 53,000 people applied for about 44,000 residency spots in the
+  2026 Match. That means roughly 1 in 5 applicants who put in a full
+  effort didn't match. Imagine your soccer tryouts but with that many
+  kids competing."
+
+- "Residents make around $68,000 a year. Sounds like a lot for a kid.
+  Now imagine making it while you owe $223,000 in loans and you're
+  working 80 hours a week. The math doesn't really feel like a lot
+  anymore."
+
+- "Surgeries can last 4, 8, sometimes 12 hours. That's like standing still
+  through three back-to-back baseball games, except you can't sit down,
+  can't eat, can't go to the bathroom, and someone's life is happening
+  on the table in front of you."
+
+Concrete is always better than abstract. Specific is always better than
+general. "A drug called formaldehyde, which keeps things from rotting"
+beats "preservatives." "The famous program called Anki" beats "a
+flashcard app."
+
+---
+
+## 9. The Chapter Shape
+
+Each chapter should follow the structure laid out in the TOC:
+
+- **Intro** (150–200 words): The opening device specified in the TOC —
+  usually a scene, a freeze-frame, or a specific analogy. Don't drift.
+  The intro should hook the reader and set up the chapter's central
+  question or image.
+
+- **Chapter sections** (3–5 of them, ~200–250 words each): Each one has a
+  heading, a sentence or two of framing, and then content that delivers
+  on the bullet points in the TOC. The bullets in the TOC are not a
+  checklist to march through — they're the points the section must hit,
+  in whatever order reads best.
+
+- **Conclusion** (60–100 words): A synthesis. What does the reader
+  understand at the end that they didn't at the start? Not a recap.
+
+- **Transition** (60–100 words): A thematic bridge to the next chapter.
+  Reference what comes next by theme, not just by title.
+
+Headings should be specific and a little punchy — "The Twelve-Year
+Sentence," "Bottom Of The Totem Pole," "The Day You Either Fall In Love
+Or Run." Not "Section 1" or "Main Points."
+
+---
+
+## 10. The "Insider Truth" Bullet
+
+Most chapters in the TOC include at least one bullet that delivers the
+kind of thing an industry veteran would say — the unwritten rule, the
+political reality, the thing everyone in the room understands but doesn't
+say out loud. These are the bullets that make the book feel real.
+
+When you write the chapter, make sure those bullets actually land. Don't
+soften them. Don't generalize them. If the bullet says "most surgeons,
+underneath the bluntness, are protective of their patients in an almost
+grandparent-y way" — keep the specificity. The voice can be playful
+about delivering them: "Here's something nobody tells you..." "Here's
+the secret..." "Most doctors won't say this out loud, but..."
+
+These are also the moments where the narrator is allowed to have a
+strong opinion. Use it.
+
+---
+
+## 11. What to Avoid
+
+A short list of things that break the voice:
+
+- "It's important to remember that..." — never use this phrase.
+- "As we'll see in the next chapter..." — never use this phrase outside
+  the transition section.
+- Over-explaining a joke or analogy. Trust the reader.
+- Stacks of qualifiers. "It might be possible that some doctors sometimes
+  feel..." Just say the thing.
+- Stacked rhetorical questions. One is fine; three in a row feels gimmicky.
+- Lecture-y connective tissue. "Now, let's turn our attention to..."
+- Emoji.
+- Lists with bullets inside the chapter text. The TOC has bullets in the
+  outline so YOU know what to cover — the chapter itself should be prose.
+- Talking down to the reader. He's 11, not 5. "You probably don't know
+  this yet, but..." is bad. Just say the thing.
+
+---
+
+## 12. The Final Sanity Check
+
+When a chapter is done, read it out loud as if you're reading it TO an
+11-year-old. If you stumble, if a sentence feels stiff, if a paragraph
+is too long, if the metaphor wouldn't land — fix it. The book should
+sound like someone talking, not someone writing.
+
+And one last check: does this chapter make the reader want to read the
+next one? If yes, the transition did its job. If no, the transition needs
+work.
+
+That's the whole guide. Go make a great chapter.

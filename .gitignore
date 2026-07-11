@@ -3,3 +3,5 @@ books/
 __pycache__/
 *_normalized.html
 *_manifest.json
+*.epub
+.DS_Store

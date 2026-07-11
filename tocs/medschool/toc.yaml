@@ -1,0 +1,1513 @@
+title: "How Do You Make a Doctor? A Kid's Guide to What Actually Happens in Med School and Residency"
+author: "Ben"
+default_word_target: 1200
+
+parts:
+  - title: "Part One: Before Med School Even Starts"
+    description: >
+      Most people think "medical school" is where the doctor stuff starts. It's not. There's a brutal, multi-year
+      obstacle course that comes first — undergrad with extra steps, one of the hardest tests in the world, and
+      a lottery so competitive that most people who want to be doctors never get to find out if they would've
+      been good ones. This part is the warm-up. If the kid reading this is genuinely thinking about being
+      pre-med in college someday, this is the part he's closest to right now.
+
+    sections:
+      - title: "The Long Hallway"
+        description: >
+          The road to even getting into med school, why it takes so long, and why most people who start the
+          journey don't finish it.
+
+        chapters:
+          - title: "So You Want To Be a Doctor"
+            word_target: 1200
+            description: >
+              The opening scene of the book, hooked to the TV show the reader already loves (The Pitt). Use the
+              show to set up the central question: how long does it actually take to turn a regular human being
+              into the kind of person who can stitch up a kid's arm while three other patients are screaming?
+              The answer — about twelve years past high school — is the spine of the whole book.
+
+            intro: >
+              Open with a scene from The Pitt. You and I are watching it together. Noah Wyle is wearing scrubs,
+              running between rooms, telling a nurse to push something with a hard name, calmly handling a kid
+              whose arm is bleeding while somebody behind him is having a heart attack. Freeze-frame the scene.
+              Ask the reader: "How long do you think it took him — or any real doctor that one is based on —
+              to be able to do that?" Then drop the number. Twelve years, minimum. Four years of college, four
+              years of med school, three to seven years of residency. Promise the reader we're going to walk
+              through every single one of those years and figure out what actually happens.
+
+            chapter_sections:
+              - heading: "The Twelve-Year Sentence"
+                description: >
+                  Lay out the full timeline up front so the reader knows what they're getting into.
+                bullet_points:
+                  - "Four years of college (this part is called pre-med — it's just regular college with a very specific set of classes you have to take, plus a huge test at the end)"
+                  - "Four years of med school (split into two years of mostly classroom and two years of mostly hospital — we're going to spend most of this book here)"
+                  - "Three to seven years of residency (this is when you actually do the job for the first time, under a more experienced doctor's eye, and it varies a lot — family doctor is 3 years, brain surgeon is 7)"
+                  - "Most doctors finish around age 30, sometimes older. People who start kindergarten at 5 don't get to be a 'real' doctor until they're three times that age"
+
+              - heading: "Why It Takes So Long"
+                description: >
+                  Walk the reader through why nobody just lets people doctor faster.
+                bullet_points:
+                  - "Your body has way more parts than you think. Just memorizing the names of every bone, muscle, nerve, and squishy thing in there takes most of a year by itself"
+                  - "When something goes wrong with a person, there are usually 5–10 things it could be, and the doctor has to figure out the right one fast — that kind of thinking takes years of practice on real patients to develop"
+                  - "Doctors do things that, if they get them wrong, somebody dies. The whole system is designed around this. You don't get to do anything important until you've been watched doing it about a hundred times"
+                  - "Here's something nobody tells you: the doctor on The Pitt who looks so calm? He's not calm because he's a special kind of person. He's calm because he's already seen everything that's happening in that room, three or four times before, when he was still being trained"
+
+              - heading: "Why Anyone Would Sign Up For This"
+                description: >
+                  Twelve years is a long time. Why do people do it?
+                bullet_points:
+                  - "You get to be the person in the room who knows what to do when something terrible happens. That is a real and rare and very specific kind of power"
+                  - "Most jobs in the world produce a thing you can't really see — a report, a meeting, a slide. A doctor's job produces a person who walks out of the hospital instead of not walking out. That difference is hard to explain unless you've felt it"
+                  - "Doctors get paid pretty well — the average family doctor makes about $250,000 a year, and some specialties make a lot more — but here's the secret: most doctors say the money is not actually why they stuck it out. It's the work itself"
+                  - "Almost every doctor I've ever talked to says some version of the same thing: 'I have no idea what else I would have done with my life.' That's a sentence you almost never hear about other jobs"
+
+              - heading: "What This Book Is Actually About"
+                description: >
+                  Tell the reader exactly what they're going to get out of the next 21 chapters.
+                bullet_points:
+                  - "We're going to walk through every single year of the training, in order, and figure out what they actually do in each one"
+                  - "By the time you're done, you'll know more about how a doctor gets made than 95% of grown-ups, including most of the parents who tell their kids they should be doctors"
+                  - "Some of the years are wild, some are exhausting, and some are kind of beautiful. I'm going to tell you which is which"
+                  - "And at the end, we're going to talk about something almost nobody can answer well: should you actually want to do this? Because there's a real case for it and a real case against, and you deserve to hear both"
+
+            conclusion: >
+              Twelve years sounds insane until you remember what a doctor actually does. The whole training
+              system is built around one idea: you don't get to make decisions about other people's lives until
+              you have practiced making those decisions, supervised, about a thousand times. That's why it takes
+              so long. That's also why people who finish it tend to be very, very good at it.
+
+            transition: >
+              Before you can even get into med school, you have to survive something called pre-med. It's a
+              whole four years of college with a giant test at the end and an application process so brutal
+              that most people who start it never get in. That's the next chapter. If you ever go to college
+              thinking about being a doctor, this is the part you'll actually live through first.
+
+          - title: "The Lottery You Have to Train For"
+            word_target: 1200
+            description: >
+              How you get into med school. Pre-med, the MCAT, the application marathon, and why the whole
+              thing is shaped like a lottery — except you spend four years training for the lottery, and most
+              people who buy a ticket still don't win.
+
+            intro: >
+              Open with a sports analogy. Imagine if to get on your school's basketball team, you had to play
+              perfectly for four straight years in a different league, take a giant standardized test about
+              basketball, fill out a 50-page application, fly to twenty different schools for interviews, and
+              even then only about half the kids who tried would make a team somewhere. Now imagine the team
+              is full of other kids who all did exactly the same thing. That's getting into med school.
+
+            chapter_sections:
+              - heading: "Pre-Med Is Just College With Extra Stuff Bolted On"
+                description: >
+                  Explain what pre-med actually is so the reader doesn't think it's a separate school.
+                bullet_points:
+                  - "Pre-med isn't a major. You can major in literally anything — English, music, philosophy — as long as you also take a specific list of science classes (a year of biology, a year of chemistry, a year of organic chemistry, a year of physics, plus biochemistry and a couple of others)"
+                  - "Those science classes are designed to be hard on purpose. They're a filter. About half the kids who start out wanting to be pre-med drop the pre-med part by the end of sophomore year because the chemistry is brutal"
+                  - "On top of the classes, you're supposed to do research in a lab, volunteer at a hospital, and shadow a real doctor for a bunch of hours so you can prove you've actually seen what the job is like"
+                  - "Here's the secret nobody tells pre-meds: a regular B in organic chemistry is a death sentence for your application. You can't just pass. You basically have to ace it. That changes how most pre-meds choose their classes, and not always in good ways"
+
+              - heading: "The MCAT — One Test, Seven and a Half Hours"
+                description: >
+                  Introduce the huge test that pre-meds spend a year of their life preparing for.
+                bullet_points:
+                  - "The MCAT is a standardized test that lasts about seven and a half hours, which is longer than a school day"
+                  - "It covers biology, chemistry, organic chemistry, physics, biochemistry, psychology, sociology, and reading comprehension — basically everything you spent four years learning, plus some stuff you didn't"
+                  - "Most people spend three to six months studying for it full time. People take vacations from school to do nothing but practice MCAT questions for ten hours a day"
+                  - "The test gets a score from 472 to 528. To have a good shot at med school, you usually want to be over 510. The average kid who actually gets in scores around 512. That's not a typo — half the kids who get in beat that, half don't"
+
+              - heading: "The Application Marathon"
+                description: >
+                  What it takes to actually apply.
+                bullet_points:
+                  - "You don't apply to one med school — you apply to 15 or 20 or 30 at the same time, because nobody is sure they'll get in anywhere"
+                  - "Each school makes you write a separate essay (called a 'secondary'), and they're not short — figure 30 to 50 of them by the time you're done"
+                  - "If a school likes you, they invite you to fly out for an interview, which means buying a plane ticket and a suit and sitting in front of doctors who ask you why you want to do this for twelve years"
+                  - "The whole application thing takes about 18 months from start to finish, and costs around $5,000 just in fees and travel — that's before you've paid a single dollar of tuition"
+
+              - heading: "The Numbers Nobody Wants To Look At"
+                description: >
+                  The honest math of who gets in.
+                bullet_points:
+                  - "About 55,000 people apply to med school every year in the US. About 22,000 of them get in. So less than half"
+                  - "The kids who DO get in have, on average, a 3.7 GPA and an MCAT score around 512. The kids who don't get in are not stupid — they were near the top of their colleges. They just weren't near enough"
+                  - "A lot of people who get in had to take a 'gap year' (or two, or three) after college — they worked, did more research, took the MCAT again, applied again. The straight-shot kid who goes 'college, then med school' is actually pretty rare now"
+                  - "Here's the part that's a little unfair: a kid from a family with money has a much easier time with all of this. The test prep, the travel for interviews, the not-having-a-job-for-a-year — that all costs money. The whole system is biased toward kids whose parents can help, and nobody really pretends it isn't"
+
+            conclusion: >
+              Pre-med is one of the longest, most expensive, most exhausting things a kid can sign up for in
+              college. If you survive it AND you get into a med school somewhere, congratulations: you have
+              earned the right to start the real training. The real training is way harder.
+
+            transition: >
+              Let's say you made it. The envelope from a med school arrived, your name was inside, you signed
+              the giant stack of papers and the giant loans. Now what? Your first day of med school doesn't
+              start with classes — it starts with a ceremony, in a fancy room, where they put a white coat on
+              you and tell you you're a doctor now. You are absolutely not a doctor yet. But that's where the
+              next chapter starts.
+
+  - title: "Part Two: First Year of Med School — Learning the Body"
+    description: >
+      The first year of med school is mostly about one thing: memorizing the body. Every bone, every muscle,
+      every nerve, every chemical reaction that's happening inside you right now. It's the year that breaks
+      most students mentally and intellectually, because the volume is unlike anything they've ever encountered.
+      It's also the year of the most famous traditions in medicine — the white coat ceremony and the cadaver lab.
+
+    sections:
+      - title: "Showing Up"
+        description: >
+          The ceremony, the rituals, and the first weeks of what is genuinely the hardest school in America.
+
+        chapters:
+          - title: "The White Coat"
+            word_target: 1200
+            description: >
+              The white coat ceremony — the formal moment, usually held in a giant auditorium with the
+              student's family watching, where each new med student gets a short white coat placed on their
+              shoulders. Most med schools take this very seriously. The chapter uses it to explore what it
+              means to "become" a doctor — and the gap between the ceremony's seriousness and the reality
+              that the student doesn't know anything yet.
+
+            intro: >
+              Open with the ceremony itself, as a specific scene. A big auditorium. Maybe 150 students. Their
+              families up in the seats — parents, grandparents, brothers and sisters. Each student walks across
+              a stage and a real doctor places a short white coat over their shoulders. The coat is short on
+              purpose — full-length white coats are for actual doctors. This one is the kid version. Everyone
+              claps. People cry. Now here's the funny thing about this ceremony, the reader needs to know:
+              every single one of those students, the second they put that coat on, knows absolutely nothing
+              about medicine. Nothing. They couldn't help you if you twisted your ankle. They're a doctor in
+              the same way a kid is a black belt after their first karate class. It's the start of the thing.
+
+            chapter_sections:
+              - heading: "A Coat Is Just A Coat (Except When It Isn't)"
+                description: >
+                  Why a piece of clothing is treated like a sacred object in medicine.
+                bullet_points:
+                  - "The white coat tradition in America started in the 1990s — it's pretty new, actually — and was invented by a doctor who thought med students needed a real moment to mark the start of the journey"
+                  - "Almost every med school in the country does this ceremony now. It's the only school I can think of where the first day involves a formal robe and a podium and family flying in from out of town"
+                  - "Med schools take rituals very seriously. There's a reason — the job is heavy, and the people doing the job need ceremonies to remind them what they signed up for"
+                  - "Other professions have nothing like this. There is no 'first day of being a lawyer' ceremony. There is no 'becoming a software engineer' robe. Doctors are different on purpose"
+
+              - heading: "What You Promise"
+                description: >
+                  The Hippocratic-Oath-ish thing students recite, and what it actually means.
+                bullet_points:
+                  - "Most schools have students recite some version of an oath at this ceremony — a list of promises about how they'll treat patients"
+                  - "The original one is called the Hippocratic Oath, named after a Greek doctor who lived 2,400 years ago. He wrote down rules like 'don't poison patients' and 'don't take advantage of people who are sick.' Most of his rules still apply"
+                  - "Modern versions usually include lines like 'I will treat patients as people, not problems' and 'I will tell the truth, even when it's hard'"
+                  - "Here's something nobody talks about in front of the families: a lot of new students don't yet know what some of these promises actually cost. Telling a family that their grandma isn't going to make it, for example, sounds easy in a ceremony and is wildly hard in real life"
+
+              - heading: "The Walk From The Stage To The Classroom"
+                description: >
+                  What happens after the families leave.
+                bullet_points:
+                  - "The ceremony is on a weekend. By Monday morning, that same student is sitting in a lecture hall trying to memorize the names of 206 bones in the human body, and the families are gone, and nobody is calling them 'doctor' anymore"
+                  - "The first lecture in most med schools is anatomy — the study of every single part of the body and where it is. It's usually six hours a day, plus homework"
+                  - "There's a moment, somewhere in the first week, when every student has the exact same realization: 'I am not going to be able to memorize all of this.' Then they have to figure out a way to memorize all of it anyway"
+                  - "I had a med student friend who told me her first month of med school felt like trying to drink a milkshake through a fire hose. Everybody uses some version of that line. It's that bad and that real"
+
+              - heading: "Why The Ritual Still Matters"
+                description: >
+                  Bring it back to why the ceremony, dorky as it sometimes feels, is actually important.
+                bullet_points:
+                  - "The white coat ceremony does something kind of magical: it tells the student, in front of everyone who loves them, that this is real. The kid is now in the doctor pipeline. There's no fooling around"
+                  - "Med school is so hard that some students drop out in the first year. They lose the coat. The ceremony has to be heavy enough that walking away from it feels heavy"
+                  - "Years later, when a doctor is exhausted and burned out at 3am in the emergency room, sometimes the only thing they remember is the ceremony — the version of themselves who showed up the first day, the people in the audience"
+                  - "Rituals stick. That's what they're for"
+
+            conclusion: >
+              The white coat ceremony is one of the most important moments in a doctor's life and one of the
+              least important moments in their training. Nothing they learned to get to that stage is going
+              to help them with what comes next. But the ceremony is a promise — to the patients they don't
+              know yet, to the families in the audience, and to themselves — that they're going to try.
+
+            transition: >
+              On Monday morning, the new med student walks into a lecture hall and finds out what they actually
+              signed up for. The first year of med school is one of the strangest things in education: most of
+              it happens in a classroom, but the most famous part of it happens in a basement, surrounded by
+              dead bodies. That's the next chapter.
+
+          - title: "The Cadaver Lab"
+            word_target: 1200
+            description: >
+              Anatomy lab. Every American med student spends their first year dissecting a human body that was
+              donated for this purpose. It is one of the strangest and most formative experiences in all of
+              education. This chapter handles it head-on but age-appropriately — focusing on the wonder, the
+              weirdness, the respect, and what students actually learn from it.
+
+            intro: >
+              Open with a freeze-frame. Picture a long, brightly-lit room in the basement of a medical school.
+              The smell is sharp — kind of like the smell of a pickle jar, only weirder — because of a chemical
+              called formaldehyde, which keeps things from rotting. There are about thirty tables in the room.
+              On each table, under a blue sheet, there is a person. A real person, who used to walk around and
+              eat dinner and have a family, who decided before they died that they would let med students learn
+              from their body after they were done with it. The med students are about to lift those sheets
+              for the first time. Hold that scene. Then walk the reader into it.
+
+            chapter_sections:
+              - heading: "The Donors"
+                description: >
+                  Who these people are, and why they signed up for this.
+                bullet_points:
+                  - "Every cadaver in a med school lab is a person who, while they were alive, signed papers saying their body could be used for medical education after they died"
+                  - "There's actually a long waiting list of people who want to do this. Donors include retired doctors, science teachers, and a lot of people who say they just wanted to be useful at the end"
+                  - "The med school doesn't tell the students much about the donors — usually just their age and what they died of. But there are lots of clues. A small scar from an old knee replacement. A tattoo that's now faded. Sometimes a bullet still inside, from years ago"
+                  - "When the year is over, the school holds a memorial ceremony for the donors and invites their families. The students who learned from each donor go and meet the donor's family. People cry. It's one of the strangest and most moving days of the whole year"
+
+              - heading: "What You Actually Do In There"
+                description: >
+                  The actual work of dissecting a body, week by week.
+                bullet_points:
+                  - "Students work in teams of four, with one body per team, for about ten months"
+                  - "You start with the skin and work your way in. First week is mostly the skin and the fat. Then the muscles. Then the organs. By the end of the year you've taken apart every single system"
+                  - "There's a textbook that tells you what to find and what to cut, but the body in front of you doesn't read the textbook. Real human bodies are different from each other in weirdly specific ways — extra ribs, weird-shaped hearts, blood vessels in the wrong place"
+                  - "You memorize hundreds of small things. The names of every muscle, every nerve, every blood vessel. There are tests where the teacher puts a tiny piece of string on something inside the body and asks you what it is. You get about 30 seconds per question"
+
+              - heading: "The Rules Nobody Writes Down"
+                description: >
+                  The unwritten code that every dissection lab has.
+                bullet_points:
+                  - "You don't make jokes about the bodies. Some students try, in the first week, because it's awkward and they're nervous. They stop pretty fast"
+                  - "You keep the face covered for the first few weeks. Anatomy professors do this on purpose — it gives the students time to get used to the body before they have to think of the body as a person"
+                  - "You don't take pictures. Most schools will kick a student out for posting anything from the lab. The donor agreed to teach you, not to be on Instagram"
+                  - "Here's the secret that's hard to describe: most students go in thinking they'll be grossed out, and most students come out feeling kind of grateful. The donors aren't gross. They're teachers"
+
+              - heading: "What It Actually Teaches You"
+                description: >
+                  The thing the cadaver lab does to a person that no other class can.
+                bullet_points:
+                  - "You can learn the body from a textbook, but you can't really learn it. The textbook shows you a picture of a heart, with little arrows and clean labels. A real heart is in the middle of a real body, surrounded by other stuff, smaller than you thought, and harder to find"
+                  - "Doing the work with your hands tells your brain things that pictures can't. By the end of the year, the student doesn't just know where the liver is — they know how it feels, how it lifts up, what's right next to it"
+                  - "Maybe the most important thing the lab teaches: bodies are not magic. They're machines made of meat. That sounds blunt, but it's actually a relief — it means a broken body can usually be figured out, the same way a broken bike can"
+                  - "But also: the donor matters. Every student leaves the year with a quiet sense that they owe somebody, by name, for what they learned. That's the part of the lab nobody can teach you in a lecture"
+
+            conclusion: >
+              The cadaver lab is the part of med school that almost nobody outside of medicine understands.
+              It's not creepy. It's not even sad, most of the time. It's a slow, careful, almost respectful
+              process of one human being learning what's inside another human being — because the only way
+              to take care of bodies is to first know what's actually in them.
+
+            transition: >
+              Cadaver lab is the famous part of first year, but it's not the biggest part. The biggest part
+              is the wall of stuff you have to memorize for everything else — biochemistry, physiology, all
+              the systems of the body in motion. It's an amount of information no human brain has ever held
+              before. That's the next chapter, and it's where most students figure out who they really are.
+
+          - title: "Drinking From The Fire Hose"
+            word_target: 1200
+            description: >
+              The other side of first year — the classroom side. Biochemistry, physiology, histology, embryology.
+              The sheer impossible volume of information. This chapter is about how med students learn to
+              learn — because the techniques that got them through college absolutely do not work anymore.
+
+            intro: >
+              Open with a Minecraft analogy. Imagine you got dropped into a fresh Minecraft world, but with one
+              rule: before you could place a single block, build a single house, or do anything fun at all, you
+              had to memorize the recipe for every item in the game. Every potion. Every enchantment. Every
+              redstone circuit. Every monster's behavior and how to beat it. Now imagine you have nine months
+              to memorize all of that, and you have a test every Friday, and if you fail two of them in a row
+              you have to start over from scratch. That's first year of med school, except instead of Minecraft
+              recipes, it's the entire human body and everything that happens inside it.
+
+            chapter_sections:
+              - heading: "How Much Stuff We're Actually Talking About"
+                description: >
+                  Help the reader feel the scale.
+                bullet_points:
+                  - "An average med student spends about 80 hours a week on schoolwork in their first year. School days, weekends, all of it. That's twice as much as most grown-ups spend at their job"
+                  - "The amount of new information a med student is expected to remember in their first year is, very roughly, equivalent to memorizing every word in a couple of long novels — except instead of stories, it's tiny details about cells and chemicals and tissues"
+                  - "First year covers: biochemistry (the chemistry of what's happening inside every cell), physiology (how every system in the body works when it's working right), histology (what tissues look like under a microscope), embryology (how babies form), genetics, and a bunch of other stuff"
+                  - "Every test in med school is harder than every test you've ever taken. Not a little harder. A lot harder"
+
+              - heading: "Why The Old Tricks Don't Work Anymore"
+                description: >
+                  The transition every med student has to make.
+                bullet_points:
+                  - "Most med students were the best at their college. They got A's in everything. They studied the night before tests. Some of them barely studied at all"
+                  - "None of that works in med school. You can't cram for a test about three thousand small facts. You can't pull an all-nighter when the test covers a month of material"
+                  - "Most students fail their first big test of med school. Not because they're bad — because they studied the way they always have, and that way is too slow for the new volume"
+                  - "Within the first three months, every student has to invent a new way of learning. Most of them end up doing some version of the same thing — making thousands of flashcards, doing them every day, forever. There's a famous program called Anki that almost every med student uses, and the average student has about 20,000 flashcards in it by graduation"
+
+              - heading: "Living On A Schedule You'd Hate"
+                description: >
+                  What a med student's life actually looks like Monday through Sunday.
+                bullet_points:
+                  - "Most med students wake up around 6am, attend lectures or watch them at 2x speed in the morning, eat lunch while reviewing flashcards, study in the library until 9pm, and start over the next day"
+                  - "There's no spring break. Well, there technically is, but most students use it to catch up on the stuff they fell behind on"
+                  - "Most students live with other med students because nobody else can stand being around someone who studies that much"
+                  - "A med student told me once that the hardest part wasn't the work, it was watching her college friends post pictures of their fun grown-up lives — going out, traveling, having weekends — while she was looking at slides of kidney cells on a Friday night. That's a real thing, and it's lonelier than people expect"
+
+              - heading: "Why You Do It Anyway"
+                description: >
+                  The thing that keeps first-year students going.
+                bullet_points:
+                  - "Somewhere in the middle of first year, the pieces start to click. The chemistry from a textbook starts to explain something you see in the cadaver lab. The physiology starts to explain a story you heard about a patient"
+                  - "The first time a med student diagnoses something correctly in their own head — even just from a TV show — they get a little jolt of 'wait, I actually know this now'"
+                  - "By the end of first year, most students still don't feel like doctors, but they feel like people who could become doctors. That's a real shift, and it's the whole point of the year"
+                  - "Here's the secret nobody tells first-year students: nobody remembers most of the details from first year ten years later. The point of the year wasn't to memorize the embryology textbook. It was to build the brain that can memorize things like the embryology textbook. They're forging a tool, not filling a bucket"
+
+            conclusion: >
+              First year is the year of pure volume. You learn the parts of the body, the rules of the body,
+              and how to be the kind of student who can hold all of those rules in your head at once. By the
+              end, you're not yet useful to a sick person, but you are a completely different kind of brain
+              than the one you walked in with.
+
+            transition: >
+              First year teaches you what a healthy body looks like. Second year teaches you everything that
+              can go wrong with it. That's a much bigger list. And at the end of second year, there's a test
+              that, until very recently, was the most stressful eight hours of any doctor's life. That's
+              where we're going next.
+
+  - title: "Part Three: Second Year — Learning What Goes Wrong"
+    description: >
+      Second year is when the textbook flips from "how the body works" to "how the body breaks." Disease,
+      drugs, microorganisms. You go from a student who knows the healthy version to a student who can list
+      a thousand specific things that can go wrong with it. This is also the year of the most famous test
+      in medicine — Step 1 — which used to determine your entire career and recently got a giant rule change.
+
+    sections:
+      - title: "Disease and Drugs"
+        description: >
+          The two huge subjects that take over your brain in second year.
+
+        chapters:
+          - title: "Every Disease Ever"
+            word_target: 1200
+            description: >
+              Pathology — the study of disease. Second year is when the med student stops learning about
+              "the body" and starts learning, system by system, about everything that can break inside it.
+              The volume is bigger than first year, but the content is more interesting, because now you're
+              learning about actual diseases that actual people have.
+
+            intro: >
+              Open with a Pokémon-style analogy, but flipped. Imagine you spent first year of med school
+              memorizing all the Pokémon — every one of them, what they look like, where they live, what
+              they evolve into. Now imagine second year is when you have to memorize every single thing that
+              can go wrong with each Pokémon. Every disease. Every injury. Every way a Charizard could end
+              up in a Pokémon hospital. There are way more of those, and the test you have to take at the
+              end of the year doesn't care which ones are rare. It wants you to know all of them.
+
+            chapter_sections:
+              - heading: "Pathology — The Catalog Of Wrongness"
+                description: >
+                  What pathology actually is, and why it's the spine of second year.
+                bullet_points:
+                  - "Pathology means 'the study of disease.' If you can think of a body part, there's a list of bad things that can happen to it, and second year of med school is when you memorize that list for every body part"
+                  - "Most schools go system by system: the heart and blood vessels for a few weeks, then the lungs, then the kidneys, then the brain, and so on. By the end, every system in the body has its own folder in your brain"
+                  - "For each disease, you learn the same set of things: what causes it, what it does to the body, what it looks like under a microscope, what symptoms it causes, and how to tell it apart from the four other diseases that look just like it"
+                  - "Here's the trick of pathology that nobody warns you about: a lot of the time, two diseases look nearly identical. The whole skill of being a doctor is learning to spot the tiny differences. That skill is the entire game"
+
+              - heading: "Microbes — The Tiniest Enemies"
+                description: >
+                  The other huge subject of second year.
+                bullet_points:
+                  - "Microbiology is the study of the tiny living things that cause disease — bacteria, viruses, fungi, and parasites"
+                  - "You memorize hundreds of bugs. What they look like, how they get into people, what they do once they're inside, what kills them, and what they can't be killed by"
+                  - "Real example: there's a bug called MRSA (you say it 'mursa') that's a kind of staph bacteria that learned how to survive a bunch of antibiotics that used to kill it easily. Now it's a big problem in hospitals. Doctors have to memorize which drugs still work on it, which is a moving target"
+                  - "The reason this stuff is taught so hard: an actual doctor is going to see a patient with a weird infection at 11pm on a Tuesday, and the bug isn't going to come labeled. The doctor has to recognize it from a few clues. There's no Google fast enough"
+
+              - heading: "Drugs — The Tools You Get To Fight With"
+                description: >
+                  The other half of second year: what you do about all those diseases.
+                bullet_points:
+                  - "Pharmacology is the study of medicines — what they're called, what they do, how they do it, and what they shouldn't be mixed with"
+                  - "There are about 1,500 commonly used medicines in the U.S. Med students don't memorize all of them, but they memorize the major ones — and the major ones for every system of the body adds up to maybe 400 drugs you need to know cold"
+                  - "Every drug has a side effect — something annoying or scary it does to you besides the thing you wanted it to do. Pharmacology is mostly the study of side effects, which is why doctors are so weirdly careful about handing them out"
+                  - "Here's a thing nobody tells you about doctors: most of the drugs they prescribe are not magical. They are usually just slightly tilting a body in the direction you want it to go. The body does the actual healing. The drug is just a nudge"
+
+              - heading: "What You Can And Can't Do With Any Of This Yet"
+                description: >
+                  Even after a whole year of disease, you're still not allowed to actually use it.
+                bullet_points:
+                  - "A second-year med student knows more medicine than 99% of people on Earth and is still not legally allowed to prescribe a single pill or perform a single procedure"
+                  - "Everything you learn in second year is mostly used by a different person — the doctor you're going to be in three years — to actually treat patients"
+                  - "Most of the year is still classroom and library. You see real patients only in tiny supervised doses, usually with a doctor following you around making sure you don't say anything dumb"
+                  - "There's a weird feeling in second year where you start to recognize diseases in real life — in your own grandparents, in characters on TV, in news stories — but you're still not the person who's allowed to do anything about them. It's like having superpowers and being told they're for next year"
+
+            conclusion: >
+              Second year is when the textbook starts feeling like it's about real people. You stop memorizing
+              parts of the body and start memorizing what happens to real bodies. By the end of the year, you
+              recognize way more in the world than you used to. You don't get to use most of it yet — but
+              the seeing has started, and the seeing is most of the job.
+
+            transition: >
+              All of this volume — the diseases, the drugs, the bugs — was building toward one thing, and
+              for decades, that one thing was the biggest, scariest, most life-defining test in American
+              education. It's called Step 1, and the rules just changed. The next chapter is about why that
+              test ruined so many med students for so many years, and why everything just got weirdly different.
+
+          - title: "Step 1 — The Test That Used To Eat People Alive"
+            word_target: 1200
+            description: >
+              Step 1 of the USMLE. The huge test at the end of second year. For decades it was the single
+              biggest determiner of which specialty a med student could pursue and where they could get
+              accepted. In 2022 it became pass/fail. This chapter is about why that test mattered so much,
+              why it changed, and what replaced it.
+
+            intro: >
+              Open with the scene of the test itself. A windowless room in a testing center. Seven hours.
+              You sit in front of a computer with noise-canceling headphones on. You can take a few short
+              breaks. You answer about 280 questions, each one harder than the SAT, each one designed to
+              make you almost pick the wrong answer. Every question has six possible answers, and four of
+              them are usually almost right. While you're sitting there, you know that for the past sixty
+              years, what happens in this room has been the biggest single decider of what kind of doctor
+              you get to become. Then I tell the reader: as of 2022, this is no longer true. We're going to
+              talk about why.
+
+            chapter_sections:
+              - heading: "What The Test Is And Why It Existed"
+                description: >
+                  The basics of Step 1 of the USMLE.
+                bullet_points:
+                  - "Step 1 is part of a series of three tests every doctor has to pass to be allowed to practice in the U.S. — Step 1 in second year of med school, Step 2 at the end of fourth year, Step 3 during residency"
+                  - "All three are made by an organization called the USMLE (United States Medical Licensing Examination)"
+                  - "Step 1 covers everything you learned in the first two years of med school. About 280 questions. Seven hours. Multiple choice"
+                  - "For decades, your score on Step 1 was the single biggest number on your residency application. Want to be a brain surgeon? You needed about a 245 out of 300. Want to be a regular family doctor? More like a 210. Your one bad day on this one test could literally decide your career"
+
+              - heading: "What That Did To Med Students"
+                description: >
+                  The crazy effects the test had on the people taking it.
+                bullet_points:
+                  - "Med students spent the entire second year basically training for this one test, more than for their actual classes. There's a whole industry of test-prep companies — UWorld, First Aid, Pathoma — that every med student pays for and lives inside of"
+                  - "Most students take a 'dedicated' period of six to eight weeks before the test where they do nothing else. They wake up, study, eat, study, sleep. Some students reported studying ten or twelve hours a day for two months straight"
+                  - "Mental health problems among med students got really bad. Studies kept finding that depression and burnout were way higher in med students than in other graduate students. A lot of that was Step 1 pressure"
+                  - "Here's the weirdest part: nobody could prove that Step 1 score actually predicted who would be a good doctor. It mostly predicted who could memorize a giant amount of stuff under pressure"
+
+              - heading: "What Changed In 2022"
+                description: >
+                  The big rule change.
+                bullet_points:
+                  - "In January 2022, the USMLE changed Step 1 from a numerical score to just pass/fail. You either pass or you don't. You don't get a number anymore"
+                  - "Med students celebrated. The pressure cooker that had been ruining lives for sixty years was, in theory, over"
+                  - "But here's what really happened: residency programs still had to filter through thousands of applicants somehow. They couldn't use Step 1 anymore, so they just moved all that pressure to Step 2 CK, which IS still scored"
+                  - "So instead of one big scary test in the middle of med school, students now have one big scary test at the end. The total amount of pressure on a med student didn't really go down. It just moved"
+
+              - heading: "The Insider Truth About The Big Test"
+                description: >
+                  What second-year students actually whisper about it.
+                bullet_points:
+                  - "Most med students will tell you Step 1 is the worst experience of their life so far, including breakups, including the death of pets, including the time they fell off a bike"
+                  - "The pass rate is about 95%, but that doesn't help you when you're studying. You feel like you're going to be the one who fails, every single day"
+                  - "Even though Step 1 is now pass/fail, students still over-prepare for it, because they know the residency programs are looking at every single signal — and you don't want to be the one who barely passed"
+                  - "Here's something nobody tells you: there's a small group of really competitive specialties — neurosurgery, dermatology, plastic surgery — where the application process is still so brutal that students treat second year like the old days, even though the test doesn't matter the same way anymore. The pressure went underground, basically"
+
+            conclusion: >
+              Step 1 is the most famous test in American medical training, and it just stopped being the most
+              important one. The world of medicine is still rearranging itself around what comes next — but
+              for now, the thing that ate med students alive for half a century has at least changed shape.
+              The pressure didn't vanish. It just moved.
+
+            transition: >
+              The first two years of med school happen mostly in a classroom and a library and a basement
+              full of cadavers. The next two years happen somewhere completely different — in a real hospital,
+              with real patients, alongside real doctors who don't necessarily want you there. Welcome to the
+              wards. Welcome to the bottom of a hierarchy older than the country you live in.
+
+  - title: "Part Four: Third Year — Real Patients, Real Hospitals"
+    description: >
+      Third year is when the med student leaves the classroom and enters the hospital. They follow real
+      doctors around, see real patients, and sit at the very bottom of a strict and ancient hierarchy. This
+      is where most students figure out what kind of doctor they want to be — by trying every kind out, on
+      something called "rotations." It is the hardest and most exhausting and most formative year of all four.
+
+    sections:
+      - title: "On The Wards"
+        description: >
+          Life as the lowest-ranked person in the hospital, and the rotations that show you every kind of doctor.
+
+        chapters:
+          - title: "Bottom Of The Totem Pole"
+            word_target: 1200
+            description: >
+              The med student's place in the hospital — the very bottom. Above them: interns (first-year
+              residents), residents, fellows, attending physicians. Each level can boss the one below it.
+              This chapter introduces the hierarchy, the strange traditions, and the famous tradition called
+              "pimping" (which we'll call something more kid-friendly).
+
+            intro: >
+              Open with a school analogy. Imagine going to a new school where the bell schedule is set by
+              sixth graders, who got it from seventh graders, who got it from eighth graders, who got it from
+              the principal — and you, the new third-grader, are not allowed to talk in the hallway unless a
+              sixth-grader asks you a question. Now imagine this is a school where if you say something
+              wrong, somebody could actually die. That is third year of med school. The hierarchy is real,
+              it's old, and it's there for a reason — even though the reason isn't always pretty.
+
+            chapter_sections:
+              - heading: "Who Outranks You (Which Is Everyone)"
+                description: >
+                  The pecking order, from the top down.
+                bullet_points:
+                  - "At the top: the attending. This is the actual doctor in charge of the team — the one who's been a doctor for years and is legally responsible for the patient. Everyone calls them Dr. So-and-So"
+                  - "Below that: the fellow (if there is one) and the senior residents. These are doctors-in-training who already finished med school but aren't done with residency yet. They've been doing this for years"
+                  - "Below that: the intern. A first-year resident. They literally just graduated med school three months ago. They are exhausted all the time"
+                  - "Below that: you, the third-year med student. You have less actual experience than anyone else in the room and you are expected to know that and act like it"
+
+              - heading: "What 'Getting Grilled' Actually Looks Like"
+                description: >
+                  The tradition of senior doctors quizzing junior people on the spot.
+                bullet_points:
+                  - "There's a tradition in medicine where a senior doctor will, in front of the whole team, ask the med student a hard question — sometimes about the patient in front of them, sometimes about a textbook concept"
+                  - "If you get it wrong, the question gets passed to the intern. If the intern gets it wrong, it goes up to the resident. Every wrong answer is in front of everyone else"
+                  - "The official reason is that this is how med students learn — you remember stuff better when you got embarrassed about it once. The unofficial reason is that this is how it has always been done, and some senior doctors enjoy it more than they should"
+                  - "Here's something nobody tells you about getting grilled: it doesn't get easier when you become a resident. It just goes from happening every day to happening once a week. The questions get harder, and now interns are watching"
+
+              - heading: "Scut — The Job Nobody Wants"
+                description: >
+                  The medical term for the boring jobs that get pushed down the pile.
+                bullet_points:
+                  - "'Scut' is what doctors call the annoying, boring, time-consuming tasks that have to happen but don't really teach anybody anything"
+                  - "Examples: calling the records department to get a paper file faxed over. Hand-writing notes that nobody will ever read. Running labs down to a different floor. Filling out a 30-page form because the computer system is broken"
+                  - "Scut all rolls downhill. The attending pushes it to the resident, who pushes it to the intern, who pushes it to the med student. The med student does most of the scut and learns most of the medicine through the cracks"
+                  - "Med students have a saying: 'Scut work is the price of admission.' It's true. The attending who is now bossing you around did the exact same scut when they were a med student, and they remember"
+
+              - heading: "Why The Whole System Still Exists"
+                description: >
+                  The hidden logic that keeps medicine like this.
+                bullet_points:
+                  - "If you're a patient lying in a hospital bed, you don't really want a stranger making decisions about your care. You want a doctor who has been carefully checked, twice, by another doctor"
+                  - "The hierarchy isn't really about who's important. It's about who is allowed to do what without asking permission. Each level has a list of things they can and can't decide on their own, and that list grows as you climb"
+                  - "It's also slow and old-fashioned. Doctors are starting to admit that some of the harshest parts of medical training are not actually making better doctors — they're just making more exhausted ones"
+                  - "Most med students experience at least one truly mean attending in their third year and at least one truly wonderful one. The two experiences shape what kind of doctor the student themselves becomes — they remember which one they want to be"
+
+            conclusion: >
+              Third year doesn't just teach you medicine. It teaches you the hierarchy of medicine, how to
+              survive in it, and what kind of doctor you want to be when other people are at the bottom of
+              the pile someday. It's a hard year. Most students lose ten pounds. Most students cry. Most
+              students also have the first moment, late in the year, where they realize they actually love it.
+
+            transition: >
+              Not all rotations are the same. Some hospitals run on coffee and quiet thinking. Others run on
+              4am alarms, sharp knives, and surgeons. Surgery rotation is its own world inside medicine —
+              different rules, different language, different sleep schedule. That's the next chapter, and
+              it's the one that decides whether you ever want to be a surgeon.
+
+          - title: "Surgery Rotation — The Planet Where The Day Starts at 4 AM"
+            word_target: 1200
+            description: >
+              The surgery rotation. The most physically and culturally distinct part of third year. The 4am
+              rounds, the operating room, the rigid hierarchy, and the type of doctor surgeons tend to be.
+              This is where med students find out whether they love or hate operating, and there is almost
+              no in-between.
+
+            intro: >
+              Open with an alarm clock. Picture a med student. It's 3:45 in the morning. Their alarm is
+              going off. They have to be at the hospital by 4:30. The surgeons have already been there for
+              fifteen minutes. Outside, it's pitch dark — the sun won't be up for another two hours. Inside
+              the hospital, the lights are on full blast and a 50-year-old surgeon is drinking coffee and
+              looking impatient. The med student walks in, half asleep. The surgeon says, "Tell me about
+              your patient." This is every day of surgery rotation. Every. Single. Day. For a month. Or two.
+              The reader is going to find this fascinating or horrifying, and that's how you know if they
+              should be a surgeon.
+
+            chapter_sections:
+              - heading: "Surgery Is Not Like The Rest Of The Hospital"
+                description: >
+                  Why surgery feels like a different country.
+                bullet_points:
+                  - "Surgeons are doctors who fix things by cutting people open and physically rearranging them. That's a real sentence and it should sound a little wild because it is"
+                  - "Most other doctors talk to patients, look at scans, write prescriptions, and adjust treatments over time. Surgeons do all that, plus they actually go into the body and fix the broken thing with their hands"
+                  - "The schedule is different. Surgeries usually start very early because operating rooms are expensive and the day fills up fast. Surgeons start before sunrise basically every day of their working lives"
+                  - "The culture is different too. Surgeons have a reputation for being blunt, direct, and not interested in feelings. Some of that reputation is unfair. Some of it is extremely accurate"
+
+              - heading: "What A Med Student Actually Does There"
+                description: >
+                  The med student's role on a surgery team.
+                bullet_points:
+                  - "Mostly: hold things. Med students stand next to the table in the operating room and hold tools, hold tissue, hold a camera, hold a retractor (a big metal thing that keeps the body open so the surgeon can see)"
+                  - "You don't get to do the actual cutting unless the surgeon really, really likes you, and even then it's a tiny piece of the procedure under heavy supervision"
+                  - "Rounds happen before surgery, after surgery, and sometimes in between. You're supposed to know every detail of every patient on your team — their name, their numbers, what happened to them yesterday, what's happening to them today"
+                  - "And you stand. A lot. Surgeries can last 4, 8, 12 hours. The med student doesn't sit down. They don't really eat. They don't go to the bathroom. They just stand there and hold the retractor while the surgeon works"
+
+              - heading: "The Day You Either Fall In Love Or Run"
+                description: >
+                  Every med student has a moment in surgery rotation.
+                bullet_points:
+                  - "Somewhere in the rotation, every med student watches something that surgery can do that they will never forget. A baby being delivered through a C-section. A blocked artery being unblocked. A tumor being removed in one piece"
+                  - "About half the students who see that have a thought like, 'this is the coolest thing I have ever witnessed and I want to do this with my life.' The other half have a thought like, 'I never want to be in this room again'"
+                  - "Surgery is one of the few specialties where you can pretty much know whether it's for you after a month of trying it. There's no faking your way through six hours of standing in a sterile gown holding a retractor"
+                  - "Surgeons themselves will tell you, kind of proudly, that surgery 'isn't for everyone.' What they mean is: most people who try it find it unbearable. That's why so few people end up doing it"
+
+              - heading: "The Insider Truth About Surgeons"
+                description: >
+                  What the rest of medicine knows about surgeons.
+                bullet_points:
+                  - "Surgeons work the hardest hours in all of medicine. A typical general surgery resident works 80 hours a week for 5 years straight. Some specialties are worse"
+                  - "Surgeons make more money than most other doctors. A heart surgeon, a spine surgeon, or a hand surgeon can make 600,000 to over a million a year. That sounds like a lot, and it is, but they also spent 7+ years training for free or close to it"
+                  - "Surgeons have a higher divorce rate than most other doctors. Their hours are punishing and their personalities can be intense, which is not a recipe for a calm home life"
+                  - "Here's the thing nobody outside medicine knows: most surgeons are, underneath the bluntness, deeply protective of their patients in a quiet, almost grandparent-y way. They yell at residents about a missed lab. They never yell at the patient. They will fight anyone who threatens the patient. It's a strange love language"
+
+            conclusion: >
+              Surgery rotation is a sorting hat. It tells you something true about yourself that no other
+              rotation can. By the end of the month, most students know with weird certainty whether they
+              ever want to spend another day in an operating room — and that piece of self-knowledge is
+              probably worth all the 4am alarms.
+
+            transition: >
+              Surgery is one of the seven big rotations a third-year does, and it's the most famous and the
+              most exhausting. But there are six others, each with its own world, its own culture, and its
+              own kind of doctor. The next chapter is a quick tour of all of them — because by the end of
+              third year, the med student has to pick one to live inside of for the rest of their career.
+
+          - title: "The Tour — Every Other Kind Of Doctor"
+            word_target: 1300
+            description: >
+              The other major rotations of third year — internal medicine, pediatrics, OB/GYN, psychiatry,
+              family medicine — each one a short stay in a totally different version of being a doctor.
+              This chapter is a quick, vivid tour of what each one is actually like.
+
+            intro: >
+              Open with a Hogwarts-house analogy. Imagine if every kid at Hogwarts, before getting sorted,
+              had to spend one full month inside each of the four houses. Living in their dorm. Eating at
+              their table. Sitting through their classes. The whole point of third year of med school is
+              that the student lives, for a month at a time, inside every major branch of medicine. By the
+              end, they've tried on five or six totally different doctor lives, and they have to pick one.
+
+            chapter_sections:
+              - heading: "Internal Medicine — The Detectives"
+                description: >
+                  The biggest rotation of all, and the one that defines the rest of the hospital.
+                bullet_points:
+                  - "Internal medicine doctors take care of grown-ups with complicated problems. They are the detectives of medicine — the people who look at a patient with five things wrong and try to figure out which of them caused the other four"
+                  - "Most patients in a hospital are technically on an 'internal medicine' team. So this rotation is where med students spend the most time, often two months in a row"
+                  - "Internal medicine docs love long conversations about diagnosis. They use phrases like 'the most likely thing is...' and 'but we also need to rule out...' a lot. It's the puzzle-solving specialty"
+                  - "An insider truth: Internal medicine attendings can be kind of obsessed with being smart in front of each other. The rotation is famous for its endless little quiz-offs about rare diseases. Some students love it. Some find it unbearable"
+
+              - heading: "Pediatrics — The Doctors Whose Patients Are Kids"
+                description: >
+                  Medicine for everyone who's not yet 18.
+                bullet_points:
+                  - "Pediatricians take care of kids from newborns to teenagers. Same diseases as grown-ups, mostly — but in smaller bodies, with different normal numbers, and with parents who are often more scared than the kid"
+                  - "Pediatricians are famous for being some of the nicest people in medicine. They have to be — if you're not warm and weird and willing to make a funny face, no five-year-old is going to let you look in their ears"
+                  - "The hardest thing about peds is when something is really wrong with a kid. That part doesn't get easier, ever, and it's the reason a lot of students who like kids decide not to do pediatrics in the end"
+                  - "Insider truth: pediatricians get paid less than most other specialties. Society pays kid doctors less than it pays grown-up doctors. Pediatricians have been pointing this out, politely, for about forty years"
+
+              - heading: "OB/GYN — The Doctors Who Deliver Babies"
+                description: >
+                  The specialty that's part surgery, part clinic, and 100% the most physically dramatic.
+                bullet_points:
+                  - "OB/GYN doctors take care of pregnant people, deliver babies, and also handle the medical care of women's reproductive systems"
+                  - "Delivering babies is one of the few things in medicine where the patient walks in pregnant and walks out with an entirely new human being. That's wild, and even doctors who do it a thousand times never quite get over it"
+                  - "OB/GYN is one of the only specialties where you can get called in at 3am because a baby decided it was time. Most babies do not check a calendar. Most OB/GYN doctors have missed a lot of family dinners"
+                  - "Insider truth: OB/GYN gets sued more than almost any other specialty, because if something goes wrong during a birth, it's heartbreaking and expensive. A lot of OB/GYN doctors stop delivering babies in their 40s because the malpractice insurance gets too expensive"
+
+              - heading: "Psychiatry, Family Medicine, And The Quieter Specialties"
+                description: >
+                  A quick tour of the others.
+                bullet_points:
+                  - "Psychiatry is the study of the brain and the mind — not the wires and structures, but the things the brain does that affect how we think and feel. Psychiatrists treat depression, anxiety, schizophrenia, and a long list of other conditions. They prescribe medicine but also do talk therapy"
+                  - "Family medicine doctors are the most general kind of doctor — they take care of grandmas and babies and everyone in between. If you have a regular family doctor your whole family goes to, that's family medicine"
+                  - "Emergency medicine is its own giant world (it's what The Pitt is about) — ER doctors handle everything that walks through the door from a sneeze to a stab wound, all in the same shift"
+                  - "There are also specialties that don't show up much in third year because students see less of them — radiology (the doctors who read scans), pathology (the doctors who study tissues under a microscope), anesthesiology (the doctors who put you under for surgery). All of these are huge fields and most med students don't really meet them until later"
+
+              - heading: "What All Of This Adds Up To"
+                description: >
+                  The point of the tour.
+                bullet_points:
+                  - "By the end of third year, every med student has lived inside five or six totally different versions of being a doctor. Each one had its own schedule, its own personality, its own kind of patient"
+                  - "Most students go in thinking they want to do one thing and come out wanting to do something completely different. The rotations change people"
+                  - "There's no specialty that doesn't have someone, somewhere, who loves it. Even the ones you think nobody would want to do — pathology, where you mostly look at tissue samples in a quiet room — have devoted, brilliant people who can't imagine doing anything else"
+                  - "Here's the secret nobody tells you about specialties: most med students don't pick the one they're most passionate about. They pick the one whose daily life fits the kind of person they actually are. The match between you and your specialty is mostly about lifestyle, not about which diseases you find coolest"
+
+            conclusion: >
+              Third year is a tour. By the end of it, you've seen most of the major versions of being a
+              doctor, and you've collected enough clues about yourself to start narrowing it down. The
+              question is no longer 'what's interesting?' — it's 'who do I actually want to be at 7am
+              every day for the next 40 years?'
+
+            transition: >
+              Picking a specialty is one of the biggest decisions of a med student's life, and most people
+              think it's a matter of figuring out what you love. It's not. It's a matter of figuring out
+              who you are. The next chapter is about the very strange and unromantic and surprisingly
+              practical way that med students actually choose.
+
+          - title: "Picking Your Tribe"
+            word_target: 1200
+            description: >
+              How med students actually choose their specialty. The lifestyle question, the competition
+              question, the personality question, and the strange fact that most students don't pick what
+              they're passionate about — they pick what they can stand doing forever.
+
+            intro: >
+              Open by setting up a choice the reader knows from their own life. If you had to pick one
+              video game to play every day for the rest of your life — every single day, for hours — you
+              wouldn't pick the one that's the most exciting once. You'd pick the one that doesn't get
+              boring on day 1,000. That's how doctors actually pick their specialty. Not 'what's the
+              coolest medicine?' but 'what version of medicine doesn't make me miserable?' This is what
+              your fourth-year self is trying to figure out at the end of third year, and it's one of the
+              least romantic and most important choices you ever make.
+
+            chapter_sections:
+              - heading: "The Lifestyle Question"
+                description: >
+                  The biggest single factor in picking a specialty.
+                bullet_points:
+                  - "Some specialties have famously brutal hours and call schedules. Surgery, OB/GYN, internal medicine. You're going to be in the hospital a lot, and you're going to miss a lot of things"
+                  - "Other specialties have what doctors call 'lifestyle' — meaning regular hours, weekends off, no overnight call. Dermatology, radiology, ophthalmology, anesthesiology. These specialties are super competitive to get into partly because so many people want the lifestyle"
+                  - "Money plays in here too. Some lifestyle specialties pay great (dermatology, radiology). Some specialties with bad lifestyles also pay great (most surgeries). Some specialties have bad lifestyles AND lower pay (pediatrics, family medicine)"
+                  - "Here's something nobody tells you in third year: by the time you're 35, the lifestyle of your specialty is going to matter to you more than the medicine of your specialty. That's true even though it sounds shallow when you're 22"
+
+              - heading: "The Competition Question"
+                description: >
+                  What you can actually get into.
+                bullet_points:
+                  - "Some specialties are insanely competitive. Dermatology, plastic surgery, orthopedic surgery, neurosurgery. To get into one of these, you basically have to be at the top of your class with research papers and high test scores and great letters from famous doctors"
+                  - "Other specialties almost always have open spots. Family medicine had 899 unfilled positions in the 2026 match. That means hundreds of family medicine programs in this country needed people and couldn't find them"
+                  - "This means your specialty is partly chosen for you by your grades, your scores, and what you've done — not just what you want"
+                  - "Here's an unfair truth: a brilliant student who didn't get top scores in second year might not be able to be a dermatologist no matter how much they want it. Meanwhile, family medicine — which is arguably the most important kind of medicine — is often picked by students because they couldn't get into other things. That's broken, and people in medicine know it's broken, and it isn't getting fixed fast"
+
+              - heading: "The Personality Match"
+                description: >
+                  Specialties have personalities, and so do you.
+                bullet_points:
+                  - "Surgeons tend to be decisive. They cut things and move on. If you're someone who agonizes over every choice, surgery will make you miserable"
+                  - "Internal medicine doctors tend to be detail-obsessed. They love puzzles. If you're someone who wants to fix things quickly and move on, internal medicine will make you crazy"
+                  - "Pediatricians tend to be warm and patient. ER doctors tend to be calm in chaos. Psychiatrists tend to be very good listeners. Pathologists tend to like quiet"
+                  - "The unspoken truth: doctors gravitate to the specialty whose personality matches theirs. By the end of third year, students have a pretty good guess about which type of doctor they would feel most normal around — and that's a big clue"
+
+              - heading: "What You're Really Picking"
+                description: >
+                  The deeper meaning of the choice.
+                bullet_points:
+                  - "You're picking what you'll see most often. A dermatologist sees mostly rashes and moles. A heart surgeon sees mostly hearts. An ER doctor sees a chaotic mix of everything. Whatever you pick, that's the world you'll spend your career inside of"
+                  - "You're picking who your patients will be. A pediatrician's patients are mostly kids and their parents. A geriatrician's patients are mostly older adults. A psychiatrist's patients are people in the middle of their hardest internal struggles"
+                  - "You're picking who you'll work next to. Surgeons work with other surgeons. Internists work with other internists. The personality of your specialty is going to be the personality of most of your coworkers for forty years"
+                  - "Most importantly: you're picking who you're going to be. The job slowly shapes the person. The doctor you become by 45 is not just doing medicine — they ARE the medicine they chose. That's why picking right matters so much, and why so many doctors who pick wrong end up burned out by 50"
+
+            conclusion: >
+              Picking a specialty is one of the biggest moves in a doctor's life, and most people get it
+              right by accident. They tried something in third year, they liked it more than they expected,
+              and they followed the trail. The students who get it wrong usually had a story about
+              themselves that didn't match reality. The students who get it right paid attention to what
+              they actually felt during the rotations — not what they thought they should feel.
+
+            transition: >
+              Once you've picked your specialty, fourth year becomes a totally different kind of year.
+              It's not about learning anymore — it's about getting in. Fourth year is one giant audition
+              for the residency program that will train you in the specialty you chose. And it builds
+              toward one of the strangest days in any profession: a day when 38,000 newly-minted doctors
+              all open an envelope at the same minute and find out where they're going to live for the
+              next 3 to 7 years. That's what Part Five is about.
+
+  - title: "Part Five: Fourth Year — The Match"
+    description: >
+      Fourth year is the strangest year of med school. The classes are over. The big tests are over. What's
+      left is one giant application process for residency — the next phase of training. It ends with one of
+      the wildest events in any profession: Match Day, where tens of thousands of new doctors open envelopes
+      at the same moment to find out where they're going to live and work for the next 3–7 years.
+
+    sections:
+      - title: "The Audition"
+        description: >
+          How fourth year is structured, what 'sub-internships' are, and the brutal residency application process.
+
+        chapters:
+          - title: "Tryout Season"
+            word_target: 1200
+            description: >
+              The sub-internships and 'audition rotations' of fourth year. Med students fly to hospitals
+              they want to train at and try to impress the people who will decide whether to take them.
+              It's basically a job tryout in clinical clothing.
+
+            intro: >
+              Open with a sports tryout analogy, but specifically. Imagine if to get on a high school
+              basketball team, you didn't just try out at your own school — you flew to seven different
+              high schools across the country, spent a month at each one, played in their gym, ate in their
+              cafeteria, and tried to impress their coaches. At the end, all seven schools sent their
+              evaluation to a central computer, which spit out where you'd go. That's the fourth year of
+              med school. It's the longest tryout in any career.
+
+            chapter_sections:
+              - heading: "What A Sub-Internship Actually Is"
+                description: >
+                  The basic mechanics.
+                bullet_points:
+                  - "A 'sub-internship' (sub-I for short) is a month-long rotation at a hospital where you act almost like a first-year resident — you take on real patients, write real notes, and present them in rounds"
+                  - "You usually do at least one sub-I at your own med school, and then one or two 'away rotations' at hospitals in different cities where you'd like to do your residency"
+                  - "An away rotation is technically a chance to learn, but everybody knows it's a tryout. The doctors at that hospital are deciding whether they want to spend the next four years training you"
+                  - "The month is intense. You wear scrubs every day, you stay late, you read about your patients at night, you try not to mess up in front of the people who will write you letters of recommendation"
+
+              - heading: "Living Out Of A Suitcase For A Year"
+                description: >
+                  The weird reality of fourth-year life.
+                bullet_points:
+                  - "Most fourth-years do their rotations in 2 or 3 different cities, which means a lot of short-term apartments and Airbnbs"
+                  - "Some students rent a place for a month. Some sleep on the couch of a friend they barely know. Some sleep in their car. Med students mostly don't have a lot of extra money, so they get creative"
+                  - "If you have a family or a partner or a pet, fourth year is hard on them too. You're gone for a month at a time, working long days, with no real plan for where you'll end up"
+                  - "Insider truth: away rotations are also a chance for the med student to figure out if THEY actually want to live and work at that hospital. A lot of students rule out programs because the team felt mean, the city felt sad, or the food in the hospital cafeteria was bad enough to be a daily issue. Yes, doctors actually make decisions this way. Yes, it's real"
+
+              - heading: "How To Stand Out As An Audition Student"
+                description: >
+                  The unwritten rules.
+                bullet_points:
+                  - "Show up early. Always. The med student who's at the hospital before the residents gets noticed in a way that the one who shows up on time does not"
+                  - "Know your patients better than anyone. Memorize the details. When the attending asks a question about your patient, you should be able to answer without looking at notes"
+                  - "Don't try to be the smartest person in the room. Everyone hates that. Be the most reliable person in the room — the one who follows through, takes notes, and never has to be asked twice"
+                  - "Be kind to the nurses. This is the one tip every senior doctor tells every fourth-year. Nurses know everything. Nurses talk to each other. Nurses can absolutely sink your application by mentioning that the audition student was rude. They almost never have to do it more than once for it to ruin the rotation"
+
+              - heading: "The Letters You're Trying To Get"
+                description: >
+                  The hidden goal of the whole tryout.
+                bullet_points:
+                  - "At the end of a sub-I, the senior doctor at the hospital writes you a letter of recommendation. Three or four of these letters will go on your residency application"
+                  - "A weak letter is almost worse than no letter. A program director can read between the lines — 'this student performed adequately' is a polite way of saying you didn't impress anyone"
+                  - "The gold-standard letter says things like 'this student already functions at the level of an intern' and 'we would be lucky to have her in our program.' Those letters get you interviews"
+                  - "Here's the thing nobody tells you about letters: the prestige of the doctor who writes the letter matters almost as much as what it says. A great letter from a famous surgeon at a top hospital is worth more than a great letter from a random kind doctor at a small one. That's not fair. It's just the system"
+
+            conclusion: >
+              Fourth year tryouts are exhausting and strange and expensive. The good news is that by the
+              end of them, you've actually shown up at the places where you might end up training, met the
+              people there, and learned more about what kind of doctor you want to be. The bad news is
+              that now you have to spend another six months applying to all of them anyway.
+
+            transition: >
+              Auditions are how you get your foot in the door. Applications are how you actually get
+              through it. The residency application process is the most expensive, most paperwork-heavy,
+              most flight-filled three months of the whole twelve-year journey. Next chapter, we walk
+              through what it actually takes to apply for a residency in modern American medicine.
+
+          - title: "The Application Marathon"
+            word_target: 1200
+            description: >
+              ERAS, the residency application service. The personal statements, the interviews, the
+              ranking. How a med student spends most of fourth-year fall and winter applying to dozens
+              of programs at once.
+
+            intro: >
+              Open with a math problem. Imagine you wanted to get into one specific college. You'd
+              probably apply to maybe ten or twenty schools to have backups. Now imagine medical residency:
+              the average applicant for a competitive specialty applies to between 40 and 100 programs.
+              Each program means a separate set of essays, a separate interview, and a separate trip.
+              By the time the dust settles, the average med student has spent about $7,000 and flown
+              over 10,000 miles just trying to get a job they don't even start for another six months.
+              Welcome to ERAS.
+
+            chapter_sections:
+              - heading: "ERAS — The One System"
+                description: >
+                  The single website that runs the whole thing.
+                bullet_points:
+                  - "ERAS stands for the Electronic Residency Application Service. It's a website run by the same people who run the MCAT and Step 1, and every residency in the country uses it"
+                  - "You build one main application on ERAS — your grades, your test scores, your activities, your essays, your letters — and then you click which programs you want to send it to"
+                  - "Every program you click costs money. The first ten programs are pretty cheap; after that, each additional one is around $35. By the time you've applied to 60 programs (which is normal for competitive specialties), you've spent over $2,000 just on the application fees"
+                  - "Here's the catch: most programs don't really tell you why they did or didn't invite you to interview. You just refresh your email every morning for two months hoping for invitations"
+
+              - heading: "The Personal Statement"
+                description: >
+                  The most-rewritten essay in any med student's life.
+                bullet_points:
+                  - "The personal statement is the one essay every applicant writes, telling the residency program who they are, why they want this specialty, and why they'd be a good fit"
+                  - "It's about a page long. It takes most students six months to write, and they rewrite it about fifty times"
+                  - "The advice every med student gets is 'tell a story about a specific patient.' That's because every personal statement that starts with 'I have always wanted to be a doctor' goes straight to the bottom of the pile"
+                  - "Insider truth: a lot of personal statements get a quick scan, not a careful read. Program directors are reading hundreds of these in a few weeks. You're not trying to be the most beautiful writer — you're trying to not give anyone a reason to put you in the 'no' pile"
+
+              - heading: "Interview Season"
+                description: >
+                  October through February, the strange months when med students live on planes.
+                bullet_points:
+                  - "After your application is in, programs invite a slice of applicants for interviews. A competitive applicant might get 15 to 20 interview invitations. They have to choose which to accept, because you can't physically be in two places at once"
+                  - "Until 2020, every interview was in person — fly out, stay in a hotel, dinner with the residents the night before, full day of interviews. Since COVID, almost all of them are over Zoom. That's saved students a lot of money but also made it weirdly harder to get a feel for a place"
+                  - "An interview day is usually all day. You meet residents, attendings, the program director. They ask you why you picked this specialty. They ask you what your weaknesses are. They ask if you have any questions, which you absolutely must"
+                  - "Insider truth: the interview is partly about whether you can do the job, and mostly about whether the program would enjoy spending the next four years with you. Nobody wants to spend that long with someone who's annoying. A surprising number of decisions come down to 'do we like this person?'"
+
+              - heading: "The Rank List"
+                description: >
+                  After the interviews, the strangest part of the whole process.
+                bullet_points:
+                  - "After all your interviews are done, you create a ranked list of every program you'd be willing to go to, in order — your favorite at the top, your least favorite at the bottom"
+                  - "At the same time, every program creates a list of every applicant they interviewed, in order of who they want most"
+                  - "Then a computer takes everyone's lists and matches them up using a famous algorithm (the kind of math problem that won a Nobel Prize in 2012). You get matched to the highest program on your list that also wanted you enough"
+                  - "Here's the part that's hard to wrap your head around: once you submit your list, that's it. You don't negotiate. You don't choose. The computer decides. You find out on Match Day, along with everyone else. It's the most life-changing decision of your career, and you essentially hand it over to a math equation"
+
+            conclusion: >
+              The residency application marathon is the most expensive, most paperwork-heavy, most
+              uncertain part of becoming a doctor. By the time you're done, you've spent thousands of
+              dollars, written dozens of essays, flown to interviews you barely remember, and ranked
+              programs in an order that determines where your whole life is about to happen — without
+              actually picking any of them yourself. And then you wait.
+
+            transition: >
+              You wait until the third Friday in March, when something happens that doesn't really happen
+              in any other profession on Earth. Thousands of newly-minted doctors, in giant auditoriums
+              all over America, open the same envelope at the same minute and find out what city, what
+              hospital, and what version of their life starts next. That's Match Day, and it's the next chapter.
+
+          - title: "Match Day — The Envelope That Decides Everything"
+            word_target: 1200
+            description: >
+              Match Day. The third Friday in March, noon Eastern time, all over America, all at once.
+              Tens of thousands of new doctors finding out where they're going. This chapter walks
+              through the ceremony, the moment, the math behind it, and what happens to the people
+              who don't match.
+
+            intro: >
+              Open with the ceremony as a scene. Picture a giant auditorium, anywhere in America. Three
+              hundred fourth-year med students dressed up, with their families up in the seats. Each
+              student is holding a sealed envelope. The clock at the front of the room reads 11:59 ET.
+              The room goes quiet. The clock hits noon. Three hundred envelopes get opened simultaneously,
+              with three hundred letters inside, each one with one name, one specialty, one city, one
+              hospital. Some of them are getting their first choice. Some are getting their tenth. Some
+              are getting somewhere they never visited. All of them have to live with the answer for the
+              next 3 to 7 years. It's one of the most emotional minutes of any career, anywhere.
+
+            chapter_sections:
+              - heading: "How The Match Actually Works"
+                description: >
+                  The math behind the moment.
+                bullet_points:
+                  - "The whole system is called the National Resident Matching Program (NRMP). It's been running for over 70 years"
+                  - "Every applicant submits their ranked list of programs. Every program submits its ranked list of applicants. The Match algorithm pairs everyone up to give the best result for the applicants"
+                  - "If you get matched, it's binding. You can't say 'no thanks.' You're going there. The hospital can't say 'changed our mind' either. The match is a contract"
+                  - "The 2026 Match was the biggest in history: over 53,000 people applied for about 44,000 residency spots across over 6,800 programs. About 79.8% of applicants matched. That's a number worth pausing on — about 1 in 5 applicants who put in a full effort did not match into a residency program that year"
+
+              - heading: "The Ceremony"
+                description: >
+                  What it actually feels like, in the room.
+                bullet_points:
+                  - "Every med school does Match Day a little differently. Some hand out envelopes one at a time, with names called over a microphone, and the student walks up and opens their envelope in front of everyone"
+                  - "Some have everyone open them at exactly the same second. Some make it a party with food and music"
+                  - "Family members fly in. People cry. People hug their classmates. People take pictures with the letter. Some people scream. Some people sit very quietly and don't react at all"
+                  - "Here's the strange part: even if you got your top choice, you're still saying goodbye to most of your classmates. The match scatters everybody. The 300 students you've been with for four years are about to be in 300 different cities. That part is rarely talked about, but it hits hard"
+
+              - heading: "Not Matching"
+                description: >
+                  What happens when the envelope doesn't have what you wanted.
+                bullet_points:
+                  - "In 2026, about 11,000 applicants didn't match — that includes a lot of international medical graduates, but also several thousand U.S. med students"
+                  - "If you don't match, you get put into a thing called SOAP (Supplemental Offer and Acceptance Program), which is basically a frantic week where unmatched applicants apply for unfilled positions"
+                  - "Some unmatched students get a SOAP spot. Some don't. The ones who don't have to wait a year and apply again, which is heartbreaking and expensive and humbling"
+                  - "Insider truth nobody puts in the brochures: not matching is not a moral failing. The system has more applicants than spots, especially in competitive specialties. There are smart, hard-working future doctors who don't match the first time, and a lot of them go on to be excellent doctors. But on Match Day, it doesn't feel like that. It feels like the worst thing that's ever happened"
+
+              - heading: "The Moment After You Open The Envelope"
+                description: >
+                  What's actually happening inside the person holding the paper.
+                bullet_points:
+                  - "Within five minutes of opening the envelope, every matched student knows: which city they're moving to, which hospital they're working at, and what their specialty is for the rest of their career"
+                  - "If you got your first choice, the rest of the day feels like floating. You go to dinner with your family, you call everyone you know, you sleep about three hours"
+                  - "If you got your tenth choice in a city you've never been to, you have to spend the next few hours pretending to be okay in front of everyone — and then go figure out how to feel okay about it for real"
+                  - "Here's the thing every senior doctor will tell you, even though it doesn't help on the day: where you matched matters way less than how you train once you get there. Almost every doctor I know is glad about where they ended up, even the ones who were disappointed at the time. The story usually works out. It just doesn't feel like it at 12:01 on the third Friday in March"
+
+            conclusion: >
+              Match Day is one of the strangest and most beautiful and most cruel days in any profession.
+              Thousands of people, in the same minute, finding out the same kind of news with completely
+              different outcomes. It's the last day of med school in any meaningful sense. The next
+              version of being a doctor starts a few weeks later, in a different city, and it makes
+              everything that came before look like the warm-up.
+
+            transition: >
+              On July 1st of every year, thousands of brand-new doctors start their residency at the
+              same time. It is, by reputation, the most dangerous day to be in an American hospital.
+              That's the next chapter, and it's where the actual job — the one you've been training for
+              for eight years — finally starts.
+
+  - title: "Part Six: Residency — Where The Real Job Begins"
+    description: >
+      Residency is the third and final phase of medical training, and the one where the new doctor
+      actually does the job for the first time. It's 3 to 7 years long, depending on the specialty. The
+      hours are brutal, the responsibility is enormous, and the learning curve is steeper than anything
+      that came before. This is also where most doctors stop being students and become themselves.
+
+    sections:
+      - title: "Intern Year — The Hardest Year Of Your Life"
+        description: >
+          The first year of residency, called intern year, is famous for being the hardest year of any
+          doctor's life. Here's why.
+
+        chapters:
+          - title: "July 1st — The Most Dangerous Day In American Hospitals"
+            word_target: 1200
+            description: >
+              Why every July 1st, when 38,000 new doctors start their residencies at the same time, the
+              statistics for medical mistakes go up. The famous "July effect." What that first day is
+              actually like for a brand new doctor. And how the system is designed to keep patients safe
+              from people who just started.
+
+            intro: >
+              Open with a specific fact that the reader will not believe. Studies have shown that more
+              medical mistakes happen in American teaching hospitals during the first week of July than
+              during any other week of the year. The hospitals haven't changed. The patients haven't
+              changed. The only thing that's different is that thousands of brand-new doctors started
+              their first day on July 1st. They call this the 'July effect,' and it's real, and it's a
+              little terrifying, and the entire system is built around making sure no one actually gets
+              hurt by it. That's the chapter.
+
+            chapter_sections:
+              - heading: "What Actually Happens On July 1st"
+                description: >
+                  The first day, hour by hour.
+                bullet_points:
+                  - "On July 1st, every new intern in America puts on a fresh pair of scrubs and a longer white coat (the upgrade from the short one they got four years ago at the ceremony)"
+                  - "They show up at their hospital, get a badge, get assigned to a team, and within hours, they have actual patients. Real ones. With real problems"
+                  - "Their first day, they will be asked to write orders — instructions for the nurses to give medicines or perform procedures. The first order most interns write, they spend about 45 minutes triple-checking, even though it usually says something simple like 'Tylenol every six hours as needed'"
+                  - "They will be paged. A lot. The pager goes off when a nurse has a question, when a patient's vital signs change, when a lab result comes back that looks weird. Most interns in their first week feel like they're getting paged every four minutes, and that feeling is mostly accurate"
+
+              - heading: "Why The July Effect Is Real (And Smaller Than People Think)"
+                description: >
+                  The actual data on the mistake rate.
+                bullet_points:
+                  - "Several big studies have found that error rates in teaching hospitals tick up by maybe 4-8% in July compared to other months. Patient deaths also tick up a small amount"
+                  - "It's not because the new interns are doing the most dangerous things — they're not. They're closely watched. The mistakes are usually small things that pile up: lab orders that take too long, doses calculated slightly wrong, miscommunications"
+                  - "The hospitals know about this. There's a small army of senior residents and attendings who basically don't sleep during the first week of July, because they're double-checking everything the new interns do"
+                  - "Insider truth: most experienced doctors will tell you, kind of quietly, that you should try not to get admitted to a teaching hospital in the first week of July if you can help it. They don't say this loudly because it's not really fair to the interns, who are doing their best. But it's the kind of thing they tell their own family members"
+
+              - heading: "What The Intern Is Actually Thinking"
+                description: >
+                  The internal experience of being the new doctor.
+                bullet_points:
+                  - "Most interns describe the first month of intern year as the worst time of their life. The exhaustion is real, but so is the constant, low-level terror of making a real mistake"
+                  - "The most common feeling: 'I'm going to be the one who finally gets caught not knowing what I'm doing.' This feeling, by the way, gets diagnosed in medicine as 'impostor syndrome.' It is universal among new doctors. Even the ones who go on to be famous have it"
+                  - "Most interns cry at least once in the first month. A lot of them cry in a hospital bathroom, because there's nowhere else private to do it"
+                  - "Then, around the end of August, something shifts. The intern handles a small crisis without panicking. They notice that they remembered, on their own, what dose of a drug to give. They start to feel, for the first time, like maybe they ARE actually a doctor"
+
+              - heading: "Why The System Survives July Anyway"
+                description: >
+                  The safety nets that catch the new interns when they slip.
+                bullet_points:
+                  - "The new intern is never alone. There's always a senior resident on the team — someone who's been doing this for one, two, or three more years — and there's always an attending above them"
+                  - "Every important decision goes through layers of checks. The intern writes the orders, but the senior reviews them. The senior makes the calls, but the attending signs off. The pharmacy double-checks every drug. The nurses catch a huge number of mistakes before they ever happen"
+                  - "Nurses, in particular, are the secret keepers of the hospital. A new intern who's about to write a wrong order will often get a phone call from a nurse who says, gently, 'Hi, doctor, are you sure you meant 40 milligrams? Because usually we use 4.' The intern says, 'Oh my god, I meant 4, thank you.' The patient never knows. The intern learns. This happens thousands of times a day in every hospital in America"
+                  - "Here's the thing nobody tells you about July: the system is dangerous for exactly four to eight weeks, and then it gets safer than ever, because the new interns are now real doctors who are tested and tired and good. Most of the year, you actually want to be at a teaching hospital"
+
+            conclusion: >
+              July 1st is the most dangerous day of the year and the most important one — because that's
+              the day the next generation of doctors starts learning what it actually means to be one. The
+              system has flaws. The hospitals know about them. The senior people work overtime to catch
+              the new people's mistakes. And by September, the new interns are different people than
+              they were in June.
+
+            transition: >
+              Surviving July is one thing. Surviving the rest of intern year is something else. Intern
+              year is famous for one specific number: 80 hours. The maximum number of hours a resident
+              can legally work in a week. That number sounds insane, and it should — and the only reason
+              we even have it is because the version before it was worse. That's the next chapter.
+
+          - title: "The Hours"
+            word_target: 1200
+            description: >
+              The famous '80-hour work week' for residents. The story of how a young patient named Libby
+              Zion died in 1984 and indirectly changed the entire system. What 80 hours a week actually
+              feels like. And why most residents will tell you it's still not enough rest.
+
+            intro: >
+              Open with an image of two clocks. One clock shows a regular grown-up work week — 40 hours,
+              Monday through Friday, 9 to 5. The other clock shows a resident's week — 80 hours,
+              including overnight shifts, including weekends, in stretches of 24 or 28 hours at a time.
+              Now point out: 80 hours is the LEGAL MAXIMUM. It used to be more. There used to be no
+              limit at all. The story of how the number came to exist involves a sad death, a furious
+              dad, and a 30-year fight that doctors are still arguing about.
+
+            chapter_sections:
+              - heading: "Before The Rules — A Brief Horror Story"
+                description: >
+                  How bad it used to be.
+                bullet_points:
+                  - "For most of the 20th century, there were no limits on resident hours. Interns and residents commonly worked 100, 110, sometimes 120 hours a week"
+                  - "Shifts of 36 or even 48 hours straight were normal. Sleep happened in 'call rooms' — tiny rooms with bunk beds in the hospital — when residents could get to them, which often wasn't much"
+                  - "The justification was tradition. The senior doctors had done it. Their senior doctors had done it. Everyone agreed it was awful and nobody changed it for about a century"
+                  - "The whole thing was held together by the belief that you couldn't really train a doctor any other way. That belief turned out to be wrong"
+
+              - heading: "The Libby Zion Case"
+                description: >
+                  The story that changed everything.
+                bullet_points:
+                  - "In 1984, an 18-year-old college student named Libby Zion died in a New York hospital. She'd come in with a fever and was given medications by exhausted residents who had been on duty for many hours"
+                  - "Her father, who happened to be a journalist and a lawyer, refused to accept that her death was just bad luck. He spent years arguing that the residents had made a mistake because they were too tired to think clearly"
+                  - "He was right. The case led to a New York state law limiting resident hours, and eventually, in 2003, the national regulation that set the 80-hour limit for all U.S. residents"
+                  - "Insider truth: a lot of senior doctors were furious about the new rules. They argued residents would be less prepared without all the practice. Some of them still argue this today. The debate inside medicine about whether the 80-hour rule was a good idea is older than most current residents"
+
+              - heading: "What 80 Hours Actually Feels Like"
+                description: >
+                  The day-to-day reality.
+                bullet_points:
+                  - "80 hours a week is about 11 to 12 hours a day, six days a week. That's a long day, every day, with one day off"
+                  - "It's also: overnight shifts. Most residents work overnight in the hospital sometimes — anywhere from once a week to once a month, depending on the program"
+                  - "A 24-hour shift is what it sounds like: you start at 7am, you work all day, you work all night, you finish at 7am the next morning. By the end you can barely speak in sentences"
+                  - "Insider truth: technically the rules cap shifts at 24 hours (with a few exceptions). Unofficially, lots of programs find creative ways to bend this. Residents sometimes get told to 'finish charting' off the clock. About a third of residents report regularly working more than the rules say they should, and nobody really gets in trouble for it"
+
+              - heading: "Why It's Still Like This"
+                description: >
+                  The reasons the hours haven't gotten any shorter.
+                bullet_points:
+                  - "Residency is supposed to teach you what to do in every situation a doctor faces. Some of those situations only happen rarely. You see more of them if you're in the hospital more"
+                  - "Hospitals also depend on residents. The hospital workforce is genuinely propped up by people working those hours for relatively low pay (around $68,000 a year, which sounds okay until you realize they're working 80-hour weeks and carrying $223,000 in average debt)"
+                  - "Most residents make peace with the hours by the second or third year. Their bodies adapt. Their brains adapt. They learn to take 10-minute power naps and eat protein bars between patients"
+                  - "Here's the thing nobody tells you about the hours: most residents will say, after they're done, that it was the hardest and one of the most formative experiences of their life. They wouldn't necessarily do it again. But they're glad they did it once"
+
+            conclusion: >
+              The 80-hour week is the law of medical training in America, and it's both better than it
+              used to be and still wildly more than any other profession asks of its trainees. It exists
+              because a young patient died, and her father refused to let her death be ignored. It is
+              probably still too many hours, and almost certainly fewer than it'll be in twenty years.
+              The argument keeps going.
+
+            transition: >
+              You survive intern year. You survive the hours. And then something strange happens — on
+              July 1st of your second year, you become the senior resident. Now you're the one
+              supervising the new interns. You're the one taking the late-night phone calls. The whole
+              shape of your job changes overnight. That's the next chapter, and it's where you stop
+              being a student and start being something else.
+
+          - title: "Becoming The Senior"
+            word_target: 1200
+            description: >
+              The transition from intern (PGY-1) to senior resident (PGY-2 and up). The leap from doing
+              the work to running the work. How a doctor's identity changes when they go from the bottom
+              of the team to somewhere in the middle.
+
+            intro: >
+              Open with an analogy from kid life. Imagine if at school, the day after you finish 5th
+              grade, you suddenly become a 6th-grade teacher's assistant. You're not in 5th grade
+              anymore. You're not yet a teacher. You're in a weird middle place where the 5th graders
+              now think you're a teacher, and the actual teacher thinks you're still kind of a kid. That's
+              what becoming a senior resident feels like — except instead of a classroom, it's a hospital
+              ward, and instead of homework, it's keeping eight patients alive.
+
+            chapter_sections:
+              - heading: "What Changes Overnight"
+                description: >
+                  The actual differences in the job from intern year to senior year.
+                bullet_points:
+                  - "You stop writing as many orders. You start supervising the orders the interns write. You're still doing patient care, but most of it goes through someone else first"
+                  - "You start running the team rounds. The attending still has the final say, but the senior is the one organizing the team, presenting the plan, and making sure the interns know what to do next"
+                  - "You start getting paged by the interns. The intern calls you in the middle of the night with a question, and you have to decide whether the patient needs you to come look or whether the intern can handle it themselves"
+                  - "You become responsible for teaching. There's an old saying in medicine: 'See one, do one, teach one.' By second year, you're at the 'teach one' part, whether you feel ready or not"
+
+              - heading: "The Mental Shift"
+                description: >
+                  How the brain has to rewire for the new job.
+                bullet_points:
+                  - "Intern year is about getting through the day without missing anything. Senior year is about thinking three steps ahead so the interns don't miss anything"
+                  - "You stop thinking about one patient at a time. You start thinking about the whole team — all the patients, all the interns, all the moving parts — at once"
+                  - "You start having opinions. As an intern, you mostly do what the senior tells you. As a senior, you have to actually decide. That's a different muscle, and it takes a while to build"
+                  - "Insider truth: most new seniors are scared they'll mess up a decision and get an intern in trouble. By the end of second year, they've mostly stopped being scared of that and started worrying about the next thing — which is having an opinion the attending disagrees with"
+
+              - heading: "Different Specialties, Different Senior Lives"
+                description: >
+                  How the senior year experience varies by specialty.
+                bullet_points:
+                  - "In family medicine and internal medicine, you're a senior pretty fast — sometimes by year two. The training is shorter (3 years total), so you climb faster"
+                  - "In surgery, you're not a senior the same way — surgery has its own hierarchy with more layers (chief residents, fellows). You climb slowly, and you're still operating under someone else's eye for a long time"
+                  - "In specialties like neurosurgery and cardiothoracic surgery, you don't really become a true senior until year 4 or 5, because the training is just longer and the stakes are higher every step"
+                  - "Insider truth: residents in shorter programs sometimes feel jealous of residents in longer ones (they get more training, more procedures, more experience). Residents in longer programs sometimes feel jealous of the shorter ones (they're free sooner, making money sooner). Both sides think the other has it easier. Both sides are wrong"
+
+              - heading: "When You Realize You've Actually Become A Doctor"
+                description: >
+                  The moment, somewhere in second or third year of residency, when it clicks.
+                bullet_points:
+                  - "Every resident has a moment, usually unplanned, when something happens fast — a patient crashes, a code is called, a kid stops breathing in the ER — and they realize that they handled it without panicking"
+                  - "They notice, in the middle of the chaos, that their hands knew what to do. Their voice was calm. They were the person other people in the room were looking at for the next instruction. They were the doctor"
+                  - "Most residents can name the specific moment this happened to them. A specific patient, a specific shift, the first time the brain caught up with the title"
+                  - "Here's the thing every senior resident will tell you about that moment: it's the first time in your training that you really feel like the eight years of work were worth it. You don't feel like a student pretending. You feel like the thing the white coat ceremony said you were"
+
+            conclusion: >
+              The shift from intern to senior is one of the most important transitions in a doctor's
+              life. It's when you go from being the student of medicine to being a teacher of medicine,
+              and from being the person who follows orders to being the person who makes them. It's also
+              the year that decides who you are as a doctor — because every habit you build as a senior
+              becomes the way you'll practice for the rest of your career.
+
+            transition: >
+              Residency ends with a final round of tests — board certification — and then a choice. Some
+              new doctors go straight into practice as 'attendings.' Others choose to spend another 1 to
+              4 years doing a 'fellowship' to become a sub-specialist. The next chapter is about that
+              final choice, and what life on the other side of all this training actually looks like.
+
+          - title: "Boards, Fellowship, And What Comes After"
+            word_target: 1200
+            description: >
+              The end of residency. Board exams. Fellowship (extra training in a sub-specialty). What
+              happens when a doctor finally finishes training and becomes an 'attending.' The first
+              real paycheck. The strange feeling of being done.
+
+            intro: >
+              Open with a math problem the reader can do in their head. If you started college at 18,
+              you finished at 22. Med school takes you to 26. Residency takes you to somewhere between
+              29 and 33. If you do a fellowship, you might not really be 'done' until you're 35 or even
+              older. That's longer than it takes to grow some entire trees from seed. Now imagine
+              showing up to your first day of work, at 32, having never been paid a real grown-up salary
+              before, with $250,000 in debt and an expert-level knowledge of how to keep people alive.
+              That's the strange day a new attending walks into.
+
+            chapter_sections:
+              - heading: "Board Certification — The Last Big Test"
+                description: >
+                  The final exam at the end of training.
+                bullet_points:
+                  - "Every specialty has its own 'board exam' — a long, hard, comprehensive test you take at the end of residency. Pass it, and you become a 'board-certified' doctor in your specialty"
+                  - "If you don't pass, you don't lose your license — but most hospitals won't hire you, and most insurance companies won't let patients see you unless you're board-certified. So practically, the exam matters a lot"
+                  - "Pass rates are usually high — 80-95% on the first try, depending on the specialty — but not passing is humiliating, expensive (the test costs thousands of dollars), and means studying for another year while you try again"
+                  - "Most specialties also require you to re-certify every 10 years. That means more tests for the rest of your career. Doctors keep complaining about this. The boards keep ignoring them"
+
+              - heading: "Fellowship — Going Even Deeper"
+                description: >
+                  The optional next step that adds 1 to 4 more years.
+                bullet_points:
+                  - "A 'fellowship' is extra training in a sub-specialty. A general surgeon can do a fellowship in trauma surgery, hand surgery, or pediatric surgery. An internal medicine doctor can do fellowships in cardiology, oncology, infectious disease, and a bunch of others"
+                  - "Fellowships are usually 1 to 4 years long, depending on the specialty. They have their own application process, their own match, and their own grueling hours"
+                  - "Fellowship-trained doctors can charge more, get hired by bigger hospitals, and usually have more specialized expertise. They also delay their first real paycheck by years"
+                  - "Insider truth: a lot of doctors do fellowships because they genuinely love a sub-specialty. A lot of others do it because they're scared to leave training. Going from being a resident to being a real doctor is terrifying, and another two years of fellowship sometimes feels safer than going out on your own"
+
+              - heading: "The First Real Job"
+                description: >
+                  What happens after training finally ends.
+                bullet_points:
+                  - "An attending is a fully-trained, board-certified doctor. They make the decisions. They sign the orders. There's no senior person to ask if it's okay. They ARE the senior person"
+                  - "The pay jump is huge. Residents make around $68,000 a year. A new attending might make $250,000 (family medicine) to $600,000 (heart surgery) or more"
+                  - "That sounds like a lot of money, and it is, but most new attendings spend the first 5 to 10 years of their attending career paying off med school debt. The average graduate has $223,000 in loans, and the interest never stopped during residency"
+                  - "Here's the thing nobody tells new attendings: it's lonely. Suddenly nobody is telling you what to do, and nobody is double-checking your work the way the senior resident used to. The safety net is gone. Some new attendings find this exhilarating. Others find it terrifying for years"
+
+              - heading: "When Are You Actually 'Done'?"
+                description: >
+                  The strange question doctors keep asking themselves.
+                bullet_points:
+                  - "There isn't really a moment when you're 'done' becoming a doctor. Even attendings keep learning — medicine changes, new drugs come out, new treatments replace old ones. A heart attack treatment from 2005 is very different from a heart attack treatment from 2025"
+                  - "Every doctor has a story about the first patient they handled completely on their own. The exact moment they didn't have anyone to call. That moment is, in some ways, the real graduation"
+                  - "The whole training system is designed to make sure you never get to a moment where you feel completely done. Doctors are supposed to be a little bit humble forever. The day you decide you know everything is the day you start hurting patients"
+                  - "Insider truth: a lot of doctors say the first five years as an attending are almost as hard as residency, just in a different way. The responsibility is heavier. The 'I can call my senior' safety net is gone. By year five or six, most doctors finally feel like they're really doing the job"
+
+            conclusion: >
+              The end of training isn't really an ending. It's more like the moment when the training
+              wheels come off — when you stop being supervised every day and start being the supervisor.
+              Most doctors are 30 to 35 when they finally hit this point. They've been getting trained
+              for 12 to 17 years. And then they walk into the first day of the rest of their career,
+              hoping their training was enough.
+
+            transition: >
+              The training is over. The job is here. Some doctors love the job they've spent half their
+              life preparing for. Some doctors burn out and leave. Some do both, at different times. The
+              last part of this book is about both sides — what doctors love about the work, what burns
+              them out, and what medicine is going to look like by the time the reader of this book is
+              old enough to be one.
+
+  - title: "Part Seven: The Whole Story — Loving It, Hating It, And What's Coming Next"
+    description: >
+      The final part of the book steps back from the year-by-year training and asks the bigger questions.
+      Why do people love being doctors? Why do some of them burn out and leave? And what does the job
+      look like in a future where AI can read scans, write notes, and diagnose patients faster than any
+      human? This is the most opinionated part of the book — but also the most honest.
+
+    sections:
+      - title: "The Two Sides Of The Same Job"
+        description: >
+          The case for becoming a doctor and the case against, told as honestly as possible.
+
+        chapters:
+          - title: "Why People Love Being A Doctor"
+            word_target: 1200
+            description: >
+              The honest case for medicine. Why doctors stick with it, what they love, and the specific
+              kinds of moments and meaning the job provides that almost no other job provides.
+
+            intro: >
+              Open with a specific scene the kid can picture. A surgeon walking out of an operating room
+              after a 5-hour surgery to fix a kid's broken heart. The surgeon takes off the mask. Their
+              hair is messy. They walk down a hallway to a waiting room where a family is sitting, not
+              breathing. The surgeon makes eye contact with the mom. The surgeon says one sentence: 'She's
+              going to be fine.' The mom collapses into the dad's arms. The surgeon walks past them, gets
+              a coffee, sits in a chair, and starts charting. That moment is what every doctor in this
+              country signed up for. The next chapter is going to talk about all the reasons doctors quit.
+              This chapter is about why most of them don't.
+
+            chapter_sections:
+              - heading: "The Moments That Don't Exist In Other Jobs"
+                description: >
+                  Specific situations only doctors get to have.
+                bullet_points:
+                  - "Saving someone's life. Not in a movie way, but the real thing — a patient is dying, you do the right thing fast enough, and they live. Doctors who've done it can describe the exact moment in detail twenty years later"
+                  - "Catching the thing nobody else caught. A patient has been to four other doctors, nobody could figure out what was wrong, and you spot it. That feeling is, by a lot of doctors' accounts, the most rewarding thing in medicine"
+                  - "Being the person a family trusts. There's no other job where strangers tell you the most important things in their life within five minutes of meeting you, because you might be the person who saves them"
+                  - "Delivering a baby. Most doctors don't do this often, but the ones who do say it never, ever gets old. The room is full one second and then there's one more person in it, and that person didn't exist a minute ago"
+
+              - heading: "The Intellectual Reward"
+                description: >
+                  The puzzle aspect of medicine, which is huge.
+                bullet_points:
+                  - "Medicine is, on a good day, the world's hardest detective game. You take a person you've never met, look at clues nobody else can see, and figure out what's wrong with them. Some doctors describe it as Sherlock Holmes plus people"
+                  - "It rewards being smart. There's no specialty where being curious and good at thinking won't make you better at it. Most doctors who love their job describe the feeling of getting smarter every year, even decades in"
+                  - "It also rewards being patient. Some diagnoses take weeks or months to put together. Watching a complicated case slowly come into focus is, doctors say, deeply satisfying in a way that's hard to describe"
+                  - "Insider truth: the smartest doctors aren't the ones with the highest test scores. They're the ones who never stop being curious about what they don't understand. The arrogant ones tend to get stuck — they stop learning because they think they already know. The system actually punishes that pretty fast"
+
+              - heading: "The Practical Stuff That Doesn't Feel Romantic But Matters"
+                description: >
+                  The less-poetic reasons people love this career.
+                bullet_points:
+                  - "You can work pretty much anywhere. Every town in America needs doctors. If you want to live in a small town in Vermont or a big city in California or somewhere overseas, you can"
+                  - "You will always have a job. The job market for doctors is one of the most secure of any career. Even in bad economic times, hospitals keep needing doctors"
+                  - "You get paid well. Not as well as some grown-ups think doctors get paid, but well enough that, after the loans are gone, most doctors can have a comfortable life and save for retirement"
+                  - "Insider truth: a lot of doctors say the money was nice, but what they really valued was the stability. They knew, year after year, that their family was going to be okay. That kind of security is harder to find than people think, in any career"
+
+              - heading: "What Most Doctors Say When You Ask Them"
+                description: >
+                  The honest answers from real doctors about why they stayed.
+                bullet_points:
+                  - "Almost every doctor I've talked to says some version of this: 'I have no idea what else I would have done with my life.' That sentence is a clue. It means the job, for all its problems, became inseparable from who they are"
+                  - "Many doctors say the patients themselves are the reason they keep going. The fifteenth patient of the day is hard. The patient who comes back two years later to say 'you saved my life' is everything"
+                  - "A lot of doctors say they love working with the other doctors. Medicine is a team sport, and most teams are filled with smart, weird, dedicated people who genuinely care. That kind of workplace is rarer than you'd think"
+                  - "Here's the thing nobody outside medicine knows: the people who love this job love it more than most people love their jobs. There's a specific kind of meaning in it that's hard to fake and hard to replicate. That's the case for going through twelve years of training. The case against is real too, and it's the next chapter"
+
+            conclusion: >
+              Being a doctor isn't all good days. Most of the days are normal. Some are exhausting. But
+              the good ones are good in a way that most jobs can't touch — saving lives, solving puzzles
+              that other people couldn't, being the person a family will remember for the rest of their
+              lives. That's the case for medicine, and most of the doctors who finished the training
+              think it was worth it.
+
+            transition: >
+              Most doctors think it was worth it. Some doctors don't. And lately, a bigger and bigger
+              percentage of them are walking away — quitting, switching careers, retiring early. That's
+              called burnout, and it's one of the biggest stories in medicine right now. That's the
+              next chapter.
+
+          - title: "Why Doctors Burn Out"
+            word_target: 1300
+            description: >
+              The other side. Why so many doctors are exhausted, depressed, or quitting. The real numbers,
+              the specific things that grind doctors down (not the things kids would guess), and what's
+              being done about it.
+
+            intro: >
+              Open with a statistic that should make the reader stop. In 2025, the American Medical
+              Association measured the rate of 'burnout' in doctors. Burnout means a doctor who feels
+              emotionally exhausted, disconnected from their patients, and like their work doesn't matter
+              anymore. The 2025 number? About 42% of all U.S. doctors. Almost half. That's after several
+              years of getting better — the number was almost 50% during the pandemic. Imagine if 42% of
+              your teachers showed up to work tomorrow feeling like the job had broken them. That's
+              roughly where American medicine is, and the reasons for it are weirder and more specific
+              than most people realize.
+
+            chapter_sections:
+              - heading: "The Things Kids Would Guess Are Wrong"
+                description: >
+                  Bust the obvious assumptions.
+                bullet_points:
+                  - "It's not mostly because of sick patients. Doctors got into the job to help sick people. Sick people are the part most doctors love most"
+                  - "It's not mostly because of long hours, surprisingly. Doctors expected long hours when they signed up. The hours are a big part of it, but they're not what most doctors complain about first"
+                  - "It's not even mostly because of death. Doctors learn to handle death, and most of them are surprised at how much they can take. Death is heavy, but it's not the main driver"
+                  - "Most kids who imagine being a doctor think the burnout must be from the emotional weight. That's part of it, but it's not what doctors actually quit over"
+
+              - heading: "What's Actually Killing Doctors' Joy"
+                description: >
+                  The real culprits, which are mostly boring.
+                bullet_points:
+                  - "Paperwork. Most doctors today spend more time typing into the computer system than they spend talking to patients. Two hours of charting for every one hour of actual patient time is common. This is the thing doctors complain about most"
+                  - "The insurance system. A doctor figures out what a patient needs, and then has to call an insurance company to argue that the patient should be allowed to have it. The insurance company often says no. The doctor has to argue. Sometimes the patient gets the thing they need anyway. Sometimes they don't. This is exhausting in a way that breaks people slowly"
+                  - "Lawsuits. Doctors live in fear of being sued, even when they did everything right. Malpractice insurance can cost $50,000-$200,000 a year out of a doctor's pay. The fear of being sued changes how doctors practice — they order more tests, they're more cautious, and they spend more energy covering themselves"
+                  - "Feeling like a cog. A lot of doctors today work for huge hospital corporations, not their own practices. The hospital tells them how many patients they have to see per hour. There's a stopwatch on every appointment. Doctors say it's the opposite of what they signed up for"
+
+              - heading: "Which Doctors Get It Worst"
+                description: >
+                  Burnout by specialty.
+                bullet_points:
+                  - "Emergency medicine is the worst — about 50% of ER doctors report burnout. It makes sense: they handle the most chaotic patients, get the worst hours, and deal with everyone who couldn't get a regular doctor's appointment"
+                  - "Other high-burnout specialties: urology, oncology, OB/GYN, radiology, family medicine, general surgery. All of these are around 44-49%"
+                  - "Specialties with lower burnout (still around 30-35%): dermatology, pathology, ophthalmology. Notice these are also the ones with better lifestyles"
+                  - "Insider truth: there's a real correlation between how much paperwork a specialty requires and how burned out its doctors are. The more bureaucracy, the more burnout. The job itself is mostly fine. The system around the job is what wears people down"
+
+              - heading: "What's Actually Being Done About It"
+                description: >
+                  Real changes that are happening, and the ones that aren't.
+                bullet_points:
+                  - "Many hospitals now have 'wellness committees' that try to make doctors feel better. Doctors mostly find these annoying. The committees offer yoga and meditation apps when the actual problem is too much work"
+                  - "Some hospitals are hiring 'scribes' — people who follow the doctor around and do the typing. Doctors love scribes. They cost the hospital money, so most places don't have them"
+                  - "AI is starting to help with charting (we'll cover this more in the next chapter). A real AI tool listens to the doctor talking to the patient, writes the note, and the doctor just edits it. Doctors who've tried this say it's the best thing that's happened to medicine in 20 years"
+                  - "Burnout has actually gotten BETTER over the last three years — down from 48% in 2023 to 42% in 2025. That's a real win. Mostly it's because the pandemic effects are wearing off, but partly it's because the system is finally starting to take the problem seriously"
+
+            conclusion: >
+              Doctors don't usually burn out because of patients or death or hard cases. They burn out
+              because the modern medical system asks them to do a beautiful job under conditions that
+              make the beautiful job impossible. The patients are still wonderful. The work is still
+              meaningful. But the paperwork, the insurance fights, the lawsuit fears, the time pressure
+              — those are the real enemies, and they're getting fought slowly. Anyone thinking of being
+              a doctor needs to know that this is the real reason people quit. The job is good. The
+              system around the job is hard.
+
+            transition: >
+              The final chapter of this book is about where all of this is going. AI can already read
+              an X-ray faster than a radiologist and diagnose certain diseases more accurately than most
+              doctors. Computers can write the note, look up the drugs, and remember more facts than any
+              human brain. So why aren't we going to need fewer doctors? Why is medicine still going to
+              be a great job for an 11-year-old to start thinking about? That's the next, last chapter.
+
+          - title: "What Medicine Looks Like When You're A Grown-Up"
+            word_target: 1400
+            description: >
+              The future of medicine — AI, LLMs, robotic surgery, telemedicine — and what they will and
+              won't change about being a doctor. Written for a reader who, if they're going to be a
+              doctor, won't actually be one until around 2040. So this chapter is the most important one
+              in the book for them.
+
+            intro: >
+              Open with a direct address. You, the kid reading this book, would not finish medical
+              training until somewhere around 2040. The medicine that exists then is going to be different
+              in some big ways from the medicine that exists today. Some of the things that take a doctor
+              an hour to do today, a computer will do in two seconds. Some of the things doctors brag
+              about being good at today, a computer will be better at. So why should anyone become a
+              doctor? Why is this still a great career for a kid to imagine? The answer is more interesting
+              than either side of the AI argument has gotten right so far. Let's walk through it.
+
+            chapter_sections:
+              - heading: "What AI Can Already Do (Today, In 2026)"
+                description: >
+                  The things AI is already doing in real hospitals.
+                bullet_points:
+                  - "AI can read certain medical images — X-rays, CT scans, MRIs — and spot abnormalities almost as well as a trained radiologist. In some narrow tests, slightly better"
+                  - "AI can read slides under a microscope (pathology) and find certain kinds of cancer cells faster and more reliably than human pathologists"
+                  - "AI tools like Claude and GPT can pass the medical licensing exams and answer many medical questions accurately. This is genuinely new and was not true even four years ago"
+                  - "AI can listen to a doctor's conversation with a patient and write the visit note while it happens, saving the doctor 1-2 hours of typing per day"
+                  - "AI can scan a patient's entire chart in seconds and point the doctor to the things they might have missed — drug interactions, weird patterns, things buried in old notes"
+
+              - heading: "What AI Can't Do (At Least Not Anytime Soon)"
+                description: >
+                  The huge list of things AI is not even close to doing.
+                bullet_points:
+                  - "Examine a patient with its hands. Half of medicine is what doctors find by touching, listening, looking. AI doesn't have hands, eyes, ears, or judgment about what's weird in a way a person looks"
+                  - "Talk to a scared family. Telling parents that their child is going to die, or comforting a 90-year-old who's confused about why they're in a hospital — AI is profoundly bad at this, and people don't want it to be the thing doing it"
+                  - "Do procedures. AI cannot put in an IV, stitch a wound, deliver a baby, do surgery. Some surgical robots help surgeons, but the surgeon is still doing the work. The robot is just very precise hands"
+                  - "Take responsibility. When something goes wrong in medicine, somebody has to be accountable. AI can't be sued, can't be fired, can't apologize in a way that means anything. Patients want a human in the loop because someone needs to be answerable to them"
+                  - "Handle weird cases. AI is great at the common stuff because it was trained on a lot of it. When something genuinely strange comes through the door, AI tends to confidently get the wrong answer. Doctors call this 'hallucinating,' and it's the part of AI that scares everyone who works with it"
+
+              - heading: "How The Job Will Actually Change"
+                description: >
+                  The realistic future for the kid reading this book.
+                bullet_points:
+                  - "The boring parts will shrink. Charting, paperwork, looking up doses, reading basic scans, writing referral letters — AI is going to chew through all of that. Most doctors will spend much less time at a computer in 2040 than they do now"
+                  - "The thinking parts will get better. AI will look over the doctor's shoulder and say, 'Hey, did you consider this rare disease?' or 'This drug has a problem you might want to know about.' Doctors who use AI well will be way better than doctors who don't"
+                  - "Some specialties will change a LOT. Radiology will probably look very different — radiologists in 2040 might mostly be the people who handle the cases AI flags as tricky, instead of looking at every scan themselves. Pathology, too"
+                  - "Some specialties will barely change at all. Emergency medicine, surgery, pediatrics, psychiatry — anything that requires being in a room with a person — will still be very much a human job"
+                  - "The doctor's value will shift. Today, a lot of medicine is about knowing things. In 2040, a lot of medicine will be about JUDGING things — knowing when to trust the AI, when to override it, when to dig deeper. The doctors who can do that will be more valuable than ever"
+
+              - heading: "Why It's Still A Great Career To Choose"
+                description: >
+                  The deeper case for being a doctor in a world where AI exists.
+                bullet_points:
+                  - "Patients still want a person. Even when AI is more accurate, surveys show patients want a human doctor in the room. They want to look someone in the eye. They want a person who can be sad with them, mad on their behalf, and accountable to them. That's not going away"
+                  - "Medicine is one of the careers where the AI is most likely to help you, not replace you. The AI handles the boring parts. You handle the human parts. You become a more powerful version of a doctor than has ever existed before"
+                  - "Most of the things that make medicine meaningful — saving a life, catching the thing nobody else caught, being the person a family trusts — are exactly the things AI can't do. Those are going to be more, not less, valuable as AI does the boring stuff"
+                  - "The training is going to get better. AI tutors, simulated patients, faster ways to learn — the version of med school you go to in 2036 will probably be more efficient and less brutal than the version a med student goes through today. The 80-hour weeks might finally start coming down"
+                  - "Here's the most important thing I can tell you, kid: every wave of new technology in medicine — X-rays in the 1900s, antibiotics in the 1940s, ultrasounds in the 1970s, the internet in the 2000s — was supposed to replace doctors. None of them did. Each one made doctors more useful than they were before. AI is the biggest wave any of us have seen. It will probably do exactly the same thing"
+
+              - heading: "What You Should Actually Do With All Of This"
+                description: >
+                  Bring it back to the reader.
+                bullet_points:
+                  - "If you're thinking about being a doctor someday, the most important thing you can do right now is not study medicine — it's get good at being curious. About how things work, about why people do what they do, about what makes you uncomfortable when you don't know something"
+                  - "Get good at being okay with hard work. Med school is hard. Residency is hard. The training never stops. The kids who survive it aren't the smartest ones — they're the ones who can stay in the chair for one more hour even when they don't want to"
+                  - "Get good at being around people who are having a bad day. The world is going to have plenty of smart machines. It will always need humans who are unbothered by a person who's scared or sad or in pain. That's a real skill, and it's the heart of being a doctor"
+                  - "Pay attention to whether you actually like sick people, hospitals, and other doctors. Some kids love the idea of being a doctor and hate the reality. Some kids never thought about it and turn out to be naturals. Try shadowing a doctor in high school. Volunteer at a hospital. Watch The Pitt and notice what excites you and what makes you flinch"
+                  - "If after all that, you still want to be a doctor when you're 18 — then you should know that this is one of the few jobs left where you can spend your whole working life doing something genuinely important, with smart people, around the most interesting puzzles humans have. That's a real thing to walk toward, even after twelve years"
+
+            conclusion: >
+              The future of medicine is mostly going to be like the past of medicine: smart, weird,
+              dedicated people taking care of sick humans, with better tools than they had before. The
+              tools change. The work doesn't. If you grow up and decide to do this, you're not signing
+              up for a career that's about to be eaten by computers. You're signing up to be a doctor
+              in the most powerful era of medicine that has ever existed. The training will still be
+              long. The job will still be hard. And the moments — the patient who lives because of you,
+              the diagnosis nobody else caught, the family in the waiting room — those are still going
+              to be the best moments any career has to offer.
+
+            transition: >
+              That's the end of the book. There's no next chapter. From here, it's just whether you
+              want to do this or not. Watch the doctors you meet. Watch The Pitt. Notice what catches
+              you. And in ten years, when it's time to start pre-med, you'll know whether the version
+              of yourself who picks up this book again recognizes the person inside it. Good luck out there.

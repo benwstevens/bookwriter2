@@ -166,7 +166,9 @@ def setup_generator_dirs(toc_data: dict) -> dict[str, Path]:
     """Create the book directory structure for the generator pipeline."""
     title = toc_data.get("title", "Untitled")
     slug = re.sub(r"[^\w\-]", "", title.replace(" ", "_")).lower()
-    book_dir = BASE_DIR / "books" / slug
+    # Generated books live in Gen_Books at the Reading folder root,
+    # one level above this repo (moved out of books/ on 2026-07-11).
+    book_dir = BASE_DIR.parent / "Gen_Books" / slug
 
     paths = {
         "book_dir": book_dir,
