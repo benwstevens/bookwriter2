@@ -443,7 +443,8 @@ def _estimate_cost(chapter_targets, style_guide, toc_data):
 # ===========================================================================
 # Stage 2: Generate Chapters
 # ===========================================================================
-def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None):
+def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None,
+           research_text=None):
     """Generate each chapter sequentially, with context from prior chapters."""
     print("\n" + "=" * 60)
     print("STAGE 2: Generate Chapters")
@@ -456,8 +457,21 @@ def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None):
         sys.exit(1)
     instructions = INSTRUCTIONS_FILE.read_text(encoding="utf-8").strip()
 
-    # Build system prompt: instructions + style guide
+    # Build system prompt: instructions + style guide (+ research notes).
+    # Research goes in the system prompt so prompt caching amortizes it
+    # across every chapter instead of paying for it per call.
     system_prompt = instructions + "\n\n--- STYLE GUIDE ---\n\n" + style_guide
+    if research_text:
+        system_prompt += (
+            "\n\n--- RESEARCH NOTES ---\n\n"
+            "The notes below are the book's factual ground truth, gathered from "
+            "current sources. When a chapter touches material covered here, use "
+            "these facts — names, dates, figures, events — rather than your own "
+            "recollection. Do not invent specific numbers, dates, or named "
+            "examples beyond what the notes or the chapter structure provide; "
+            "where you must generalize, generalize plainly instead of "
+            "fabricating specifics.\n\n" + research_text
+        )
 
     # Full TOC as YAML for context
     toc_yaml = yaml.dump(toc_data, default_flow_style=False, allow_unicode=True)
@@ -1278,11 +1292,23 @@ def main():
                         help=f"Override word target per chapter (default: {DEFAULT_WORD_TARGET})")
     parser.add_argument("--regen", type=int, default=None, metavar="N",
                         help="Regenerate chapter N (delete cached files and re-run stage 2)")
+    parser.add_argument("--research", type=str, default=None, metavar="FILE",
+                        help="Optional research notes file (markdown/text). Fed to every "
+                             "chapter's generation as factual ground truth and copied "
+                             "into the book folder as research_notes.md")
 
     args = parser.parse_args()
 
     toc_path = Path(args.toc).resolve()
     style_path = Path(args.style_guide).resolve()
+
+    research_text = None
+    if args.research:
+        research_path = Path(args.research).resolve()
+        if not research_path.exists():
+            print(f"ERROR: research file not found: {research_path}")
+            sys.exit(1)
+        research_text = research_path.read_text(encoding="utf-8").strip()
 
     print("=" * 60)
     print("  Book Generator")
@@ -1297,11 +1323,20 @@ def main():
         toc_path, style_path, args.target,
     )
 
+    if research_text:
+        print(f"\n  Research notes: {research_path.name} "
+              f"({len(research_text.split()):,} words) — will ground every chapter")
+
     if args.dry_run:
         print("\n" + "=" * 60)
         print("DRY RUN COMPLETE — No API calls made.")
         print("=" * 60)
         return
+
+    # Archive the research notes with the book for provenance
+    if research_text:
+        (paths["book_dir"] / "research_notes.md").write_text(
+            research_text, encoding="utf-8")
 
     # Confirm before proceeding
     if args.stage <= 2:
@@ -1312,7 +1347,8 @@ def main():
             sys.exit(0)
 
     if args.stage <= 2:
-        stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=args.regen)
+        stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=args.regen,
+               research_text=research_text)
 
     if args.stage <= 3:
         stage3(paths, chapter_targets)

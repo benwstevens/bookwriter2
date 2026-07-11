@@ -13,6 +13,9 @@ python3 generator.py my_toc.yaml my_style_guide.txt --dry-run
 
 # Full run
 python3 generator.py my_toc.yaml my_style_guide.txt
+
+# Full run, grounded in a research document (recommended for recent/niche topics)
+python3 generator.py my_toc.yaml my_style_guide.txt --research research_notes.md
 ```
 
 ## The Two Inputs You Need to Prepare
@@ -178,6 +181,7 @@ python3 generator.py <toc.yaml> <style_guide.txt> [options]
 | `--stage N` | Start from stage N (1-5). Useful for resuming after a failure or re-running just the coherence pass. |
 | `--target N` | Override the per-chapter word target from the command line. |
 | `--regen N` | Regenerate chapter N only — deletes its cached files and re-runs stage 2. |
+| `--research FILE` | Optional research notes (markdown/text). Injected into every chapter's system prompt as factual ground truth — the model is told to use these facts over its own recollection and not to invent specifics beyond them. Also archived into the book folder as `research_notes.md`. Use this whenever the book covers recent events or anything past the model's training data. |
 
 ### Common Workflows
 
@@ -209,7 +213,7 @@ Loads the YAML TOC and style guide, validates required fields, creates the book 
 
 ### Stage 2 — Generate Chapters
 
-Generates each chapter sequentially using **Claude Opus** with adaptive thinking. Each chapter receives rich context:
+Generates each chapter sequentially using **Claude Opus** with adaptive thinking. If `--research` was given, the notes ride in the system prompt (prompt-cached, so the cost is amortized across all chapters). Each chapter receives rich context:
 - The full table of contents (or hierarchy summary for structured books)
 - Summaries of all prior chapters (generated cheaply via Claude Sonnet)
 - Full text of the immediately preceding chapter (for tonal continuity)
