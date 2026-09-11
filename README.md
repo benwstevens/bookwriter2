@@ -4,22 +4,39 @@ A tool that writes a whole non-fiction book from a chapter-by-chapter plan. Give
 
 ## For the person
 
-*This section is for you. Everything from "For the model" onward is instructions for your AI tool, telling it how to set this up and how to write a book with you. The last section, "For maintainers," is about the code.*
-
-**Before anything else: what you need.** Four things. First, an AI tool that runs on your computer and can run programs and read files: Claude Code today, or something similar. If you use ChatGPT or Claude in a web browser, this is not for you yet; a browser chat cannot run the script. Second, an Anthropic API key with billing turned on. This is separate from a Claude subscription: the tool bills your API account for each book, and a book has cost between about four and thirty-five dollars on the runs so far. You always see an estimate before anything is spent, and nothing is spent until you say go. Third, Python 3.10 or newer; the model checks for it and installs what is missing, with your permission. Fourth, something that opens an EPUB: a Kindle, Apple Books, or just a web browser for the HTML copy it also makes. To remove it: delete the folder. The books it made are ordinary files and stay yours.
+*This section is for you. Everything from "For the model" onward is instructions for your AI tool, telling it how to set this up and how to write a book with you; the money, stopping, and privacy facts you care about are all in this section, so you do not need to read past it. The last section, "For maintainers," is about the code.*
 
 **Why bother.** The book you want to read has not been written. It is too niche, too new, or pitched at the wrong reader. Give this a topic, a reader, and an angle. It designs a chapter-by-chapter plan, you read the plan and approve it, and it writes the whole book in one voice and hands you an EPUB the same afternoon. People have used it for a developer's guide to building a wastewater plant, a kids' guide to how doctors are made, a father-and-son priority list for learning golf built only from what has been measured, a field guide to one city's rent laws, and a forty-chapter book that walks a twelve-year-old through building a small language model.
 
 **The idea in five lines.**
-1. The plan is the book. The table of contents carries every argument, every example, and every opening device; the writing stage is mechanical.
+1. The plan is the book. The table of contents carries every argument, every example, and every opening device; in this pipeline the writing step is the mechanical part, and the hard part comes before it.
 2. The model designs the plan. You never write a line of it. You answer a handful of questions and read a chapter list.
 3. Nothing is spent until you say go, and the price comes first.
 4. It writes in a voice built for you from a short questionnaire, on top of a fixed set of readability rules (short chapters, short sentences, short paragraphs, a clear opener, and an "in the next chapter" teaser) that are the reason people finish these books.
 5. For anything recent or niche, it researches first, and the book is only as true as that research.
 
-**Two honest things.** First: it writes convincing prose, not checked facts. There is no fact-checking stage. Read the result as a very well-organised first draft by a smart stranger, and do not act on a number in it without checking. The model will offer a manual check at the end, and you should take it for any book you will make decisions from. Second: it is for explainer non-fiction. It is not for fiction, not for memoir, and not for a book that needs your own stories unless you hand them over when it asks.
+**What you get.** A book of twenty to thirty short chapters, roughly thirty to forty thousand words, as an EPUB and as one web page. Every chapter follows the same readability skeleton (under 1,500 words, short sentences, short paragraphs, a clear opener, a conclusion, and a teaser for the next chapter), in the voice the questionnaire builds. If you have notes, drafts, or research of your own, it reads them first and writes from them. The book names sources in the sentence when you ask it to; it does not produce a bibliography.
 
-**What happens next.** Open your AI tool in this folder and say "set up the book generator." That is a one-time conversation of about fifteen minutes. It installs what is needed, walks you through getting an API key (you paste the key into a file yourself; the model never handles it), picks a default voice with you, and runs a three-chapter test book for well under a dollar so you see the whole thing work. After that, say "write me a book about ..." whenever you like. It asks four or five questions, researches if the topic needs it, shows you a chapter list and a price, and writes the book after you say go. Budget an hour of your own attention and one to three hours of the machine's. (In Claude Code, `/setup-bookwriter` and `/write-a-book` do the same two things.)
+**What you need.**
+1. An AI tool that runs on your computer and can run programs and read files. Today that means Claude Code (claude.ai/code) or something similar. A chat in a web browser cannot run the script. If a browser chat is all you have, `toc_template.txt` in this folder still lets it design a book outline for you; only the writing step needs the tool.
+2. An Anthropic API account. Explained in the next paragraph, because it is the thing people get wrong.
+3. Python 3.10 or newer. The model checks for it and installs what is missing, with your permission.
+4. Something that opens an EPUB, or just a browser for the web-page copy.
+
+**The API account, in plain words.** Anthropic is the company that makes Claude. This tool bills an Anthropic *API* account, which is a separate account with its own card, set up at console.anthropic.com. No chat subscription pays for it: not ChatGPT, not a Claude plan, and not a Claude Code plan either. Most people do not have one yet. Setting one up takes about ten minutes, and the setup conversation walks you through it; you paste the key into a file yourself, and the model never handles it. Set a monthly spending limit on that account in the console. That limit is the only one the tool cannot talk its way past.
+
+**What it costs.** Between about four and thirty-five dollars a book on the runs so far, and nothing else. You see an estimate before every book, and nothing is spent until you say go. The estimate runs high, sometimes double the bill, so treat it as a ceiling.
+
+**The honest things.**
+- It writes convincing prose, not checked facts. There is no fact-checking stage. Read the result as a very well-organised first draft by a smart stranger, and do not act on a number in it without checking. The model offers a manual check at the end; take it for any book you will make decisions from. Good for learning a subject over a weekend; not for publishing under your name or citing.
+- It is for explainer non-fiction: not fiction, not memoir, and not a book that needs your own stories unless you hand them over when it asks.
+- Everything it writes passes through Anthropic's API: every chapter, every summary, the research notes, and whatever you put in the brief. Anthropic's published API terms say what they keep and whether they train on it; read them before sending anything confidential.
+- Chapters run a little long, the second editing pass occasionally drops a paragraph, and the research step reads only the open web, so paywalled sources are out of reach. The model tells you when that matters.
+- It will not sound like you unless you tell it how you sound. The questionnaire builds the voice, and you can hand it a sample of your own writing to match.
+
+**Stopping it, and removing it.** To stop a run, press Ctrl+C in the terminal, or tell the model to stop. Chapters already written are saved, a resumed run skips them, and a halted run has cost only the chapters it wrote. To remove the tool, delete three things: this folder, the Python environment the setup created (its path is recorded in `config.yaml`), and the books folder if you put it somewhere else. The books are ordinary files and yours to keep.
+
+**What happens next.** Open your AI tool in this folder and say "set up the book generator." That is a one-time conversation of about fifteen minutes: it installs what is needed, walks you through the API account, builds your voice from the questionnaire, and runs a three-chapter test book for well under a dollar so you see the whole thing work. After that, say "write me a book about ..." whenever you like. It asks a handful of questions, researches if the topic needs it, shows you a chapter list and a price, and writes the book after you say go. Budget an hour of your own attention and one to three hours of the machine's. (In Claude Code, `/setup-bookwriter` and `/write-a-book` do the same two things.)
 
 ## Where this comes from
 
@@ -29,7 +46,7 @@ bookwriter2 was built by **Ben Stevens** (benwstevens.com) in February 2026 as t
 
 ## For the model
 
-**If you are the model:** everything from here to the vocabulary is addressed to you. Read this whole file, then `toc_project_instructions.md` (how to design a table of contents that produces a good book), then `generator_instructions.txt` and `generator_coherence_instructions.txt` (what the script tells the API). There are two interviews. The **setup interview** (Part B1) happens once and writes `config.yaml`. The **book brief** (Part B2) happens for every book and writes `tocs/<slug>/brief.md`. Write answers to the file as they land, so a dropped session loses nothing. Do not skip a question because you can guess the answer; the point is that the person hears the choices. One exception to any standing rule about ending a message with a recap of open requests: skip it during an interview round. The round *is* the questions.
+**If you are the model:** everything from here to the vocabulary is addressed to you. Read this whole file, then `toc_project_instructions.md` (how to design a table of contents that produces a good book), then `generator_instructions.txt` and `generator_coherence_instructions.txt` (what the script tells the API). There are two interviews. The **setup interview** (Part B1) happens once and writes `config.yaml`. The **book brief** (Part B2) happens for every book and writes `tocs/<slug>/brief.md`. Write answers to the file as they land, so a dropped session loses nothing. Do not skip a question because you can guess the answer; the point is that the person hears the choices.
 
 ## Part A. What the generator is
 
@@ -41,7 +58,7 @@ bookwriter2 was built by **Ben Stevens** (benwstevens.com) in February 2026 as t
 - "There is no fact-check stage. When the book is done I will offer to go through it against the research and flag every number, name, and date I cannot support. Until then, treat every fact in it as unchecked."
 - "The estimate runs high and the chapters run long. On the biggest book so far the estimate was more than double the bill, and chapters came in ten to forty percent over their targets."
 
-**The words, defined once here and used freely after.** A **TOC** (table of contents) is the chapter-by-chapter plan; **YAML** is the plain-text format it is written in, which the person reads and you write. A **style guide** is a one-page description of the voice. **Research notes** are facts gathered before the plan so the book does not invent them. A **dry run** is the rehearsal that checks the plan and prices the book without spending. A **stage** is one of the five steps; a failed run restarts at the stage that failed. The **coherence pass** is the second read of neighbouring chapters. **Regen** rewrites one chapter. A **slug** is the short folder name made from the title. An **EPUB** is the e-book file. An **API key** is the password-like string that lets the script bill the person's account. A **token** is the unit the bill is counted in, about three-quarters of a word. A **virtual environment** is a private copy of Python so this tool cannot disturb anything else on the machine.
+**The words.** The vocabulary at the end of this file defines every term used below (TOC, YAML, style guide, research notes, dry run, stage, coherence pass, regen, slug, EPUB, API key, token, virtual environment). Read it once and use the words freely after.
 
 ---
 
@@ -51,17 +68,17 @@ Eight rounds, two or three questions each, in plain language, with a default on 
 
 ### 1. Tool and folder
 - You can usually see which tool you are running in; confirm it rather than asking: "I'm running in Claude Code, so I can run the script and read the files here."
-- "Is this folder inside something that syncs, like Dropbox, iCloud, OneDrive, or Google Drive?" If yes, the Python environment goes outside it (round 2), because a synced environment fetches thousands of files one at a time and can hang for minutes.
+- Check the folder's path yourself for Dropbox, iCloud, OneDrive, or Google Drive and say what you found. If it syncs, the Python environment goes outside it (round 2), because a synced environment fetches thousands of files one at a time and can hang for minutes, and the key file needs a home outside it too (round 3).
 - "Where should finished books land?" *(Default: a `books/` folder beside the script.)* Scripted: "I will not move or rename anything you already have."
 
 ### 2. Python and the environment
-Check the Python version and say what you found. Then ask permission in these words or close to them: **"I'd like to create a private Python environment for this tool and install six packages into it. That touches nothing else on your machine. If your folder is synced, I'll put the environment outside it. May I?"** *(Default: yes, at `~/.venvs/bookwriter/`.)* On yes: create it, `pip install -r requirements.txt`, and record the path under `venv` in `config.yaml`.
+Check the Python version and say what you found. Then ask permission in these words or close to them: **"I'd like to create a private Python environment for this tool and install six packages into it. Nothing else on your machine changes; the packages go only into that private environment. If your folder is synced, I'll put the environment outside it. May I?"** *(Default: yes, at `~/.venvs/bookwriter/`.)* On yes: create it, `pip install -r requirements.txt`, and record the path under `venv` in `config.yaml`.
 
 ### 3. The API key
-Explain in two sentences: "An API key is a long password that lets a program bill your Anthropic account directly. It is separate from any Claude subscription, and it is what pays for the books." Send the person to console.anthropic.com, Settings, API keys, with billing enabled, and ask them to paste the key into the `.env` file themselves as `ANTHROPIC_API_KEY=...`. Do not take the key in chat, do not print it, do not read `.env` back aloud. Confirm `.env` is git-ignored (it is). State the cost range plainly: "Books so far have cost between about four and thirty-five dollars each, and you will see an estimate before every one."
+Explain in two sentences: "An API key is a long password that lets a program bill your Anthropic account directly. It is separate from any Claude subscription, and it is what pays for the books." Send the person to console.anthropic.com, Settings, API keys, with billing enabled, and ask them to paste the key into the `.env` file themselves as `ANTHROPIC_API_KEY=...`. Do not take the key in chat, do not print it, do not read `.env` back aloud. Confirm `.env` is git-ignored (it is). If the folder syncs, say so plainly: the key file would sync with it, onto every device and into version history. Offer the alternative the script also accepts: keep the key in a file outside the folder and load it into the `ANTHROPIC_API_KEY` environment variable before each run. State the cost range plainly: "Books so far have cost between about four and thirty-five dollars each, and you will see an estimate before every one."
 
 ### 4. The spending rule
-"Before any book, I run a dry run and show you the estimate. I never start writing without a yes from you in that conversation. Do you want a ceiling above which I ask a second time?" *(Default: twenty dollars.)* Record it as `spend_ceiling`.
+Say plainly: "Before any book, I run a dry run and show you the estimate. I never start writing without a yes from you in that conversation; the flag I use for unattended runs only skips the terminal prompt after that yes. The one limit I cannot talk past is a spending limit on your Anthropic account itself. Set one in the console now, and tell me what it is." Then: "Do you also want an estimate warning, an amount above which I ask you a second time?" *(Default: twenty dollars.)* Record it as `spend_ceiling`. It is a warning on the estimate, not a cap; say so.
 
 ### 5. Reading device
 "Where will you read these: a Kindle, Apple Books, or a browser?" *(Default: browser.)* Record it as `reading_device` and say once how the file will get there: Send to Kindle by email or drag-and-drop for a Kindle; double-click for Apple Books; open the HTML file for a browser.
@@ -79,10 +96,10 @@ This is the round that decides whether the books read well, so it gets six small
 Then assemble the guide, show it in full, take corrections, and save it. Bans also go into `config.yaml` under `house_rules`.
 
 ### 7. Research
-"Do I have a way to search the web from here, or a deep-research capability?" If yes, say that books on recent or niche topics will get a research pass first, at no API cost to the script, and that paywalled sources are mostly out of reach. If no, say what that means: "Books on well-known, older topics will be fine. For anything recent or niche I will tell you the book needs research notes, and you can paste them in or we can skip the topic."
+Check your own tools and tell the person what you found instead of asking them. If you can search the web, say that books on recent or niche topics will get a research pass first, at no API cost to the script, and that paywalled sources are mostly out of reach. If no, say what that means: "Books on well-known, older topics will be fine. For anything recent or niche I will tell you the book needs research notes, and you can paste them in or we can skip the topic."
 
 ### 8. The test run
-Say: "Last step. I'll run the shipped three-chapter test book so you see the whole thing work. First the dry run." Run `generator.py examples/test_toc.yaml examples/test_style_guide.txt --dry-run`, show the estimate (well under a dollar), and ask for the go. On yes, run it in the foreground with `--yes`, narrate the stages as they print, then open the output folder and confirm the person can see the book on their chosen device. Ask whether to keep or delete the test book.
+Say: "Last step. I'll run the shipped three-chapter test book so you see the whole thing work. First the dry run." Run `generator.py examples/test_toc.yaml style_guides/default.txt --dry-run` (the test outline in the voice just built, so the run exercises the questionnaire's result), show the estimate (well under a dollar), and ask for the go. On yes, run it in the foreground with `--yes`, narrate the stages as they print, then open the output folder and confirm the person can see the book on their chosen device. Ask whether to keep or delete the test book.
 
 Then read `config.yaml` back in full, take corrections, and say what was built (Part C).
 
@@ -90,16 +107,17 @@ Then read `config.yaml` back in full, take corrections, and say what was built (
 
 ## Part B2. The book brief (every book)
 
-One turn of questions, skipping anything the person's idea already answers; then the model works alone; then one approval message; then generation. The questions come from `toc_project_instructions.md` Step 1, sharpened by use.
+One turn of questions, skipping anything the person's idea already answers; then the model works alone; then one approval message; then generation. The questions come from `toc_project_instructions.md` Step 1, sharpened by use. Answers here override the setup defaults (voice, research, house rules) for this book only.
 
 ### The questions, in one turn
 1. **The question the book answers.** "In one sentence, what will a reader be able to do or understand at the end that they cannot now?" Prime with two examples: "explain a bakery from the oven door"; "walk into a rent-stabilised building and know which exits are real."
 2. **The reader.** Who, what they already know, and whether there is a reader pair (a kid and a parent; a client and their advisor). *(Default: a smart generalist outside the field.)*
-3. **The angle and the edge.** What it argues that existing books do not, and whether the author writes from experience (first person, war stories) or synthesises. *(Default: synthesising, third person, unless the default style guide says otherwise.)*
+3. **The angle and the edge.** What it argues that existing books do not, and whether the author writes from experience (first person, war stories) or synthesises. *(Default: synthesising, third person, unless the default style guide says otherwise.)* If the person does not know what already exists on the topic, offer to find out during research rather than accept a guess.
 4. **Length and shape.** Chapters, and words per chapter. *(Default: twenty to thirty chapters at 1,300 words; say the cost band that implies, roughly ten to twenty dollars.)* For a how-to book, ask whether chapters should alternate doing and explaining.
 5. **Off-limits and must-includes.** Sensitivities, topics to skip, and anything the person insists appears. Prime: "people often say: no jargon without a definition; nothing the reader would need a calculator for; the last chapter has to be practical."
-6. **Research.** Decide and say: "This topic is recent or specialised enough that I want to research it first; that adds about twenty minutes and costs nothing on the script's bill" or "This is well-trodden and I will write the plan from what I know." The person can override either way. If research is on, say where it will be saved and that paywalled sources are mostly unreachable.
-7. **Voice.** The default guide, or adapt it for this book. If adapting, run the short form of the questionnaire (who is speaking, who is reading, register, bans; the skeleton stays), draft the adapted guide, and show the changed lines.
+6. **Your own material.** "Do you have notes, drafts, research, or a piece of your own writing I should read first?" Files go in as research notes (`--research`); a writing sample shapes the style guide for this book. *(Default: none.)*
+7. **Research.** Decide and say: "This topic is recent or specialised enough that I want to research it first; that adds about twenty minutes and costs nothing on the script's bill" or "This is well-trodden and I will write the plan from what I know." The person can override either way. If research is on, say where it will be saved and that paywalled sources are mostly unreachable.
+8. **Voice.** The default guide, or adapt it for this book. If adapting, run the short form of the questionnaire (who is speaking, who is reading, register, bans; the skeleton stays), draft the adapted guide, and show the changed lines.
 
 Write the answers to `tocs/<slug>/brief.md`.
 
@@ -114,6 +132,7 @@ One message the person can read on a phone: the chapter count and total words; o
 
 ### Generation and delivery
 - Run in the background with the environment from `config.yaml` and `--yes` (the yes was given in chat; the flag only skips the terminal prompt). Twenty to thirty chapters take one to two hours. Report progress as chapters land.
+- To stop: Ctrl+C in the terminal, or the person says stop and you end the process. Finished chapters are saved, a resumed run skips them, and a halted run has cost only those chapters. Say this before the first background run.
 - On failure or interruption, resume with `--stage 2`; finished chapters are skipped. A chapter the person dislikes is rewritten with `--regen N`, then `--stage 4` re-runs the coherence pass.
 - When done: check the word-count report, confirm every chapter is present, spot-read three chapters for coherence-pass damage, and hand over the path and how to open it on the chosen device.
 - Offer the fact check: "Shall I go through it against the research and flag every number, name, and date I cannot support?" For any book the person will act on, recommend it.
@@ -144,6 +163,9 @@ An EPUB is the standard e-book file, the same kind you buy from any bookstore ex
 ---
 
 ## For maintainers
+
+### Getting it
+The repo is `github.com/benwstevens/bookwriter2`. Clone it, copy `config.example.yaml` to `config.yaml`, create a virtual environment outside any synced folder, and `pip install -r requirements.txt`. No license has been chosen yet; until one is, treat the code as all rights reserved.
 
 ### Repo map
 | Path | What it is |
