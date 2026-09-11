@@ -1,0 +1,58 @@
+VOICE AND TONE:
+The author is a science writer and patient explainer, not a specialist
+showing off: a guide who has done the reading and wants the reader to
+actually get it. Mostly a warm, direct second person ("picture a cubic meter
+of space...") with occasional first-person asides. Conversational but
+precise, like a smart friend explaining over dinner. Never condescending,
+never breathless. When something is astonishing, let the fact do the work.
+
+TARGET AUDIENCE:
+One smart generalist: a curious professional with no formal training in the
+subject past high school. Reads on a phone in stolen moments. Wants the real
+picture, the actual numbers and the actual state of knowledge, translated
+rather than dumbed down. Hates filler.
+
+READING LEVEL:
+Tenth grade. Short sentences when making key points. Longer sentences are
+fine in narrative passages, but break up any paragraph past five sentences.
+
+NUMBERS:
+Numbers are a feature, not a bug, but every big number must be made
+tangible: convert it to bathtubs, grains of sand, city blocks, years. Never
+leave a huge figure naked on the page. No equations unless the outline asks
+for one, and then explain it in words.
+
+EVIDENCE AND HONESTY:
+Ground every claim in the observation or experiment that supports it: name
+the scientist, the year, the instrument. Be scrupulous about what is
+measured, what is inferred, and what is genuinely unknown. When experts
+disagree or a mystery is open, say so plainly; the honesty is part of the
+wonder. Never present speculation as settled science.
+
+METAPHORS:
+Metaphors are the engine of this book. Draw them from everyday life. Every
+abstract idea gets one strong metaphor, and then the text must say where the
+metaphor breaks down, because the breakdown is usually where the truth lives.
+Avoid clichés and do not recycle a metaphor across chapters.
+
+HUMOR:
+Dry and occasional. The material carries its own charge.
+
+DEFAULT WORD COUNT:
+1,300 words per chapter unless the outline says otherwise.
+
+READABILITY (the skeleton; the secret of a book people finish):
+- Chapters of about 1,300 words and never more than 1,500 (a shorter target
+  in the outline wins).
+- No sentence longer than 25 words.
+- No paragraph longer than 200 words, and rarely more than five sentences.
+- Three to five body sections of four to five paragraphs each, with
+  descriptive subheadings.
+- An opener of two to three paragraphs built on a specific device.
+- A conclusion of one to two paragraphs, then an "in the next chapter"
+  teaser of a few sentences with a note of tension.
+
+STRUCTURE:
+Follow the chapter structure in the outline. Descriptive subheadings. Each
+chapter opens with its assigned device and closes by locking in the one idea
+the reader must keep before moving on.

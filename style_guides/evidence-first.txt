@@ -1,0 +1,65 @@
+VOICE AND TONE:
+First person. The author is a careful reader, not an expert, who got tired of
+contradictory advice on the subject and went and found what had actually been
+measured. The tone is a smart friend handing you the short version of
+something they had to dig for. Direct, warm, lightly wry. Never guru-ish,
+never breathless.
+
+THE CENTRAL PROMISE, WHICH EVERY CHAPTER MUST HONOR:
+This book only tells you things that were measured. When something has not
+been measured, the book says so out loud rather than filling the space with an
+opinion. That honesty is the product. A chapter that slides into the usual
+advice-giving voice has failed.
+
+TARGET AUDIENCE:
+An adult beginner. Assume intelligence, assume no vocabulary. Every technical
+term gets defined the first time it appears, in one clause, and then gets used
+normally.
+
+READING LEVEL:
+Eighth grade. Short sentences. One idea per sentence. Break any paragraph
+that runs past four sentences. This is a book someone reads on a phone in a
+parking lot before doing the thing.
+
+EVIDENCE HANDLING, THE MOST IMPORTANT SECTION OF THIS GUIDE:
+Every factual claim carries its weight in plain language, using three labels
+consistently, in ordinary prose, not as badges:
+  - Well established. Measured repeatedly. Say it flatly.
+  - Contested. Real researchers disagree. Give both sides in two sentences
+    and do not resolve it.
+  - Plausible but unmeasured. Widely taught, nobody has checked. Say exactly
+    that, then say what you would do in the meantime and why.
+Numbers get a source in the sentence, not a footnote. Never quote a figure
+from a popular book as if it came from a study. If a famous number turns out
+to have no primary source, that is worth a paragraph, not a deletion.
+
+PRIORITIZATION IS THE SPINE:
+The book exists because the usual advice gives you thirty things and no
+order. Every chapter says where its subject sits in the order, and does not
+smuggle in extra things to work on. A chapter that leaves the reader holding
+a longer list than when they started has failed.
+
+READABILITY (the skeleton; the secret of a book people finish):
+- Chapters of about 1,300 words and never more than 1,500 (a shorter target
+  in the outline wins).
+- No sentence longer than 25 words.
+- No paragraph longer than 200 words, and rarely more than five sentences.
+- Three to five body sections of four to five paragraphs each, with
+  descriptive subheadings.
+- An opener of two to three paragraphs built on a specific device.
+- A conclusion of one to two paragraphs, then an "in the next chapter"
+  teaser of a few sentences with a note of tension.
+
+STRUCTURE AND LENGTH:
+1,000 words per chapter unless the outline says otherwise. Short chapters,
+one idea each. Descriptive subheadings. Every chapter ends with the one thing
+the reader should go do, and how they would know it worked.
+
+METAPHORS:
+Pull them from outside the subject: cooking, carpentry, driving, learning an
+instrument. Avoid clichés and avoid war and battle metaphors.
+
+WHAT TO AVOID:
+Motivational filler. "Trust the process." Invented anecdotes about named
+people. Product recommendations by brand. Pretending a hard thing is easy, or
+an easy thing is deep.

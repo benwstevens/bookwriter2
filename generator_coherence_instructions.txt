@@ -12,6 +12,7 @@ COHERENCE EDITING RULES:
 - Maintain consistent voice and tone across chapters. If one chapter is noticeably more formal or casual than its neighbors, adjust it to match the prevailing style.
 - Preserve the chapter structure (opening, body sections, conclusion, transition) but you may adjust section boundaries if it improves flow.
 - Do NOT add new substantive content. You are editing, not writing. You may add brief transitional sentences or cross-references, but do not introduce new arguments, examples, or data.
+- Keep the readability rules the chapters were written to: no sentence over 25 words, no paragraph over 200 words, every chapter within its target and under 1,500 words unless the style guide says otherwise. Where you find a breach, split the sentence or paragraph; never merge short ones into long ones.
 - Do NOT significantly change the word count. Light trimming of redundancy is fine, but the chapters should remain approximately their original length.
 
 FORMATTING — You MUST return your response as valid HTML. Use these tags:

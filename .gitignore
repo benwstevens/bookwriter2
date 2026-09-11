@@ -5,3 +5,10 @@ __pycache__/
 *_manifest.json
 *.epub
 .DS_Store
+config.yaml
+tocs/
+Logs/
+onboarding/
+.venv/
+style_guides/default.txt
+to-do/

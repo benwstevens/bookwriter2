@@ -1,0 +1,72 @@
+# Style guide template. The model fills the <angle-bracket> lines from the
+# setup questionnaire (README, Part B1 round 6) and saves the result as
+# style_guides/default.txt. Lines starting with # are notes and are removed.
+# The READABILITY block is the fixed skeleton; keep it unless the person
+# deliberately loosens or tightens a line in round 6f.
+
+WHO IS SPEAKING:
+<The author in one or two sentences: who they are, how long they have done
+this, why they are the one to explain it. First person or third person.>
+
+WHO IS READING:
+<The reader: who they are, what they already know, what they do not, and
+where they read (phone, bed, desk, a parking lot before doing the thing).
+If there is a reader pair, say who the second reader is and how the text
+speaks to them.>
+
+VOICE AND TONE:
+<The register in a phrase, then two sentences of how it behaves: a mentor
+over coffee; a smart friend at dinner; a mischievous guide building the
+thing alongside you; a plain explainer. What it never does: lecture, talk
+down, gush.>
+
+READING LEVEL:
+<Grade level. Tenth grade is the default for adults; eighth for a phone
+reader in a hurry; seventh to eighth for a kid with a grown-up alongside.>
+Big words are welcome if defined once, in plain language, the first time
+they appear. Prefer the plain word when one exists.
+
+READABILITY (the skeleton; the secret of a book people finish):
+- Chapters of about 1,300 words and never more than 1,500.
+- No sentence longer than 25 words.
+- No paragraph longer than 200 words, and rarely more than five sentences.
+- Three to five body sections of four to five paragraphs each, with
+  descriptive subheadings, never "Section 1".
+- An opener of two to three paragraphs that earns the reader's attention
+  with a specific device: an analogy from another field, a scene, a fact.
+- A conclusion of one to two paragraphs: what the reader now understands,
+  and the caveat everyone in the field knows.
+- An "in the next chapter" teaser of a few sentences with a note of tension.
+
+STORIES:
+<Real stories only, or composites allowed if flagged? Whose stories: the
+author's own, named people, unnamed cases? How many per chapter?>
+
+METAPHORS:
+<Where they come from (everyday life; a field far from the subject; never
+the subject itself). Whether every metaphor must say where it breaks down.>
+Avoid clichés ("at the end of the day," "it's a marathon, not a sprint").
+
+NUMBERS AND EVIDENCE:
+<Whether big numbers are anchored to something physical. Whether claims are
+labeled (well established / contested / plausible but unmeasured). Whether
+sources are named in the sentence. How the unknown is handled: said plainly,
+never papered over.>
+
+HUMOR:
+<What kind and how often. What it is never at the expense of.>
+
+BANNED:
+<Words, devices, and habits the author never wants: em-dashes; hype words
+("leverage," "robust," "journey," "game-changing," "delve"); filler ("it is
+important to note"); equations; anything the reader would need a calculator
+for. One per line.>
+
+RECURRING ELEMENTS:
+<Any fixed pieces every chapter carries, or "none": a sidebar for a second
+reader; a "try this" task; a myth box; a one-line recap of where the book
+stands.>
+
+STRUCTURE:
+Follow the chapter structure in the outline; its sections become the body's
+subheadings, in order. Stay within 10 percent of each chapter's word target.

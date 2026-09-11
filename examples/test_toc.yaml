@@ -1,0 +1,121 @@
+# The first-run test book. Three short chapters on a neutral topic, so a new
+# install can prove the whole pipeline works for well under a dollar before
+# anyone designs a real book. Run:
+#   python generator.py examples/test_toc.yaml examples/test_style_guide.txt --dry-run
+title: "Three Small Mysteries of Bread"
+author: "Test Run"
+default_word_target: 400
+
+parts:
+  - title: "Part One: What Happens in the Oven"
+    description: >
+      Three everyday questions about a loaf of bread, each answered with one
+      piece of kitchen science a curious reader can check at home.
+
+    sections:
+      - title: "Before, During, and After"
+        description: >
+          One chapter each on rising, browning, and going stale.
+
+        chapters:
+          - title: "Why Dough Rises"
+            description: >
+              Yeast eats sugar and breathes out carbon dioxide; gluten traps
+              the gas. The chapter explains the two partners and why kneading
+              and waiting both matter.
+            intro: >
+              Open with a balloon being blown up inside a stretchy net bag:
+              the gas is the yeast's breath, the bag is gluten.
+            chapter_sections:
+              - heading: "The Tiny Bakers"
+                description: "What yeast is and what it does."
+                bullet_points:
+                  - "Yeast is a living single-celled fungus, dormant in the packet until it meets warm water and sugar"
+                  - "It exhales carbon dioxide; the bubbles are its breath, not air kneaded in"
+                  - "Too hot kills it, too cold puts it to sleep; the reason recipes say lukewarm"
+              - heading: "The Net That Holds the Breath"
+                description: "Gluten, and why kneading builds it."
+                bullet_points:
+                  - "Two flour proteins link into stretchy strands when wet and worked"
+                  - "Kneading lines the strands up; an under-kneaded loaf leaks its gas and stays flat"
+                  - "The windowpane test: stretch a piece thin enough to see light through it"
+              - heading: "Why Waiting Is Work"
+                description: "The rise as a race between gas and structure."
+                bullet_points:
+                  - "A slow rise gives more flavor because the yeast makes more than gas"
+                  - "Over-proofing: the net stretches past its limit and the loaf collapses"
+            conclusion: >
+              The reader now sees a loaf as a foam held up by a protein net,
+              and understands that most bread failures are one of the two
+              partners letting the other down.
+            transition: >
+              A risen loaf is pale and soft. The crust and the smell that make
+              bread irresistible come from a different reaction entirely, one
+              that only starts above the boiling point of water.
+
+          - title: "Why Crust Turns Brown"
+            description: >
+              The Maillard reaction and caramelisation, told as the story of
+              the surface drying out and getting hot enough for sugars and
+              proteins to rearrange into hundreds of new flavors.
+            intro: >
+              Open with a comparison to a suntan: the surface changes color
+              because of what the heat does to what is already there, and the
+              inside never sees it.
+            chapter_sections:
+              - heading: "Two Kinds of Browning"
+                description: "Maillard versus caramelisation."
+                bullet_points:
+                  - "Maillard: sugars and proteins react above about 140 C to make brown color and roasted flavors"
+                  - "Caramelisation: sugar alone, hotter still; the sweeter, darker notes"
+                  - "Same reactions as a seared steak and a roasted coffee bean"
+              - heading: "Why the Inside Stays Pale"
+                description: "Water as the crumb's thermostat."
+                bullet_points:
+                  - "The wet interior cannot pass 100 C until it dries, so it never reaches browning heat"
+                  - "The crust forms once the surface dries; steam in the oven delays that and gives a thinner, glossier crust"
+              - heading: "Reading a Crust"
+                description: "What color tells you about the bake."
+                bullet_points:
+                  - "Pale means under-baked or too little sugar; very dark means the oven ran hot"
+                  - "An egg wash adds protein and sugar to the surface, which is why it browns faster"
+            conclusion: >
+              Browning is chemistry that needs a dry, hot surface; the loaf's
+              own water decides where it can happen.
+            transition: >
+              The crust is at its best the moment the loaf cools. By the next
+              morning something has changed inside, and it is not that the
+              bread dried out.
+
+          - title: "Why Bread Goes Stale"
+            description: >
+              Staling is starch crystallising, not water leaving. The chapter
+              explains retrogradation, why the fridge makes it worse, and why
+              a few seconds in a toaster reverses it.
+            intro: >
+              Open with the puzzle: a sealed loaf still goes stale, and a
+              stale slice softens in a warm oven. Whatever is happening, it
+              is not simply drying.
+            chapter_sections:
+              - heading: "Starch Rearranges Itself"
+                description: "Retrogradation in plain words."
+                bullet_points:
+                  - "Baking melts starch into a soft, disordered state; as the loaf sits, the starch slowly re-crystallises and firms up"
+                  - "Water is still in the loaf; it has moved into the crystals where it no longer softens the crumb"
+              - heading: "The Fridge Is the Worst Place"
+                description: "Temperature and the speed of staling."
+                bullet_points:
+                  - "Staling is fastest just above freezing, which is fridge temperature"
+                  - "Freezing stops it; room temperature slows it; this is why bakers say freeze, never chill"
+              - heading: "Undoing It"
+                description: "Heat as a reset."
+                bullet_points:
+                  - "Warming above about 60 C melts the crystals again; toast is fresh bread for a few minutes"
+                  - "Fat and sugar in the recipe slow staling, which is why enriched breads keep longer"
+            conclusion: >
+              Three small mysteries, one lesson: a loaf is a living chemistry
+              set, and each stage is a reaction the reader can now name.
+            transition: >
+              This is the final chapter. Close the book's arc: the reader
+              started with three questions about a loaf and ends able to
+              explain a bakery from the oven door.

@@ -1,0 +1,30 @@
+# bookwriter2 settings for THIS install. Copy to config.yaml and edit.
+# config.yaml is git-ignored, so paths and preferences never leave your machine.
+# Every line is optional; the script falls back to the defaults noted here.
+
+# Where finished books go. Relative paths are taken from this folder.
+# Default: books/ beside generator.py.
+output_dir: books
+
+# The Python environment the model should run the script with.
+# Keep it OUTSIDE any synced folder (Dropbox, iCloud, OneDrive, Google Drive):
+# a synced environment can hang for minutes while files are fetched one by one.
+# Not read by the script; it is here so the model knows what to run.
+venv: ~/.venvs/bookwriter
+
+# The style guide used when a book does not ask for another.
+default_style_guide: style_guides/default.txt
+
+# Above this estimate (in dollars) the dry run prints a warning, and the model
+# should ask you a second time before starting. Nothing is ever spent without
+# your explicit go in the conversation.
+spend_ceiling: 20
+
+# Where you read: kindle, apple-books, browser, or other. The model uses this
+# to tell you how to open each finished book.
+reading_device: browser
+
+# Anything the model should keep in mind on every book. Examples people give:
+# "no em-dashes", "define every technical word once", "keep chapters under
+# four minutes to read". These are appended to the default style guide at setup.
+house_rules: []

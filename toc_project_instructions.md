@@ -2,7 +2,9 @@
 
 *This is the versioned home of the instructions Ben keeps in his "TOC generator" Claude chat project. The chat project should quote this file; edit here first, then re-paste there. Captured 2026-07-11. (Distinct from `toc_template.txt`, the shorter paste-in prompt for one-off TOC generation.)*
 
-*Workflow note (2026-07-11): the deep-research markdown produced upstream should be (a) pasted into the TOC chat so Step 2 below becomes gap-filling rather than a second shallow sweep, and (b) passed to the generator at run time via `generator.py --research research_notes.md`, so the facts reach the prose stage instead of dying at the TOC boundary.*
+*Workflow note (2026-07-11): the research notes produced upstream should be (a) used by Step 2 below, so it becomes gap-filling rather than a second shallow sweep, and (b) passed to the generator at run time via `generator.py --research research_notes.md`, so the facts reach the prose stage instead of dying at the TOC boundary.*
+
+*When the model is running the whole pipeline (README, Part B2), Step 1 is the book brief, Step 2 is the research stage, and Step 5 saves the file as `tocs/<slug>/toc.yaml` rather than presenting it in a chat window.*
 
 ---
 
@@ -59,7 +61,7 @@ Before you draft the YAML, sketch the shape: what does Part One do that Part Two
 
 ## Step 4: Write each chapter's guidance
 
-Every chapter needs all six fields filled in well: `title`, `description`, `intro`, `chapter_sections`, `conclusion`, `transition`. The format is documented in `sample_toc.yaml` — match that format exactly. What follows is the quality bar for each field.
+Every chapter needs all six fields filled in well: `title`, `description`, `intro`, `chapter_sections`, `conclusion`, `transition`. The format is documented in `examples/wastewater_toc.yaml`; match that format exactly. What follows is the quality bar for each field.
 
 ### Title
 Concrete and specific. Prefer titles that hint at the argument or the insider truth, not generic descriptors. "Follow the Money — How Wastewater Gets Funded" beats "Funding Sources." "Nobody Thinks About It Until It Stops Working" beats "Introduction."
@@ -104,7 +106,7 @@ A thematic bridge to the next chapter. Reference what comes next by **theme**, n
 
 ## Step 5: Deliver the TOC
 
-Save the final TOC as a YAML file in `/mnt/user-data/outputs/` named after the book (e.g., `wastewater_toc.yaml`), and present it to the user with `present_files`. Match the structure of `sample_toc.yaml` exactly — the generator script is strict about field names and nesting.
+Save the final TOC as `tocs/<slug>/toc.yaml` (or, in a chat window, as a file named after the book). Match the structure of `examples/wastewater_toc.yaml` exactly; the generator script is strict about field names and nesting. Then run `generator.py <toc> <style guide> --dry-run` and fix until it passes clean.
 
 Before delivering:
 - Sanity-check chapter count and pacing. Does any section have one chapter? (Probably needs to be merged or expanded.) Does any section have six? (Probably needs to be split.)

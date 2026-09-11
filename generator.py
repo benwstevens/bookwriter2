@@ -36,7 +36,57 @@ from shared import (
 INSTRUCTIONS_FILE = BASE_DIR / "generator_instructions.txt"
 COHERENCE_INSTRUCTIONS_FILE = BASE_DIR / "generator_coherence_instructions.txt"
 
-DEFAULT_WORD_TARGET = 3500
+DEFAULT_WORD_TARGET = 1300   # the readability target; chapters run long, so this lands near the cap
+CHAPTER_WORD_CAP = 1500      # the readability cap; the dry run warns above it
+
+CONFIG_FILE = BASE_DIR / "config.yaml"
+DEFAULT_OUTPUT_DIR = BASE_DIR / "books"
+
+# Model pins. A retired model makes every run fail until one of these lines
+# changes, and changing it changes the book's voice. Upgrading is the owner's
+# decision, not an automatic fix (see README, "For maintainers").
+GEN_MODEL = "claude-opus-4-6"
+SUMMARY_MODEL = "claude-sonnet-4-6"
+COHERENCE_MODEL = "claude-opus-4-6"
+
+
+def load_config() -> dict:
+    """Read config.yaml (this install's settings) if it exists. See config.example.yaml."""
+    if not CONFIG_FILE.exists():
+        return {}
+    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    if not isinstance(data, dict):
+        print(f"ERROR: {CONFIG_FILE.name} must be a simple list of 'setting: value' lines.")
+        sys.exit(1)
+    return data
+
+
+def resolve_output_root(config: dict, override: str | None) -> Path:
+    """Where book folders go: --out, then config.yaml output_dir, then books/ beside the script."""
+    if override:
+        return Path(override).expanduser().resolve()
+    value = config.get("output_dir")
+    if value:
+        candidate = Path(str(value)).expanduser()
+        return candidate.resolve() if candidate.is_absolute() else (BASE_DIR / candidate).resolve()
+    return DEFAULT_OUTPUT_DIR
+
+
+def check_model_pins(client) -> None:
+    """Confirm the pinned model IDs still exist before spending anything."""
+    import anthropic
+    for model_id in sorted({GEN_MODEL, SUMMARY_MODEL, COHERENCE_MODEL}):
+        try:
+            client.models.retrieve(model_id)
+        except anthropic.NotFoundError:
+            print(f"\nERROR: the pinned model '{model_id}' is no longer available.")
+            print("  Change the pin at the top of generator.py. That changes the book's voice,")
+            print("  so it is the owner's decision, not an automatic fix.")
+            sys.exit(1)
+        except Exception as e:  # network or auth trouble: say so, do not block
+            print(f"  (could not verify model pin {model_id}: {e.__class__.__name__})")
+            return
 
 
 # ===========================================================================
@@ -162,13 +212,11 @@ def _build_hierarchy_summary(chapter_targets: list[dict]) -> str:
 # ===========================================================================
 # Directory setup (generator-specific — different from distiller)
 # ===========================================================================
-def setup_generator_dirs(toc_data: dict) -> dict[str, Path]:
-    """Create the book directory structure for the generator pipeline."""
+def setup_generator_dirs(toc_data: dict, output_root: Path) -> dict[str, Path]:
+    """Create the book directory structure under output_root (see resolve_output_root)."""
     title = toc_data.get("title", "Untitled")
     slug = re.sub(r"[^\w\-]", "", title.replace(" ", "_")).lower()
-    # Generated books live in Gen_Books at the Reading folder root,
-    # one level above this repo (moved out of books/ on 2026-07-11).
-    book_dir = BASE_DIR.parent / "Gen_Books" / slug
+    book_dir = output_root / slug
 
     paths = {
         "book_dir": book_dir,
@@ -186,8 +234,8 @@ def setup_generator_dirs(toc_data: dict) -> dict[str, Path]:
 # ===========================================================================
 # Stage 1: Parse & Validate Inputs
 # ===========================================================================
-def stage1(toc_path: Path, style_path: Path, target_override: int | None = None):
-    """Parse and validate inputs. Returns (toc_data, style_guide, paths, chapter_targets)."""
+def stage1(toc_path: Path, style_path: Path, output_root: Path, target_override: int | None = None):
+    """Parse and validate inputs. Returns (toc_data, style_guide, paths, chapter_targets, cost_estimate)."""
     print("\n" + "=" * 60)
     print("STAGE 1: Parse & Validate Inputs")
     print("=" * 60)
@@ -232,7 +280,7 @@ def stage1(toc_path: Path, style_path: Path, target_override: int | None = None)
         sys.exit(1)
 
     # Set up directories
-    paths = setup_generator_dirs(toc_data)
+    paths = setup_generator_dirs(toc_data, output_root)
 
     # Copy inputs into book directory for reproducibility
     dest_toc = paths["book_dir"] / "toc.yaml"
@@ -250,6 +298,7 @@ def stage1(toc_path: Path, style_path: Path, target_override: int | None = None)
     total_target = sum(ct["word_target"] for ct in chapter_targets)
     print(f"\n  Book: {toc_data['title']}")
     print(f"  Author: {toc_data.get('author', 'Unknown')}")
+    print(f"  Output folder: {paths['book_dir']}")
 
     if has_parts:
         num_parts = len(toc_data["parts"])
@@ -282,11 +331,19 @@ def stage1(toc_path: Path, style_path: Path, target_override: int | None = None)
         extra_str = f"  ({', '.join(extras)})" if extras else ""
         print(f"    {i:2d}. {prefix}{ct['title']} — {ct['word_target']:,} words{extra_str}")
 
+    over_cap = [f"{i}. {ct['title']} ({ct['word_target']:,})"
+                for i, ct in enumerate(chapter_targets, 1) if ct["word_target"] > CHAPTER_WORD_CAP]
+    if over_cap:
+        print(f"\n  NOTE: {len(over_cap)} chapter(s) target more than the {CHAPTER_WORD_CAP:,}-word readability cap."
+              " Chapters run long as it is; the style guide should say why these need it:")
+        for line in over_cap:
+            print(f"    {line}")
+
     # Cost estimate
     cost_estimate = _estimate_cost(chapter_targets, style_guide, toc_data)
-    print(f"\n  Estimated cost: ~${cost_estimate:.2f}")
+    print(f"\n  Estimated cost: ~${cost_estimate:.2f}  (estimates have run high; the bill is usually lower)")
 
-    return toc_data, style_guide, paths, chapter_targets
+    return toc_data, style_guide, paths, chapter_targets, cost_estimate
 
 
 def _validate_flat_toc(toc_data: dict):
@@ -371,6 +428,12 @@ def _estimate_cost(chapter_targets, style_guide, toc_data):
     )
     style_tokens = estimate_tokens(style_guide)
     toc_tokens = estimate_tokens(yaml.dump(toc_data))
+    # stage2/stage4 send a compact hierarchy summary (not the full TOC YAML)
+    # whenever the TOC has parts/sections; estimate with what is actually sent.
+    if any(ct.get("part_title") for ct in chapter_targets):
+        context_tokens = estimate_tokens(_build_hierarchy_summary(chapter_targets))
+    else:
+        context_tokens = toc_tokens
 
     # The system prompt (instructions + style guide) is cached across chapters
     sys_tokens = instructions_tokens + style_tokens
@@ -385,7 +448,8 @@ def _estimate_cost(chapter_targets, style_guide, toc_data):
     for i, ct in enumerate(chapter_targets):
         # User message tokens (not cached — varies per chapter)
         prior_chapter_tokens = int(chapter_targets[i - 1]["word_target"] * 1.3) if i > 0 else 0
-        user_tokens = toc_tokens + estimate_tokens(ct["description"]) + prior_chapter_tokens + summary_context_tokens
+        struct_tokens = estimate_tokens(_format_chapter_structure(ct) or "")
+        user_tokens = context_tokens + estimate_tokens(ct["description"]) + struct_tokens + prior_chapter_tokens + summary_context_tokens
 
         if i == 0:
             # First chapter: system prompt written to cache
@@ -415,7 +479,7 @@ def _estimate_cost(chapter_targets, style_guide, toc_data):
     num_windows = max(1, (len(chapter_targets) - 3) // 2 + 1) if len(chapter_targets) > 7 else 1
     coherence_sys_tokens = style_tokens  # style guide is the cacheable system part
     coherence_input_per_window = 5 * int(sum(ct["word_target"] for ct in chapter_targets) / len(chapter_targets) * 1.3)
-    coherence_uncached_input = (coherence_input_per_window + toc_tokens) * num_windows
+    coherence_uncached_input = (coherence_input_per_window + context_tokens) * num_windows
     coherence_cached_write = coherence_sys_tokens  # first window writes cache
     coherence_cached_read = coherence_sys_tokens * max(0, num_windows - 1)
     coherence_output_total = coherence_input_per_window * num_windows
@@ -490,8 +554,9 @@ def stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=None,
 
     import anthropic
     client = anthropic.Anthropic(api_key=api_key)
-    gen_model = "claude-opus-4-6"
-    summary_model = "claude-sonnet-4-6"
+    check_model_pins(client)
+    gen_model = GEN_MODEL
+    summary_model = SUMMARY_MODEL
 
     summaries = []  # list of summary strings for context
     failures = []
@@ -814,6 +879,7 @@ def stage4(toc_data, style_guide, paths, chapter_targets):
     api_key = get_api_key()
     import anthropic
     client = anthropic.Anthropic(api_key=api_key)
+    check_model_pins(client)
 
     # Determine windows
     if num_chapters <= 7:
@@ -915,7 +981,7 @@ def stage4(toc_data, style_guide, paths, chapter_targets):
 
         # Stream the response (these are large)
         result_text = _stream_api_call_with_retry(
-            client, "claude-opus-4-6", system_prompt, user_message,
+            client, COHERENCE_MODEL, system_prompt, user_message,
             max_tokens=32768, thinking_budget=10000,
         )
 
@@ -1296,6 +1362,12 @@ def main():
                         help="Optional research notes file (markdown/text). Fed to every "
                              "chapter's generation as factual ground truth and copied "
                              "into the book folder as research_notes.md")
+    parser.add_argument("--out", type=str, default=None, metavar="DIR",
+                        help="Folder to put the book in (overrides output_dir in config.yaml; "
+                             "default: books/ beside this script)")
+    parser.add_argument("--yes", action="store_true",
+                        help="Skip the 'Proceed with API calls?' prompt. For unattended runs, "
+                             "only after the person has approved the dry run.")
 
     args = parser.parse_args()
 
@@ -1310,6 +1382,9 @@ def main():
             sys.exit(1)
         research_text = research_path.read_text(encoding="utf-8").strip()
 
+    config = load_config()
+    output_root = resolve_output_root(config, args.out)
+
     print("=" * 60)
     print("  Book Generator")
     print("=" * 60)
@@ -1319,9 +1394,14 @@ def main():
     print(f"  Starting from stage: {args.stage}")
 
     # Stage 1 always runs (to load inputs)
-    toc_data, style_guide, paths, chapter_targets = stage1(
-        toc_path, style_path, args.target,
+    toc_data, style_guide, paths, chapter_targets, cost_estimate = stage1(
+        toc_path, style_path, output_root, args.target,
     )
+
+    ceiling = config.get("spend_ceiling")
+    if ceiling is not None and cost_estimate > float(ceiling):
+        print(f"\n  NOTE: the estimate is above the spend ceiling of ${float(ceiling):.2f} "
+              f"in config.yaml. Make sure this run was approved knowingly.")
 
     if research_text:
         print(f"\n  Research notes: {research_path.name} "
@@ -1341,10 +1421,13 @@ def main():
     # Confirm before proceeding
     if args.stage <= 2:
         print()
-        confirm = input("Proceed with API calls? [Y/n] ").strip()
-        if confirm.lower() == "n":
-            print("Aborted by user.")
-            sys.exit(0)
+        if args.yes:
+            print("  --yes given: proceeding without the prompt.")
+        else:
+            confirm = input("Proceed with API calls? [Y/n] ").strip()
+            if confirm.lower() == "n":
+                print("Aborted by user.")
+                sys.exit(0)
 
     if args.stage <= 2:
         stage2(toc_data, style_guide, paths, chapter_targets, regen_chapter=args.regen,
